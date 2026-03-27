@@ -65,9 +65,9 @@ source/main.o source/main.d: ../source/main.c \
  /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/deprecated_definitions.h \
  /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/portable/GCC/ARM_CM0/portmacro.h \
  /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/mpu_wrappers.h \
- /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/queue.h \
  /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/task.h \
  /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/list.h \
+ /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/queue.h \
  /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/task.h \
  /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/semphr.h \
  /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/queue.h
@@ -137,9 +137,9 @@ source/main.o source/main.d: ../source/main.c \
 /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/deprecated_definitions.h:
 /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/portable/GCC/ARM_CM0/portmacro.h:
 /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/mpu_wrappers.h:
-/Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/queue.h:
 /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/task.h:
 /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/list.h:
+/Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/queue.h:
 /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/task.h:
 /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/semphr.h:
 /Users/ethanlam/Documents/MCUXpressoIDE_25.6.136/workspace/Final_Project_CG2271/freertos/freertos-kernel/include/queue.h:
