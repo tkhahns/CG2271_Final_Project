@@ -1,0 +1,348 @@
+================================================================================
+            SMART STUDY ENVIRONMENT MONITOR — FULL PROJECT ARCHITECTURE
+                         CG2271 AY2025/26 Sem 2 — B01-08
+================================================================================
+
+
+================================================================================
+1. WORKLOAD SUMMARY
+================================================================================
+
++----------+----------------+--------------------------------------------------+
+| Role     | Board Focus    | Key Responsibilities                             |
++----------+----------------+--------------------------------------------------+
+| Member 1 | MCXC444        | HC-SR04, Photoresistor, Sound ISR,               |
+|          |                | vDistanceTask, vEnvTask                          |
++----------+----------------+--------------------------------------------------+
+| Member 2 | MCXC444        | vAlertTask, vCommsTask, RGB LED,                 |
+|          |                | MCXC444 UART, RTOS Mutexes                       |
++----------+----------------+--------------------------------------------------+
+| Member 3 | ESP32          | DHT11, LCD Display (I2C), Active Buzzer,         |
+|          |                | ESP32 UART Parsing                               |
++----------+----------------+--------------------------------------------------+
+| Member 4 | ESP32          | Firebase RTDB, Telegram Bot API, OpenAI API,     |
+|          |                | Wi-Fi / HTTP                                     |
++----------+----------------+--------------------------------------------------+
+
+
+================================================================================
+2. FULL SYSTEM ARCHITECTURE
+================================================================================
+
+    PHYSICAL SENSORS                    MCXC444                            ESP32                         ACTUATORS
+    & CONTROLS                         (FreeRTOS)                         (Arduino)                     & DISPLAYS
+  ──────────────────      ──────────────────────────────      ─────────────────────────────      ──────────────────
+
+  ┌───────────────┐       ┌──────────────────────────────┐    ┌─────────────────────────────┐    ┌───────────────┐
+  │ Photoresistor │──ADC──│                              │    │                             │    │               │
+  │ (Light)       │       │                              │    │                             │──▶ │ LCD 16x2      │
+  │ [Member 1]    │       │                              │    │                             │I2C │ (QC1602A +    │
+  └───────────────┘       │                              │    │                             │    │  PCF8574)     │
+                          │                              │    │                             │    │ [Member 3]    │
+  ┌───────────────┐       │                              │    │                             │    └───────────────┘
+  │ Big Sound     │──GPIO─│         FreeRTOS             │    │                             │
+  │ (Noise)       │  IRQ  │         Kernel               │    │        Arduino              │    ┌───────────────┐
+  │ [Member 1]    │       │                              │    │        Main Loop            │──▶ │ Active Buzzer │
+  └───────────────┘       │                              │    │                             │GPIO│ [Member 3]    │
+                          │  ┌────────┐  ┌────────────┐  │    │                             │    └───────────────┘
+  ┌───────────────┐       │  │vEnvTask│  │vDistanceTask│  │    │                             │
+  │ HC-SR04       │──GPIO─│  │[Mem 1] │  │  [Mem 1]   │  │    │  ┌──────────┐               │    ┌───────────────┐
+  │ (Ultrasonic)  │       │  └───┬────┘  └─────┬──────┘  │    │  │DHT11 Read│               │    │               │
+  │ [Member 1]    │       │      │             │          │    │  │[Member 3]│               │    │  RGB LED      │
+  └───────────────┘       │      ▼             ▼          │    │  └────┬─────┘               │    │  [Member 2]   │
+                          │  ┌──────────────────────┐     │    │       │                     │    │               │
+  ┌───────────────┐       │  │    xSensorQueue      │     │    │       ▼                     │    └───────┬───────┘
+  │ SW2 (Start/   │──IRQ──│  │    (FreeRTOS Queue)  │     │    │  ┌──────────┐               │            │
+  │     Stop)     │       │  └──────────┬───────────┘     │    │  │  UART    │               │            │
+  │ [Member 2]    │       │             │                 │    │  │  Handler │               │            │
+  └───────────────┘       │             ▼                 │    │  │[Member 3]│               │      Connected to
+                          │  ┌──────────────────────┐     │    │  └────┬─────┘               │      MCXC444 GPIO
+  ┌───────────────┐       │  │    vAlertTask         │     │    │       │                     │
+  │ SW3 (Alert    │──IRQ──│  │    [Member 2]         │     │    │       │ SensorData_t        │
+  │     Ack)      │       │  │                       │     │    │       ▼                     │
+  │ [Member 2]    │       │  │  - Reads queue        │     │    │  ┌──────────────────────┐   │
+  └───────────────┘       │  │  - Checks thresholds  │     │    │  │    Main Loop         │   │
+                          │  │  - Sets warning level  │────┼──▶ │  │    (esp32.ino)        │   │
+                          │  │  - Drives RGB LED     │     │    │  │                      │   │
+                          │  └──────────┬───────────┘     │    │  │  1. Read UART         │   │
+                          │             │                 │    │  │  2. Read DHT11        │   │
+                          │    xSystemStatusMutex         │    │  │  3. Log Firebase      │   │
+                          │    (protects shared status)   │    │  │  4. Poll Telegram     │   │
+                          │             │                 │    │  │  5. Call OpenAI       │   │
+                          │             ▼                 │    │  │  6. Update LCD        │   │
+                          │  ┌──────────────────────┐     │    │  │  7. Drive Buzzer      │   │
+                          │  │    vCommsTask         │     │    │  └──────────┬───────────┘   │
+                          │  │    [Member 2]         │     │    │             │               │
+                          │  │                       │     │    │             │               │
+                          │  │  - Packs sensor data  │     │    │      ┌──────┴──────┐        │
+                          │  │  - UART TX to ESP32   │─────┼───▶│      │ wifi_manager│        │
+                          │  │  - UART RX from ESP32 │◀────┼────│      │ [Member 4]  │        │
+                          │  │  - Updates thresholds │     │    │      └──────┬──────┘        │
+                          │  └──────────────────────┘     │    │             │               │
+                          │                              │    │             │ HTTPS          │
+                          │  ┌──────────────────────┐     │    │             │               │
+                          │  │    vButtonTask        │     │    └─────────────┼───────────────┘
+                          │  │    [Member 2]         │     │                 │
+                          │  │                       │     │                 │
+                          │  │  - SW2: Start/Stop    │     │    ┌────────────┼────────────────┐
+                          │  │  - SW3: Ack alert     │     │    │   INTERNET │                │
+                          │  │  - xSoundSemaphore    │     │    │            ▼                │
+                          │  └──────────────────────┘     │    │  ┌──────────────────────┐   │
+                          │                              │    │  │                      │   │
+                          └──────────────────────────────┘    │  │   ┌──────────────┐   │   │
+                                                              │  │   │ Firebase     │   │   │
+                                                              │  │   │ RTDB         │   │   │
+                                                              │  │   │ [Member 4]   │   │   │
+                     UART LINK                                │  │   │              │   │   │
+                     ──────────                               │  │   │ /latest.json │   │   │
+                                                              │  │   │ /readings/   │   │   │
+      MCXC444 TX (PTD3) ──────────────▶ ESP32 RX (GPIO 16)   │  │   └──────────────┘   │   │
+      MCXC444 RX (PTD2) ◀────────────── ESP32 TX (GPIO 17)   │  │                      │   │
+      GND ─────────────────────────────── GND                 │  │   ┌──────────────┐   │   │
+                                                              │  │   │ Telegram     │   │   │
+      Packet format (MCXC444 → ESP32):                        │  │   │ Bot API      │   │   │
+      "TEMP:28.5,HUM:65.0,LIGHT:512,NOISE:1,DIST:45.2,       │  │   │ [Member 4]   │   │   │
+       WARN:1\n"                                              │  │   │              │   │   │
+                                                              │  │   │ /getUpdates  │   │   │
+      Packet format (ESP32 → MCXC444):                        │  │   │ /sendMessage │   │   │
+      "Advisory text here\n"                                  │  │   └──────────────┘   │   │
+      "SETTEMP:30.0\n"                                        │  │                      │   │
+      "SETDIST:40.0\n"                                        │  │   ┌──────────────┐   │   │
+                                                              │  │   │ OpenAI       │   │   │
+                                                              │  │   │ API          │   │   │
+                                                              │  │   │ [Member 4]   │   │   │
+                                                              │  │   │              │   │   │
+                                                              │  │   │ /v1/chat/    │   │   │
+                                                              │  │   │ completions  │   │   │
+                                                              │  │   └──────────────┘   │   │
+                                                              │  │                      │   │
+                                                              │  └──────────────────────┘   │
+                                                              │                             │
+                                                              └─────────────────────────────┘
+
+
+================================================================================
+3. MCXC444 SOFTWARE ARCHITECTURE (FreeRTOS)
+================================================================================
+
+    ┌──────────────────────────────────────────────────────────────────┐
+    │                      FreeRTOS Scheduler                          │
+    │                 (Preemptive + Time-Slicing)                      │
+    └──────────────────────────────────────────────────────────────────┘
+           │                │                │                │
+    ┌──────┴───────┐  ┌─────┴────────┐  ┌───┴──────────┐  ┌─┴────────────┐
+    │ vButtonTask  │  │ vAlertTask   │  │ vCommsTask   │  │ vEnvTask     │
+    │ Priority:    │  │ Priority:    │  │ Priority:    │  │ Priority:    │
+    │   HIGH       │  │   HIGH       │  │   MEDIUM     │  │   LOW        │
+    │ [Member 2]   │  │ [Member 2]   │  │ [Member 2]   │  │ [Member 1]   │
+    └──────┬───────┘  └─────┬────────┘  └───┬──────────┘  └─┬────────────┘
+           │                │                │                │
+           │                │                │                │
+      SW2/SW3 ISR      xSensorQueue     UART TX/RX       ADC Read
+      gives             reads from       packs &          Light,
+      semaphore         queue            sends data       Sound
+           │                │                │                │
+           │                │                │                │   ┌──────────────┐
+           │                │                │                └──▶│vDistanceTask │
+           │                │                │                    │ Priority:LOW │
+           │                │                │                    │ [Member 1]   │
+           │                │                │                    └──────┬───────┘
+           ▼                ▼                ▼                ▼         │
+    ┌──────────────────────────────────────────────────────────────┐    │
+    │                    Shared Resources                          │    │
+    │                                                              │◀───┘
+    │  xSensorQueue ──────── Queue (10 x SensorData_t)            │
+    │  xSoundSemaphore ───── Binary Semaphore (noise event)       │
+    │  xSystemStatusMutex ── Mutex (protects SystemStatus_t)      │
+    │  globalSystemStatus ── { warningLevel: 0/1/2 }              │
+    └──────────────────────────────────────────────────────────────┘
+
+
+================================================================================
+4. ESP32 SOFTWARE ARCHITECTURE (Arduino)
+================================================================================
+
+    ┌──────────────────────────────────────────────────────────────────────┐
+    │                        esp32.ino — Main Loop                        │
+    │                                                                      │
+    │   setup()                                                            │
+    │     ├── connectWiFi()          [Member 4]                            │
+    │     ├── initUART()             [Member 3]                            │
+    │     ├── initLCD()              [Member 3]                            │
+    │     ├── initFirebase()         [Member 4]                            │
+    │     ├── initTelegram()         [Member 4]                            │
+    │     └── initOpenAI()           [Member 4]                            │
+    │                                                                      │
+    │   loop()  ── runs continuously ──────────────────────────────────    │
+    │     │                                                                │
+    │     ├── ensureWiFiConnected()                       [Member 4]       │
+    │     │                                                                │
+    │     ├── [Every 2s] Read Sensors & Process                            │
+    │     │     │                                                          │
+    │     │     ├── readUART() ─── parse MCXC444 data     [Member 3]       │
+    │     │     ├── readDHT11() ── temp & humidity        [Member 3]       │
+    │     │     ├── readHCSR04() ─ ultrasonic distance    [Member 3]       │
+    │     │     │                                                          │
+    │     │     ├── logToFirebase(data)                   [Member 4]       │
+    │     │     │     │                                                    │
+    │     │     │     ├── PUT  /latest.json                                │
+    │     │     │     └── POST /readings.json                              │
+    │     │     │                                                          │
+    │     │     ├── [If warning changed OR critical]                       │
+    │     │     │     ├── getAdvisory(data)               [Member 4]       │
+    │     │     │     │     └── POST openai.com/v1/chat/completions        │
+    │     │     │     ├── scrollText(advisory)            [Member 3]       │
+    │     │     │     ├── sendTelegramAlert(msg)          [Member 4]       │
+    │     │     │     ├── activateBuzzer()                [Member 3]       │
+    │     │     │     └── sendUART(advisory)              [Member 3]       │
+    │     │     │                                                          │
+    │     │     └── displayText(line1, line2)             [Member 3]       │
+    │     │                                                                │
+    │     └── [Every 3s] Poll Telegram                                     │
+    │           │                                                          │
+    │           ├── pollTelegram(data)                    [Member 4]       │
+    │           │     ├── GET /getUpdates                                   │
+    │           │     ├── Handle /status  ── sendMessage(readings)          │
+    │           │     ├── Handle /settemp ── update threshold               │
+    │           │     └── Handle /setdist ── update threshold               │
+    │           │                                                          │
+    │           └── [If command received]                                   │
+    │                 ├── getAdvisory(data)               [Member 4]       │
+    │                 └── sendTelegramAlert(advisory)     [Member 4]       │
+    │                                                                      │
+    └──────────────────────────────────────────────────────────────────────┘
+
+
+================================================================================
+5. ESP32 FILE STRUCTURE — MEMBER 3 & MEMBER 4
+================================================================================
+
+    esp32/
+    ├── esp32.ino              Main entry — setup() + loop()       [Shared]
+    ├── config.h               Wi-Fi, Firebase, Telegram, OpenAI   [Member 4]
+    │
+    │── wifi_manager.h/.cpp    Wi-Fi connect / reconnect           [Member 4]
+    │── uart_handler.h/.cpp    UART receive & parse from MCXC444   [Member 3]
+    │── firebase_client.h/.cpp PUT /latest, POST /readings         [Member 4]
+    │── telegram_bot.h/.cpp    getUpdates, /status, /set*, alerts  [Member 4]
+    │── openai_client.h/.cpp   Chat Completions -> advisory        [Member 4]
+    │── lcd_display.h/.cpp     QC1602A 16x2 LCD via I2C            [Member 3]
+    │── dht_sensor.h/.cpp      DHT11 temp & humidity reading       [Member 3]
+    │── buzzer.h/.cpp          Active buzzer control                [Member 3]
+    └── PROJECT_ARCHITECTURE.txt   (this file)
+
+
+================================================================================
+6. DATA FLOW — END TO END
+================================================================================
+
+    Step 1: Sensing
+    ────────────────
+    Photoresistor ──ADC──▶ vEnvTask ──▶ xSensorQueue
+    Big Sound ─────IRQ──▶ xSoundSemaphore
+    HC-SR04 ───────GPIO──▶ vDistanceTask ──▶ xSensorQueue
+    DHT11 ─────────GPIO──▶ ESP32 readDHT11()
+    SW2/SW3 ───────IRQ──▶ vButtonTask
+
+    Step 2: Processing (MCXC444)
+    ─────────────────────────────
+    xSensorQueue ──▶ vAlertTask
+                         │
+                         ├── Threshold checks (temp, humidity, light, noise, distance)
+                         ├── Set warningLevel (0=Normal, 1=Warning, 2=Critical)
+                         ├── Update globalSystemStatus (protected by xSystemStatusMutex)
+                         └── Drive RGB LED (Green / Yellow / Red)
+
+    Step 3: Communication (MCXC444 → ESP32)
+    ─────────────────────────────────────────
+    vCommsTask ──▶ Pack sensor data + warning level
+               ──▶ UART TX: "TEMP:28.5,HUM:65.0,LIGHT:512,NOISE:1,DIST:45.2,WARN:1\n"
+
+    Step 4: Cloud Operations (ESP32)
+    ─────────────────────────────────
+    uart_handler ──▶ parse into SensorData_t
+         │
+         ├──▶ firebase_client ──HTTPS──▶ Firebase RTDB
+         │         PUT  https://<project>.firebaseio.com/latest.json
+         │         POST https://<project>.firebaseio.com/readings.json
+         │
+         ├──▶ telegram_bot ──HTTPS──▶ Telegram Bot API
+         │         GET  api.telegram.org/bot<token>/getUpdates
+         │         POST api.telegram.org/bot<token>/sendMessage
+         │
+         └──▶ openai_client ──HTTPS──▶ OpenAI API
+                   POST api.openai.com/v1/chat/completions
+                   Model: gpt-4o-mini
+                   Returns: one-sentence study advisory
+
+    Step 5: Output (ESP32)
+    ───────────────────────
+    Advisory ──▶ LCD Display (scrolling text on line 2)
+    Advisory ──▶ Telegram sendMessage (if critical)
+    Advisory ──▶ UART TX back to MCXC444
+
+    Step 6: Feedback Loop (ESP32 → MCXC444)
+    ─────────────────────────────────────────
+    ESP32 UART TX ──▶ vCommsTask UART RX
+                          │
+                          ├── "SETTEMP:30.0\n"  → update threshold in vAlertTask
+                          ├── "SETDIST:40.0\n"  → update threshold in vAlertTask
+                          └── "Advisory text\n"  → (optional display/log)
+
+
+================================================================================
+7. WARNING STATE LOGIC
+================================================================================
+
+    Condition                              Warning Level
+    ─────────────────────────────────────  ─────────────
+    All readings within thresholds         0 (Normal)    → RGB: GREEN
+    Any ONE reading exceeds threshold      1 (Warning)   → RGB: YELLOW
+    Multiple readings exceed OR            2 (Critical)  → RGB: RED
+      distance critically close                           → Buzzer ON
+                                                          → Telegram alert
+                                                          → OpenAI advisory
+
+    Default Thresholds:
+      Temperature  > 32.0 C      → Warning
+      Humidity     > 80.0 %      → Warning
+      Light        < 200         → Warning (too dark)
+      Noise        == 1          → Warning (noisy)
+      Distance     < 30.0 cm     → Warning (too close)
+
+
+================================================================================
+8. HARDWARE PIN MAPPING
+================================================================================
+
+    MCXC444:
+    ┌──────────────────┬──────────┬──────────┐
+    │ Component        │ Pin      │ Mode     │
+    ├──────────────────┼──────────┼──────────┤
+    │ Photoresistor    │ ADC pin  │ ADC      │
+    │ Big Sound        │ GPIO     │ IRQ      │
+    │ RGB LED (R)      │ GPIO     │ Output   │
+    │ RGB LED (G)      │ GPIO     │ Output   │
+    │ RGB LED (B)      │ GPIO     │ Output   │
+    │ SW2              │ On-board │ IRQ      │
+    │ SW3              │ On-board │ IRQ      │
+    │ UART TX          │ PTD3     │ UART     │
+    │ UART RX          │ PTD2     │ UART     │
+    └──────────────────┴──────────┴──────────┘
+
+    ESP32:
+    ┌──────────────────┬──────────┬──────────┐
+    │ Component        │ Pin      │ Mode     │
+    ├──────────────────┼──────────┼──────────┤
+    │ UART RX (MCXC)   │ GPIO 16  │ UART     │
+    │ UART TX (MCXC)   │ GPIO 17  │ UART     │
+    │ DHT11            │ GPIO 4   │ Digital  │
+    │ HC-SR04 TRIG     │ GPIO 5   │ Output   │
+    │ HC-SR04 ECHO     │ GPIO 18  │ Input    │
+    │ LCD SDA          │ GPIO 21  │ I2C      │
+    │ LCD SCL          │ GPIO 22  │ I2C      │
+    │ Active Buzzer    │ GPIO 25  │ Output   │
+    └──────────────────┴──────────┴──────────┘
+
+
+================================================================================

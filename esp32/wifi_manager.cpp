@@ -2,25 +2,32 @@
 #include "config.h"
 #include <WiFi.h>
 
+static unsigned long lastReconnectAttempt = 0;
+static const unsigned long RECONNECT_COOLDOWN_MS = 5000;
+
 void connectWiFi() {
     WiFi.mode(WIFI_STA);
+    WiFi.disconnect();
+    delay(100);
     WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
 
-    Serial.print("Connecting to Wi-Fi");
+    Serial.print("[WiFi] Connecting to ");
+    Serial.print(WIFI_SSID);
+
     int attempts = 0;
-    while (WiFi.status() != WL_CONNECTED && attempts < 40) {
-        delay(500);
+    while (WiFi.status() != WL_CONNECTED && attempts < WIFI_MAX_RETRIES) {
+        delay(WIFI_RETRY_MS);
         Serial.print(".");
         attempts++;
     }
 
+    Serial.println();
+
     if (WiFi.status() == WL_CONNECTED) {
-        Serial.println();
-        Serial.print("Connected! IP: ");
+        Serial.print("[WiFi] Connected. IP: ");
         Serial.println(WiFi.localIP());
     } else {
-        Serial.println();
-        Serial.println("Wi-Fi connection failed.");
+        Serial.println("[WiFi] Connection FAILED.");
     }
 }
 
@@ -29,8 +36,12 @@ bool isWiFiConnected() {
 }
 
 void ensureWiFiConnected() {
-    if (!isWiFiConnected()) {
-        Serial.println("Wi-Fi lost. Reconnecting...");
-        connectWiFi();
-    }
+    if (isWiFiConnected()) return;
+
+    unsigned long now = millis();
+    if (now - lastReconnectAttempt < RECONNECT_COOLDOWN_MS) return;
+    lastReconnectAttempt = now;
+
+    Serial.println("[WiFi] Lost connection. Reconnecting...");
+    connectWiFi();
 }

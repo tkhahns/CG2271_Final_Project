@@ -2,21 +2,33 @@
 #define CONFIG_H
 
 // ==================== Wi-Fi ====================
-#define WIFI_SSID     "YOUR_WIFI_SSID"
-#define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
+#define WIFI_SSID         "YOUR_WIFI_SSID"
+#define WIFI_PASSWORD     "YOUR_WIFI_PASSWORD"
+#define WIFI_MAX_RETRIES  40
+#define WIFI_RETRY_MS     500
 
 // ==================== Firebase RTDB ====================
-#define FIREBASE_HOST "YOUR_PROJECT.firebaseio.com"
+// Use the REST API with your database secret for authentication.
+// Find your database URL in Firebase Console > Realtime Database.
+// Find the secret in Project Settings > Service Accounts > Database Secrets.
+#define FIREBASE_HOST "YOUR_PROJECT_ID.firebaseio.com"
 #define FIREBASE_AUTH "YOUR_DATABASE_SECRET"
 
 // ==================== Telegram Bot ====================
+// Create a bot via @BotFather on Telegram to get the token.
+// Send /start to your bot, then visit:
+//   https://api.telegram.org/bot<TOKEN>/getUpdates
+// to find your chat_id in the response JSON.
 #define TELEGRAM_BOT_TOKEN "YOUR_BOT_TOKEN"
 #define TELEGRAM_CHAT_ID   "YOUR_CHAT_ID"
 
 // ==================== OpenAI API ====================
-#define OPENAI_API_KEY "YOUR_OPENAI_API_KEY"
+// Get your API key from https://platform.openai.com/api-keys
+#define OPENAI_API_KEY  "YOUR_OPENAI_API_KEY"
+#define OPENAI_MODEL    "gpt-4o-mini"
+#define OPENAI_MAX_TOKENS 80
 
-// ==================== UART ====================
+// ==================== UART (to MCXC444) ====================
 #define UART_RX_PIN 16
 #define UART_TX_PIN 17
 #define UART_BAUD   9600
@@ -26,7 +38,13 @@
 #define LCD_COLS     16
 #define LCD_ROWS     2
 
-// ==================== Thresholds (defaults) ====================
+// ==================== Timing Intervals ====================
+#define SENSOR_READ_INTERVAL_MS   2000   // Read UART + local sensors every 2s
+#define TELEGRAM_POLL_INTERVAL_MS 3000   // Poll Telegram every 3s
+#define FIREBASE_LOG_INTERVAL_MS  2000   // Log to Firebase every 2s
+#define OPENAI_MIN_INTERVAL_MS    15000  // Minimum 15s between OpenAI calls
+
+// ==================== Default Thresholds ====================
 #define DEFAULT_TEMP_THRESHOLD  32.0f
 #define DEFAULT_DIST_THRESHOLD  30.0f
 

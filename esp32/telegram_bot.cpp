@@ -1,131 +1,200 @@
 #include "telegram_bot.h"
 #include "config.h"
 #include <WiFi.h>
+#include <WiFiClientSecure.h>
 #include <HTTPClient.h>
 #include <ArduinoJson.h>
 
-static long   lastUpdateId = 0;
-static bool   pendingCommand = false;
-static String lastCommand = "";
+static WiFiClientSecure telegramClient;
+static long lastUpdateId = 0;
 
-static const String BOT_URL = "https://api.telegram.org/bot" + String(TELEGRAM_BOT_TOKEN);
+// Constructed in initTelegram() to avoid global String construction issues
+static String botUrl;
 
-void initTelegram() {
-    Serial.println("Telegram bot ready.");
+static const char* warningLevelStr(int level) {
+    switch (level) {
+        case 0:  return "Normal";
+        case 1:  return "Warning";
+        case 2:  return "Critical";
+        default: return "Unknown";
+    }
 }
 
-// Send a message to the configured chat
-static bool sendMessage(const String& text) {
+void initTelegram() {
+    telegramClient.setInsecure();
+    botUrl = "https://api.telegram.org/bot" + String(TELEGRAM_BOT_TOKEN);
+    Serial.println("[Telegram] Bot ready.");
+}
+
+// Send a message to the configured chat using ArduinoJson for safe escaping
+bool sendTelegramMessage(const String& text) {
+    if (WiFi.status() != WL_CONNECTED) return false;
+
     HTTPClient http;
-    String url = BOT_URL + "/sendMessage";
-
-    String payload = "{";
-    payload += "\"chat_id\":\"" + String(TELEGRAM_CHAT_ID) + "\",";
-    payload += "\"text\":\"" + text + "\",";
-    payload += "\"parse_mode\":\"Markdown\"";
-    payload += "}";
-
-    http.begin(url);
+    http.begin(telegramClient, botUrl + "/sendMessage");
     http.addHeader("Content-Type", "application/json");
+
+    JsonDocument doc;
+    doc["chat_id"] = TELEGRAM_CHAT_ID;
+    doc["text"] = text;
+    doc["parse_mode"] = "Markdown";
+
+    String payload;
+    serializeJson(doc, payload);
+
     int code = http.POST(payload);
     http.end();
 
-    return code == 200;
+    if (code == 200) {
+        Serial.println("[Telegram] Message sent.");
+        return true;
+    } else {
+        Serial.print("[Telegram] Send error: ");
+        Serial.println(code);
+        return false;
+    }
 }
 
-// Format sensor data as a readable status string
+// Format sensor readings as a readable Telegram message
 static String formatStatus(const SensorData_t& data) {
-    String status = "--- Study Desk Status ---\n";
-    status += "Temp: "     + String(data.temperature, 1) + " C\n";
-    status += "Humidity: " + String(data.humidity, 1) + " %\n";
-    status += "Light: "    + String(data.light) + "\n";
-    status += "Noise: "    + (data.noise ? String("Noisy") : String("Quiet")) + "\n";
-    status += "Distance: " + String(data.distance, 1) + " cm\n";
-
-    const char* levels[] = {"Normal", "Warning", "Critical"};
-    int idx = constrain(data.warningLevel, 0, 2);
-    status += "Status: " + String(levels[idx]);
-
-    return status;
+    String s = "*Study Desk Status*\n";
+    s += "Temp: "       + String(data.temperature, 1) + " C\n";
+    s += "Humidity: "   + String(data.humidity, 1) + " %\n";
+    s += "Light: "      + String(data.light) + "\n";
+    s += "Noise: "      + String(data.noise ? "Noisy" : "Quiet") + "\n";
+    s += "Distance: "   + String(data.distance, 1) + " cm\n";
+    s += "Status: *"    + String(warningLevelStr(data.warningLevel)) + "*";
+    return s;
 }
 
-// Poll Telegram for new messages and handle commands
-void pollTelegram(const SensorData_t& data, float& tempThreshold, float& distThreshold) {
-    if (WiFi.status() != WL_CONNECTED) return;
+// Send an alert message with warning emoji and advisory
+bool sendTelegramAlert(const SensorData_t& data, const String& advisory) {
+    String msg;
+
+    if (data.warningLevel == 2) {
+        msg = "CRITICAL ALERT\n\n";
+    } else if (data.warningLevel == 1) {
+        msg = "Warning\n\n";
+    }
+
+    msg += formatStatus(data);
+    msg += "\n\n*Advisory:* " + advisory;
+
+    return sendTelegramMessage(msg);
+}
+
+// Poll Telegram for incoming commands and handle them
+TelegramResult_t pollTelegram(const SensorData_t& data, float& tempThreshold, float& distThreshold) {
+    TelegramResult_t result = {CMD_NONE, 0, false};
+
+    if (WiFi.status() != WL_CONNECTED) return result;
 
     HTTPClient http;
-    String url = BOT_URL + "/getUpdates?offset=" + String(lastUpdateId + 1) + "&timeout=1&limit=5";
-
-    http.begin(url);
+    String url = botUrl + "/getUpdates?offset=" + String(lastUpdateId + 1) + "&timeout=1&limit=5";
+    http.begin(telegramClient, url);
+    http.setTimeout(5000);
     int code = http.GET();
 
     if (code != 200) {
         http.end();
-        return;
+        return result;
     }
 
     String response = http.getString();
     http.end();
 
-    // Parse JSON response
     JsonDocument doc;
-    DeserializationError err = deserializeJson(doc, response);
-    if (err) return;
+    if (deserializeJson(doc, response)) return result;
 
     JsonArray results = doc["result"].as<JsonArray>();
 
-    for (JsonObject result : results) {
-        long updateId = result["update_id"];
+    for (JsonObject update : results) {
+        long updateId = update["update_id"];
         if (updateId > lastUpdateId) lastUpdateId = updateId;
 
-        String text = result["message"]["text"] | "";
-        text.trim();
+        const char* textRaw = update["message"]["text"];
+        if (!textRaw) continue;
 
+        String text = String(textRaw);
+        text.trim();
         if (text.length() == 0) continue;
 
-        Serial.print("Telegram cmd: ");
+        Serial.print("[Telegram] Command: ");
         Serial.println(text);
 
-        pendingCommand = true;
-        lastCommand = text;
+        // --- /start ---
+        if (text == "/start") {
+            result.command = CMD_START;
+            result.received = true;
 
-        if (text == "/status") {
-            sendMessage(formatStatus(data));
+            sendTelegramMessage(
+                "*Smart Study Monitor*\n\n"
+                "Commands:\n"
+                "/status - View current readings\n"
+                "/settemp <C> - Set temperature threshold\n"
+                "/setdist <cm> - Set distance threshold\n"
+                "/help - Show this message"
+            );
         }
-        else if (text.startsWith("/settemp ")) {
-            float val = text.substring(9).toFloat();
-            if (val > 0) {
+        // --- /status ---
+        else if (text == "/status") {
+            result.command = CMD_STATUS;
+            result.received = true;
+
+            if (data.valid) {
+                sendTelegramMessage(formatStatus(data));
+            } else {
+                sendTelegramMessage("No sensor data available yet.");
+            }
+        }
+        // --- /settemp <value> ---
+        else if (text.startsWith("/settemp")) {
+            result.command = CMD_SETTEMP;
+            result.received = true;
+
+            String valStr = text.substring(8);
+            valStr.trim();
+            float val = valStr.toFloat();
+
+            if (val > 0 && val < 60) {
                 tempThreshold = val;
-                sendMessage("Temp threshold set to " + String(val, 1) + " C");
+                result.value = val;
+                sendTelegramMessage("Temperature threshold set to " + String(val, 1) + " C");
             } else {
-                sendMessage("Usage: /settemp <value>");
+                sendTelegramMessage("Usage: /settemp <value>\nExample: /settemp 30");
             }
         }
-        else if (text.startsWith("/setdist ")) {
-            float val = text.substring(9).toFloat();
-            if (val > 0) {
+        // --- /setdist <value> ---
+        else if (text.startsWith("/setdist")) {
+            result.command = CMD_SETDIST;
+            result.received = true;
+
+            String valStr = text.substring(8);
+            valStr.trim();
+            float val = valStr.toFloat();
+
+            if (val > 0 && val < 200) {
                 distThreshold = val;
-                sendMessage("Distance threshold set to " + String(val, 1) + " cm");
+                result.value = val;
+                sendTelegramMessage("Distance threshold set to " + String(val, 1) + " cm");
             } else {
-                sendMessage("Usage: /setdist <value>");
+                sendTelegramMessage("Usage: /setdist <value>\nExample: /setdist 40");
             }
         }
-        else if (text == "/start") {
-            sendMessage("Smart Study Monitor active. Commands:\n/status - View readings\n/settemp <C> - Set temp threshold\n/setdist <cm> - Set distance threshold");
+        // --- /help ---
+        else if (text == "/help") {
+            result.command = CMD_HELP;
+            result.received = true;
+
+            sendTelegramMessage(
+                "*Commands:*\n"
+                "/status - Current sensor readings\n"
+                "/settemp <C> - Temperature threshold\n"
+                "/setdist <cm> - Distance threshold\n"
+                "/help - Show this message"
+            );
         }
     }
-}
 
-void sendTelegramAlert(const char* message) {
-    sendMessage(String(message));
-}
-
-bool hasPendingCommand() {
-    bool val = pendingCommand;
-    pendingCommand = false;
-    return val;
-}
-
-String getLastCommand() {
-    return lastCommand;
+    return result;
 }
