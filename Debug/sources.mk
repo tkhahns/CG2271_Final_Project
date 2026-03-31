@@ -24,6 +24,7 @@ freertos/freertos-kernel \
 freertos/freertos-kernel/portable/Common \
 freertos/freertos-kernel/portable/GCC/ARM_CM0 \
 freertos/freertos-kernel/portable/MemMang \
+source/headers \
 source \
 startup \
 utilities/debug_console \
