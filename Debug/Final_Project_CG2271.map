@@ -572,10 +572,6 @@ Discarded input sections
  .text          0x00000000        0x0 ./source/main.o
  .data          0x00000000        0x0 ./source/main.o
  .bss           0x00000000        0x0 ./source/main.o
- .text.vApplicationMallocFailedHook
-                0x00000000       0x14 ./source/main.o
- .text.vApplicationStackOverflowHook
-                0x00000000       0x1a ./source/main.o
  .debug_macro   0x00000000      0xaf0 ./source/main.o
  .debug_macro   0x00000000       0x10 ./source/main.o
  .debug_macro   0x00000000      0x12e ./source/main.o
@@ -4218,7 +4214,7 @@ END GROUP
                 0x20006000                        __top_SRAM = 0x20006000
                 0x20006000                        __top_RAM = 0x20006000
 
-.text           0x00000000     0x68f4
+.text           0x00000000     0x6904
  FILL mask 0xff
                 0x00000000                        __vectors_start__ = ABSOLUTE (.)
  *(SORT_BY_ALIGNMENT(.isr_vector))
@@ -4228,7 +4224,7 @@ END GROUP
                 0x000000c0                        . = ALIGN (0x4)
                 0x000000c0                        __section_table_start = .
                 0x000000c0                        __data_section_table = .
-                0x000000c0        0x4 LONG 0x68f4 LOADADDR (.data)
+                0x000000c0        0x4 LONG 0x6904 LOADADDR (.data)
                 0x000000c4        0x4 LONG 0x1fffe080 ADDR (.data)
                 0x000000c8        0x4 LONG 0x8 SIZEOF (.data)
                 0x000000cc                        __data_section_table_end = .
@@ -4371,582 +4367,582 @@ END GROUP
                 0x00000b50       0x50 ./source/main.o
                 0x00000b50                readADCChannel
  .text.initButtonIRQs
-                0x00000ba0      0x144 ./source/main.o
+                0x00000ba0      0x154 ./source/main.o
                 0x00000ba0                initButtonIRQs
  .text.PORTA_IRQHandler
-                0x00000ce4       0x78 ./source/main.o
-                0x00000ce4                PORTA_IRQHandler
+                0x00000cf4       0x80 ./source/main.o
+                0x00000cf4                PORTA_IRQHandler
  .text.PORTC_PORTD_IRQHandler
-                0x00000d5c       0x78 ./source/main.o
-                0x00000d5c                PORTC_PORTD_IRQHandler
+                0x00000d74       0x80 ./source/main.o
+                0x00000d74                PORTC_PORTD_IRQHandler
  .text.sensorTask
-                0x00000dd4       0xc0 ./source/main.o
+                0x00000df4       0xc4 ./source/main.o
  .text.buttonTask
-                0x00000e94       0xec ./source/main.o
+                0x00000eb8       0xe8 ./source/main.o
  .text.alertTask
-                0x00000f80      0x100 ./source/main.o
+                0x00000fa0      0x100 ./source/main.o
  .text.printTask
-                0x00001080      0x144 ./source/main.o
- .text.main     0x000011c4      0x104 ./source/main.o
-                0x000011c4                main
+                0x000010a0      0x130 ./source/main.o
+ .text.main     0x000011d0      0x108 ./source/main.o
+                0x000011d0                main
  .text.HardFault_Handler
-                0x000012c8       0x38 ./source/semihost_hardfault.o
-                0x000012c8                HardFault_Handler
+                0x000012d8       0x38 ./source/semihost_hardfault.o
+                0x000012d8                HardFault_Handler
  .text.pvPortMalloc
-                0x00001300      0x1f4 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
-                0x00001300                pvPortMalloc
+                0x00001310      0x1f4 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
+                0x00001310                pvPortMalloc
  .text.vPortFree
-                0x000014f4       0xb8 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
-                0x000014f4                vPortFree
+                0x00001504       0xb8 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
+                0x00001504                vPortFree
  .text.prvHeapInit
-                0x000015ac       0xb0 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
+                0x000015bc       0xb0 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
  .text.prvInsertBlockIntoFreeList
-                0x0000165c       0xe0 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
+                0x0000166c       0xe0 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
  .text.vPortSetupTimerInterrupt
-                0x0000173c       0x44 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
-                0x0000173c                vPortSetupTimerInterrupt
+                0x0000174c       0x44 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+                0x0000174c                vPortSetupTimerInterrupt
  .text.prvTaskExitError
-                0x00001780       0x30 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+                0x00001790       0x30 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
  .text.vPortYield
-                0x000017b0       0x20 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
-                0x000017b0                vPortYield
+                0x000017c0       0x20 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+                0x000017c0                vPortYield
  .text.vPortEnterCritical
-                0x000017d0       0x24 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
-                0x000017d0                vPortEnterCritical
+                0x000017e0       0x24 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+                0x000017e0                vPortEnterCritical
  .text.vPortExitCritical
-                0x000017f4       0x30 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
-                0x000017f4                vPortExitCritical
+                0x00001804       0x30 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+                0x00001804                vPortExitCritical
  .text.SysTick_Handler
-                0x00001824       0x34 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
-                0x00001824                SysTick_Handler
+                0x00001834       0x34 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+                0x00001834                SysTick_Handler
  .text.pxPortInitialiseStack
-                0x00001858      0x11c ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
-                0x00001858                pxPortInitialiseStack
+                0x00001868      0x11c ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+                0x00001868                pxPortInitialiseStack
  .text.xPortStartScheduler
-                0x00001974       0x8c ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
-                0x00001974                xPortStartScheduler
+                0x00001984       0x8c ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+                0x00001984                xPortStartScheduler
  .text.vQueueAddToRegistry
-                0x00001a00       0x8c ./freertos/freertos-kernel/queue.o
-                0x00001a00                vQueueAddToRegistry
+                0x00001a10       0x8c ./freertos/freertos-kernel/queue.o
+                0x00001a10                vQueueAddToRegistry
  .text.prvInitialiseNewTask
-                0x00001a8c      0x104 ./freertos/freertos-kernel/tasks.o
+                0x00001a9c      0x104 ./freertos/freertos-kernel/tasks.o
  .text.prvAddNewTaskToReadyList
-                0x00001b90      0x120 ./freertos/freertos-kernel/tasks.o
+                0x00001ba0      0x120 ./freertos/freertos-kernel/tasks.o
  .text.xTaskDelayUntil
-                0x00001cb0       0xc0 ./freertos/freertos-kernel/tasks.o
-                0x00001cb0                xTaskDelayUntil
+                0x00001cc0       0xc0 ./freertos/freertos-kernel/tasks.o
+                0x00001cc0                xTaskDelayUntil
  .text.prvCreateIdleTasks
-                0x00001d70       0x98 ./freertos/freertos-kernel/tasks.o
+                0x00001d80       0x98 ./freertos/freertos-kernel/tasks.o
  .text.vTaskStartScheduler
-                0x00001e08       0x68 ./freertos/freertos-kernel/tasks.o
-                0x00001e08                vTaskStartScheduler
+                0x00001e18       0x68 ./freertos/freertos-kernel/tasks.o
+                0x00001e18                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x00001e70       0x18 ./freertos/freertos-kernel/tasks.o
-                0x00001e70                vTaskSuspendAll
+                0x00001e80       0x18 ./freertos/freertos-kernel/tasks.o
+                0x00001e80                vTaskSuspendAll
  .text.xTaskResumeAll
-                0x00001e88      0x1ec ./freertos/freertos-kernel/tasks.o
-                0x00001e88                xTaskResumeAll
+                0x00001e98      0x1ec ./freertos/freertos-kernel/tasks.o
+                0x00001e98                xTaskResumeAll
  .text.xTaskGetTickCount
-                0x00002074       0x1c ./freertos/freertos-kernel/tasks.o
-                0x00002074                xTaskGetTickCount
+                0x00002084       0x1c ./freertos/freertos-kernel/tasks.o
+                0x00002084                xTaskGetTickCount
  .text.xTaskGetTickCountFromISR
-                0x00002090       0x20 ./freertos/freertos-kernel/tasks.o
-                0x00002090                xTaskGetTickCountFromISR
+                0x000020a0       0x20 ./freertos/freertos-kernel/tasks.o
+                0x000020a0                xTaskGetTickCountFromISR
  .text.uxTaskGetNumberOfTasks
-                0x000020b0       0x14 ./freertos/freertos-kernel/tasks.o
-                0x000020b0                uxTaskGetNumberOfTasks
+                0x000020c0       0x14 ./freertos/freertos-kernel/tasks.o
+                0x000020c0                uxTaskGetNumberOfTasks
  .text.xTaskIncrementTick
-                0x000020c4      0x204 ./freertos/freertos-kernel/tasks.o
-                0x000020c4                xTaskIncrementTick
+                0x000020d4      0x204 ./freertos/freertos-kernel/tasks.o
+                0x000020d4                xTaskIncrementTick
  .text.vTaskSwitchContext
-                0x000022c8       0xa8 ./freertos/freertos-kernel/tasks.o
-                0x000022c8                vTaskSwitchContext
+                0x000022d8       0xa8 ./freertos/freertos-kernel/tasks.o
+                0x000022d8                vTaskSwitchContext
  .text.vTaskPlaceOnEventList
-                0x00002370       0x40 ./freertos/freertos-kernel/tasks.o
-                0x00002370                vTaskPlaceOnEventList
+                0x00002380       0x40 ./freertos/freertos-kernel/tasks.o
+                0x00002380                vTaskPlaceOnEventList
  .text.vTaskPlaceOnEventListRestricted
-                0x000023b0       0x80 ./freertos/freertos-kernel/tasks.o
-                0x000023b0                vTaskPlaceOnEventListRestricted
+                0x000023c0       0x80 ./freertos/freertos-kernel/tasks.o
+                0x000023c0                vTaskPlaceOnEventListRestricted
  .text.xTaskRemoveFromEventList
-                0x00002430      0x19c ./freertos/freertos-kernel/tasks.o
-                0x00002430                xTaskRemoveFromEventList
+                0x00002440      0x19c ./freertos/freertos-kernel/tasks.o
+                0x00002440                xTaskRemoveFromEventList
  .text.vTaskInternalSetTimeOutState
-                0x000025cc       0x28 ./freertos/freertos-kernel/tasks.o
-                0x000025cc                vTaskInternalSetTimeOutState
+                0x000025dc       0x28 ./freertos/freertos-kernel/tasks.o
+                0x000025dc                vTaskInternalSetTimeOutState
  .text.xTaskCheckForTimeOut
-                0x000025f4       0xac ./freertos/freertos-kernel/tasks.o
-                0x000025f4                xTaskCheckForTimeOut
+                0x00002604       0xac ./freertos/freertos-kernel/tasks.o
+                0x00002604                xTaskCheckForTimeOut
  .text.vTaskMissedYield
-                0x000026a0       0x14 ./freertos/freertos-kernel/tasks.o
-                0x000026a0                vTaskMissedYield
+                0x000026b0       0x14 ./freertos/freertos-kernel/tasks.o
+                0x000026b0                vTaskMissedYield
  .text.prvIdleTask
-                0x000026b4       0x20 ./freertos/freertos-kernel/tasks.o
+                0x000026c4       0x20 ./freertos/freertos-kernel/tasks.o
  .text.prvInitialiseTaskLists
-                0x000026d4       0x88 ./freertos/freertos-kernel/tasks.o
+                0x000026e4       0x88 ./freertos/freertos-kernel/tasks.o
  .text.prvCheckTasksWaitingTermination
-                0x0000275c       0x5c ./freertos/freertos-kernel/tasks.o
+                0x0000276c       0x5c ./freertos/freertos-kernel/tasks.o
  .text.prvResetNextTaskUnblockTime
-                0x000027b8       0x34 ./freertos/freertos-kernel/tasks.o
+                0x000027c8       0x34 ./freertos/freertos-kernel/tasks.o
  .text.xTaskGetSchedulerState
-                0x000027ec       0x38 ./freertos/freertos-kernel/tasks.o
-                0x000027ec                xTaskGetSchedulerState
+                0x000027fc       0x38 ./freertos/freertos-kernel/tasks.o
+                0x000027fc                xTaskGetSchedulerState
  .text.xTaskPriorityInherit
-                0x00002824      0x124 ./freertos/freertos-kernel/tasks.o
-                0x00002824                xTaskPriorityInherit
+                0x00002834      0x124 ./freertos/freertos-kernel/tasks.o
+                0x00002834                xTaskPriorityInherit
  .text.xTaskPriorityDisinherit
-                0x00002948      0x10c ./freertos/freertos-kernel/tasks.o
-                0x00002948                xTaskPriorityDisinherit
+                0x00002958      0x10c ./freertos/freertos-kernel/tasks.o
+                0x00002958                xTaskPriorityDisinherit
  .text.vTaskPriorityDisinheritAfterTimeout
-                0x00002a54      0x134 ./freertos/freertos-kernel/tasks.o
-                0x00002a54                vTaskPriorityDisinheritAfterTimeout
+                0x00002a64      0x134 ./freertos/freertos-kernel/tasks.o
+                0x00002a64                vTaskPriorityDisinheritAfterTimeout
  .text.pvTaskIncrementMutexHeldCount
-                0x00002b88       0x2c ./freertos/freertos-kernel/tasks.o
-                0x00002b88                pvTaskIncrementMutexHeldCount
+                0x00002b98       0x2c ./freertos/freertos-kernel/tasks.o
+                0x00002b98                pvTaskIncrementMutexHeldCount
  .text.xTaskGenericNotify
-                0x00002bb4      0x214 ./freertos/freertos-kernel/tasks.o
-                0x00002bb4                xTaskGenericNotify
+                0x00002bc4      0x214 ./freertos/freertos-kernel/tasks.o
+                0x00002bc4                xTaskGenericNotify
  .text.xTaskGenericNotifyFromISR
-                0x00002dc8      0x27c ./freertos/freertos-kernel/tasks.o
-                0x00002dc8                xTaskGenericNotifyFromISR
+                0x00002dd8      0x27c ./freertos/freertos-kernel/tasks.o
+                0x00002dd8                xTaskGenericNotifyFromISR
  .text.prvAddCurrentTaskToDelayedList
-                0x00003044       0xe4 ./freertos/freertos-kernel/tasks.o
+                0x00003054       0xe4 ./freertos/freertos-kernel/tasks.o
  .text.xTimerCreateTimerTask
-                0x00003128       0x54 ./freertos/freertos-kernel/timers.o
-                0x00003128                xTimerCreateTimerTask
+                0x00003138       0x54 ./freertos/freertos-kernel/timers.o
+                0x00003138                xTimerCreateTimerTask
  .text.prvProcessExpiredTimer
-                0x0000317c       0x64 ./freertos/freertos-kernel/timers.o
+                0x0000318c       0x64 ./freertos/freertos-kernel/timers.o
  .text.prvProcessTimerOrBlockTask
-                0x000031e0       0x90 ./freertos/freertos-kernel/timers.o
+                0x000031f0       0x90 ./freertos/freertos-kernel/timers.o
  .text.prvGetNextExpireTime
-                0x00003270       0x44 ./freertos/freertos-kernel/timers.o
+                0x00003280       0x44 ./freertos/freertos-kernel/timers.o
  .text.prvSampleTimeNow
-                0x000032b4       0x40 ./freertos/freertos-kernel/timers.o
+                0x000032c4       0x40 ./freertos/freertos-kernel/timers.o
  .text.prvInsertTimerInActiveList
-                0x000032f4       0x84 ./freertos/freertos-kernel/timers.o
+                0x00003304       0x84 ./freertos/freertos-kernel/timers.o
  .text.prvProcessReceivedCommands
-                0x00003378      0x198 ./freertos/freertos-kernel/timers.o
+                0x00003388      0x198 ./freertos/freertos-kernel/timers.o
  .text.prvSwitchTimerLists
-                0x00003510       0x50 ./freertos/freertos-kernel/timers.o
+                0x00003520       0x50 ./freertos/freertos-kernel/timers.o
  .text.prvCheckForValidListAndQueue
-                0x00003560       0x74 ./freertos/freertos-kernel/timers.o
+                0x00003570       0x74 ./freertos/freertos-kernel/timers.o
  .text.CLOCK_SetEr32kClock
-                0x000035d4       0x34 ./drivers/fsl_clock.o
+                0x000035e4       0x34 ./drivers/fsl_clock.o
  .text.CLOCK_GetLircClkFreq
-                0x00003608       0x50 ./drivers/fsl_clock.o
+                0x00003618       0x50 ./drivers/fsl_clock.o
  .text.CLOCK_GetOsc0ErClkFreq
-                0x00003658       0x44 ./drivers/fsl_clock.o
-                0x00003658                CLOCK_GetOsc0ErClkFreq
+                0x00003668       0x44 ./drivers/fsl_clock.o
+                0x00003668                CLOCK_GetOsc0ErClkFreq
  .text.CLOCK_GetEr32kClkFreq
-                0x0000369c       0x78 ./drivers/fsl_clock.o
-                0x0000369c                CLOCK_GetEr32kClkFreq
+                0x000036ac       0x78 ./drivers/fsl_clock.o
+                0x000036ac                CLOCK_GetEr32kClkFreq
  .text.CLOCK_GetFreq
-                0x00003714       0xc0 ./drivers/fsl_clock.o
-                0x00003714                CLOCK_GetFreq
+                0x00003724       0xc0 ./drivers/fsl_clock.o
+                0x00003724                CLOCK_GetFreq
  .text.CLOCK_SetSimConfig
-                0x000037d4       0x2c ./drivers/fsl_clock.o
-                0x000037d4                CLOCK_SetSimConfig
+                0x000037e4       0x2c ./drivers/fsl_clock.o
+                0x000037e4                CLOCK_SetSimConfig
  .text.CLOCK_GetInternalRefClkFreq
-                0x00003800       0x48 ./drivers/fsl_clock.o
-                0x00003800                CLOCK_GetInternalRefClkFreq
+                0x00003810       0x48 ./drivers/fsl_clock.o
+                0x00003810                CLOCK_GetInternalRefClkFreq
  .text.CLOCK_GetPeriphClkFreq
-                0x00003848       0x3c ./drivers/fsl_clock.o
-                0x00003848                CLOCK_GetPeriphClkFreq
+                0x00003858       0x3c ./drivers/fsl_clock.o
+                0x00003858                CLOCK_GetPeriphClkFreq
  .text.CLOCK_GetOutClkFreq
-                0x00003884       0x7c ./drivers/fsl_clock.o
-                0x00003884                CLOCK_GetOutClkFreq
+                0x00003894       0x7c ./drivers/fsl_clock.o
+                0x00003894                CLOCK_GetOutClkFreq
  .text.CLOCK_SetMcgliteConfig
-                0x00003900      0x110 ./drivers/fsl_clock.o
-                0x00003900                CLOCK_SetMcgliteConfig
+                0x00003910      0x110 ./drivers/fsl_clock.o
+                0x00003910                CLOCK_SetMcgliteConfig
  .text.CLOCK_EnableClock
-                0x00003a10       0x34 ./drivers/fsl_lpuart.o
+                0x00003a20       0x34 ./drivers/fsl_lpuart.o
  .text.LPUART_GetInstance
-                0x00003a44       0x4c ./drivers/fsl_lpuart.o
-                0x00003a44                LPUART_GetInstance
+                0x00003a54       0x4c ./drivers/fsl_lpuart.o
+                0x00003a54                LPUART_GetInstance
  .text.LPUART_Init
-                0x00003a90      0x338 ./drivers/fsl_lpuart.o
-                0x00003a90                LPUART_Init
+                0x00003aa0      0x338 ./drivers/fsl_lpuart.o
+                0x00003aa0                LPUART_Init
  .text.LPUART_GetDefaultConfig
-                0x00003dc8       0x68 ./drivers/fsl_lpuart.o
-                0x00003dc8                LPUART_GetDefaultConfig
+                0x00003dd8       0x68 ./drivers/fsl_lpuart.o
+                0x00003dd8                LPUART_GetDefaultConfig
  .text.LPUART_WriteBlocking
-                0x00003e30       0x6c ./drivers/fsl_lpuart.o
-                0x00003e30                LPUART_WriteBlocking
+                0x00003e40       0x6c ./drivers/fsl_lpuart.o
+                0x00003e40                LPUART_WriteBlocking
  .text.LPUART0_DriverIRQHandler
-                0x00003e9c       0x24 ./drivers/fsl_lpuart.o
-                0x00003e9c                LPUART0_DriverIRQHandler
+                0x00003eac       0x24 ./drivers/fsl_lpuart.o
+                0x00003eac                LPUART0_DriverIRQHandler
  .text.LPUART1_DriverIRQHandler
-                0x00003ec0       0x24 ./drivers/fsl_lpuart.o
-                0x00003ec0                LPUART1_DriverIRQHandler
+                0x00003ed0       0x24 ./drivers/fsl_lpuart.o
+                0x00003ed0                LPUART1_DriverIRQHandler
  .text.SystemInit
-                0x00003ee4       0x40 ./device/system_MCXC444.o
-                0x00003ee4                SystemInit
+                0x00003ef4       0x40 ./device/system_MCXC444.o
+                0x00003ef4                SystemInit
  .text.HAL_UartGetStatus
-                0x00003f24       0x34 ./component/uart/fsl_adapter_lpuart.o
+                0x00003f34       0x34 ./component/uart/fsl_adapter_lpuart.o
  .text.HAL_UartInitCommon
-                0x00003f58       0xa0 ./component/uart/fsl_adapter_lpuart.o
+                0x00003f68       0xa0 ./component/uart/fsl_adapter_lpuart.o
  .text.HAL_UartInit
-                0x00003ff8       0x98 ./component/uart/fsl_adapter_lpuart.o
-                0x00003ff8                HAL_UartInit
+                0x00004008       0x98 ./component/uart/fsl_adapter_lpuart.o
+                0x00004008                HAL_UartInit
  .text.HAL_UartSendBlocking
-                0x00004090       0x6c ./component/uart/fsl_adapter_lpuart.o
-                0x00004090                HAL_UartSendBlocking
+                0x000040a0       0x6c ./component/uart/fsl_adapter_lpuart.o
+                0x000040a0                HAL_UartSendBlocking
  .text.SerialManager_StartWriting
-                0x000040fc       0x44 ./component/serial_manager/fsl_component_serial_manager.o
+                0x0000410c       0x44 ./component/serial_manager/fsl_component_serial_manager.o
  .text.SerialManager_Init
-                0x00004140       0x70 ./component/serial_manager/fsl_component_serial_manager.o
-                0x00004140                SerialManager_Init
+                0x00004150       0x70 ./component/serial_manager/fsl_component_serial_manager.o
+                0x00004150                SerialManager_Init
  .text.SerialManager_OpenReadHandle
-                0x000041b0       0x74 ./component/serial_manager/fsl_component_serial_manager.o
-                0x000041b0                SerialManager_OpenReadHandle
+                0x000041c0       0x74 ./component/serial_manager/fsl_component_serial_manager.o
+                0x000041c0                SerialManager_OpenReadHandle
  .text.CLOCK_SetLpuart0Clock
-                0x00004224       0x38 ./board/board.o
+                0x00004234       0x38 ./board/board.o
  .text.CLOCK_SetSimSafeDivs
-                0x0000425c       0x20 ./board/clock_config.o
+                0x0000426c       0x20 ./board/clock_config.o
  .text.BOARD_BootClockRUN
-                0x0000427c       0x34 ./board/clock_config.o
-                0x0000427c                BOARD_BootClockRUN
+                0x0000428c       0x34 ./board/clock_config.o
+                0x0000428c                BOARD_BootClockRUN
  .text.CLOCK_EnableClock
-                0x000042b0       0x34 ./board/pin_mux.o
+                0x000042c0       0x34 ./board/pin_mux.o
  .text.PORT_SetPinMux
-                0x000042e4       0x40 ./board/pin_mux.o
+                0x000042f4       0x40 ./board/pin_mux.o
  .text.BOARD_InitDEBUG_UARTPins
-                0x00004324       0x4c ./board/pin_mux.o
-                0x00004324                BOARD_InitDEBUG_UARTPins
- .text._initio  0x00004370       0x7c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
-                0x00004370                _initio
- .text.setvbuf  0x000043ec       0x4c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
-                0x000043ec                setvbuf
- .text.strlen   0x00004438       0x5c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
-                0x00004438                strlen
+                0x00004334       0x4c ./board/pin_mux.o
+                0x00004334                BOARD_InitDEBUG_UARTPins
+ .text._initio  0x00004380       0x7c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
+                0x00004380                _initio
+ .text.setvbuf  0x000043fc       0x4c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
+                0x000043fc                setvbuf
+ .text.strlen   0x00004448       0x5c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
+                0x00004448                strlen
  .text._deferredlazyseek
-                0x00004494       0x44 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
-                0x00004494                _deferredlazyseek
- .text._fdopen  0x000044d8       0x74 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
-                0x000044d8                _fdopen
- .text._fflush  0x0000454c       0x5c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
-                0x0000454c                _fflush
+                0x000044a4       0x44 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
+                0x000044a4                _deferredlazyseek
+ .text._fdopen  0x000044e8       0x74 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
+                0x000044e8                _fdopen
+ .text._fflush  0x0000455c       0x5c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
+                0x0000455c                _fflush
  .text._Cwritebuf
-                0x000045a8       0x68 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
-                0x000045a8                _Cwritebuf
- .text.fclose   0x00004610       0x5c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
-                0x00004610                fclose
- .text.fflush   0x0000466c       0x40 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
-                0x0000466c                fflush
- .text.fseek    0x000046ac       0xec /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
-                0x000046ac                fseek
- .text.ftell    0x00004798       0x4c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
-                0x00004798                ftell
+                0x000045b8       0x68 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
+                0x000045b8                _Cwritebuf
+ .text.fclose   0x00004620       0x5c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
+                0x00004620                fclose
+ .text.fflush   0x0000467c       0x40 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
+                0x0000467c                fflush
+ .text.fseek    0x000046bc       0xec /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
+                0x000046bc                fseek
+ .text.ftell    0x000047a8       0x4c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
+                0x000047a8                ftell
  .text._do_fflush
-                0x000047e4       0x48 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
-                0x000047e4                _do_fflush
+                0x000047f4       0x48 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
+                0x000047f4                _do_fflush
  .text.PrintGetWidth
-                0x0000482c       0x7c ./utilities/str/fsl_str.o
+                0x0000483c       0x7c ./utilities/str/fsl_str.o
  .text.PrintGetPrecision
-                0x000048a8       0xa0 ./utilities/str/fsl_str.o
+                0x000048b8       0xa0 ./utilities/str/fsl_str.o
  .text.PrintIsobpu
-                0x00004948       0x3e ./utilities/str/fsl_str.o
+                0x00004958       0x3e ./utilities/str/fsl_str.o
  .text.PrintIsdi
-                0x00004986       0x2e ./utilities/str/fsl_str.o
+                0x00004996       0x2e ./utilities/str/fsl_str.o
  .text.PrintOutputdifFobpu
-                0x000049b4       0x48 ./utilities/str/fsl_str.o
+                0x000049c4       0x48 ./utilities/str/fsl_str.o
  .text.PrintOutputxX
-                0x000049fc       0x48 ./utilities/str/fsl_str.o
+                0x00004a0c       0x48 ./utilities/str/fsl_str.o
  .text.PrintIsfF
-                0x00004a44       0x2e ./utilities/str/fsl_str.o
+                0x00004a54       0x2e ./utilities/str/fsl_str.o
  .text.PrintIsxX
-                0x00004a72       0x2e ./utilities/str/fsl_str.o
+                0x00004a82       0x2e ./utilities/str/fsl_str.o
  .text.PrintFilterLengthFlag
-                0x00004aa0       0x44 ./utilities/str/fsl_str.o
+                0x00004ab0       0x44 ./utilities/str/fsl_str.o
  .text.PrintGetRadixFromobpu
-                0x00004ae4       0x58 ./utilities/str/fsl_str.o
+                0x00004af4       0x58 ./utilities/str/fsl_str.o
  .text.ConvertRadixNumToString
-                0x00004b3c       0xc0 ./utilities/str/fsl_str.o
+                0x00004b4c       0xc0 ./utilities/str/fsl_str.o
  .text.StrFormatExaminedi
-                0x00004bfc       0x22 ./utilities/str/fsl_str.o
+                0x00004c0c       0x22 ./utilities/str/fsl_str.o
  .text.StrFormatExaminexX
-                0x00004c1e       0x22 ./utilities/str/fsl_str.o
+                0x00004c2e       0x22 ./utilities/str/fsl_str.o
  .text.StrFormatExamineobpu
-                0x00004c40       0x22 ./utilities/str/fsl_str.o
+                0x00004c50       0x22 ./utilities/str/fsl_str.o
  .text.ConvertPrecisionWidthToLength
-                0x00004c62       0x22 ./utilities/str/fsl_str.o
+                0x00004c72       0x22 ./utilities/str/fsl_str.o
  .text.StrFormatPrintf
-                0x00004c84      0x2d6 ./utilities/str/fsl_str.o
-                0x00004c84                StrFormatPrintf
+                0x00004c94      0x2d6 ./utilities/str/fsl_str.o
+                0x00004c94                StrFormatPrintf
  .text.DbgConsole_PrintCallback
-                0x00004f5a       0x6c ./utilities/debug_console/fsl_debug_console.o
+                0x00004f6a       0x6c ./utilities/debug_console/fsl_debug_console.o
  .text.DbgConsole_Printf
-                0x00004fc6       0x32 ./utilities/debug_console/fsl_debug_console.o
-                0x00004fc6                DbgConsole_Printf
+                0x00004fd6       0x32 ./utilities/debug_console/fsl_debug_console.o
+                0x00004fd6                DbgConsole_Printf
  .text.__sys_write
-                0x00004ff8       0x40 ./utilities/debug_console/fsl_debug_console.o
-                0x00004ff8                __sys_write
+                0x00005008       0x40 ./utilities/debug_console/fsl_debug_console.o
+                0x00005008                __sys_write
  .text.fsl_assert_hook
-                0x00005038       0x16 ./utilities/fsl_assert.o
-                0x00005038                fsl_assert_hook
+                0x00005048       0x16 ./utilities/fsl_assert.o
+                0x00005048                fsl_assert_hook
  .text.offAllLEDs
-                0x0000504e       0x1c ./source/main.o
-                0x0000504e                offAllLEDs
- .text.setRGB   0x0000506a       0x68 ./source/main.o
-                0x0000506a                setRGB
+                0x0000505e       0x1c ./source/main.o
+                0x0000505e                offAllLEDs
+ .text.setRGB   0x0000507a       0x68 ./source/main.o
+                0x0000507a                setRGB
  .text.readMicWindow
-                0x000050d2       0xaa ./source/main.o
-                0x000050d2                readMicWindow
+                0x000050e2       0xaa ./source/main.o
+                0x000050e2                readMicWindow
  .text.vPortSVCHandler_C
-                0x0000517c       0x38 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
-                0x0000517c                vPortSVCHandler_C
+                0x0000518c       0x38 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+                0x0000518c                vPortSVCHandler_C
  .text.ulSetInterruptMask
-                0x000051b4        0xc ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
-                0x000051b4                ulSetInterruptMask
+                0x000051c4        0xc ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
+                0x000051c4                ulSetInterruptMask
  .text.vClearInterruptMask
-                0x000051c0        0x8 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
-                0x000051c0                vClearInterruptMask
+                0x000051d0        0x8 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
+                0x000051d0                vClearInterruptMask
  .text.vListInitialise
-                0x000051c8       0x3c ./freertos/freertos-kernel/list.o
-                0x000051c8                vListInitialise
+                0x000051d8       0x3c ./freertos/freertos-kernel/list.o
+                0x000051d8                vListInitialise
  .text.vListInitialiseItem
-                0x00005204       0x16 ./freertos/freertos-kernel/list.o
-                0x00005204                vListInitialiseItem
+                0x00005214       0x16 ./freertos/freertos-kernel/list.o
+                0x00005214                vListInitialiseItem
  .text.vListInsert
-                0x0000521a       0x6c ./freertos/freertos-kernel/list.o
-                0x0000521a                vListInsert
+                0x0000522a       0x6c ./freertos/freertos-kernel/list.o
+                0x0000522a                vListInsert
  .text.uxListRemove
-                0x00005286       0x50 ./freertos/freertos-kernel/list.o
-                0x00005286                uxListRemove
+                0x00005296       0x50 ./freertos/freertos-kernel/list.o
+                0x00005296                uxListRemove
  .text.xQueueGenericReset
-                0x000052d6      0x116 ./freertos/freertos-kernel/queue.o
-                0x000052d6                xQueueGenericReset
+                0x000052e6      0x116 ./freertos/freertos-kernel/queue.o
+                0x000052e6                xQueueGenericReset
  .text.xQueueGenericCreate
-                0x000053ec       0xbe ./freertos/freertos-kernel/queue.o
-                0x000053ec                xQueueGenericCreate
+                0x000053fc       0xbe ./freertos/freertos-kernel/queue.o
+                0x000053fc                xQueueGenericCreate
  .text.prvInitialiseNewQueue
-                0x000054aa       0x4e ./freertos/freertos-kernel/queue.o
+                0x000054ba       0x4e ./freertos/freertos-kernel/queue.o
  .text.prvInitialiseMutex
-                0x000054f8       0x34 ./freertos/freertos-kernel/queue.o
+                0x00005508       0x34 ./freertos/freertos-kernel/queue.o
  .text.xQueueCreateMutex
-                0x0000552c       0x38 ./freertos/freertos-kernel/queue.o
-                0x0000552c                xQueueCreateMutex
+                0x0000553c       0x38 ./freertos/freertos-kernel/queue.o
+                0x0000553c                xQueueCreateMutex
  .text.xQueueGenericSend
-                0x00005564      0x190 ./freertos/freertos-kernel/queue.o
-                0x00005564                xQueueGenericSend
+                0x00005574      0x190 ./freertos/freertos-kernel/queue.o
+                0x00005574                xQueueGenericSend
  .text.xQueueGiveFromISR
-                0x000056f4       0xf6 ./freertos/freertos-kernel/queue.o
-                0x000056f4                xQueueGiveFromISR
+                0x00005704       0xf6 ./freertos/freertos-kernel/queue.o
+                0x00005704                xQueueGiveFromISR
  .text.xQueueReceive
-                0x000057ea      0x170 ./freertos/freertos-kernel/queue.o
-                0x000057ea                xQueueReceive
+                0x000057fa      0x170 ./freertos/freertos-kernel/queue.o
+                0x000057fa                xQueueReceive
  .text.xQueueSemaphoreTake
-                0x0000595a      0x1b0 ./freertos/freertos-kernel/queue.o
-                0x0000595a                xQueueSemaphoreTake
+                0x0000596a      0x1b0 ./freertos/freertos-kernel/queue.o
+                0x0000596a                xQueueSemaphoreTake
  .text.prvGetDisinheritPriorityAfterTimeout
-                0x00005b0a       0x2c ./freertos/freertos-kernel/queue.o
+                0x00005b1a       0x2c ./freertos/freertos-kernel/queue.o
  .text.prvCopyDataToQueue
-                0x00005b36       0xd6 ./freertos/freertos-kernel/queue.o
+                0x00005b46       0xd6 ./freertos/freertos-kernel/queue.o
  .text.prvCopyDataFromQueue
-                0x00005c0c       0x4c ./freertos/freertos-kernel/queue.o
+                0x00005c1c       0x4c ./freertos/freertos-kernel/queue.o
  .text.prvUnlockQueue
-                0x00005c58       0xbc ./freertos/freertos-kernel/queue.o
+                0x00005c68       0xbc ./freertos/freertos-kernel/queue.o
  .text.prvIsQueueEmpty
-                0x00005d14       0x2c ./freertos/freertos-kernel/queue.o
+                0x00005d24       0x2c ./freertos/freertos-kernel/queue.o
  .text.prvIsQueueFull
-                0x00005d40       0x30 ./freertos/freertos-kernel/queue.o
+                0x00005d50       0x30 ./freertos/freertos-kernel/queue.o
  .text.vQueueWaitForMessageRestricted
-                0x00005d70       0x66 ./freertos/freertos-kernel/queue.o
-                0x00005d70                vQueueWaitForMessageRestricted
+                0x00005d80       0x66 ./freertos/freertos-kernel/queue.o
+                0x00005d80                vQueueWaitForMessageRestricted
  .text.prvCreateTask
-                0x00005dd6       0x82 ./freertos/freertos-kernel/tasks.o
+                0x00005de6       0x82 ./freertos/freertos-kernel/tasks.o
  .text.xTaskCreate
-                0x00005e58       0x4c ./freertos/freertos-kernel/tasks.o
-                0x00005e58                xTaskCreate
+                0x00005e68       0x4c ./freertos/freertos-kernel/tasks.o
+                0x00005e68                xTaskCreate
  .text.prvDeleteTCB
-                0x00005ea4       0x22 ./freertos/freertos-kernel/tasks.o
+                0x00005eb4       0x22 ./freertos/freertos-kernel/tasks.o
  .text.prvReloadTimer
-                0x00005ec6       0x42 ./freertos/freertos-kernel/timers.o
+                0x00005ed6       0x42 ./freertos/freertos-kernel/timers.o
  .text.prvTimerTask
-                0x00005f08       0x2a ./freertos/freertos-kernel/timers.o
+                0x00005f18       0x2a ./freertos/freertos-kernel/timers.o
  .text.SystemInitHook
-                0x00005f32        0xa ./device/system_MCXC444.o
-                0x00005f32                SystemInitHook
+                0x00005f42        0xa ./device/system_MCXC444.o
+                0x00005f42                SystemInitHook
  .text.DisableGlobalIRQ
-                0x00005f3c       0x1e ./component/serial_manager/fsl_component_serial_manager.o
+                0x00005f4c       0x1e ./component/serial_manager/fsl_component_serial_manager.o
  .text.EnableGlobalIRQ
-                0x00005f5a       0x1c ./component/serial_manager/fsl_component_serial_manager.o
+                0x00005f6a       0x1c ./component/serial_manager/fsl_component_serial_manager.o
  .text.SerialManager_Write
-                0x00005f76       0x44 ./component/serial_manager/fsl_component_serial_manager.o
+                0x00005f86       0x44 ./component/serial_manager/fsl_component_serial_manager.o
  .text.SerialManager_OpenWriteHandle
-                0x00005fba       0x56 ./component/serial_manager/fsl_component_serial_manager.o
-                0x00005fba                SerialManager_OpenWriteHandle
+                0x00005fca       0x56 ./component/serial_manager/fsl_component_serial_manager.o
+                0x00005fca                SerialManager_OpenWriteHandle
  .text.SerialManager_WriteBlocking
-                0x00006010       0x22 ./component/serial_manager/fsl_component_serial_manager.o
-                0x00006010                SerialManager_WriteBlocking
+                0x00006020       0x22 ./component/serial_manager/fsl_component_serial_manager.o
+                0x00006020                SerialManager_WriteBlocking
  .text.Serial_UartInit
-                0x00006032       0x4e ./component/serial_manager/fsl_component_serial_port_uart.o
-                0x00006032                Serial_UartInit
+                0x00006042       0x4e ./component/serial_manager/fsl_component_serial_port_uart.o
+                0x00006042                Serial_UartInit
  .text.Serial_UartWrite
-                0x00006080       0x38 ./component/serial_manager/fsl_component_serial_port_uart.o
-                0x00006080                Serial_UartWrite
+                0x00006090       0x38 ./component/serial_manager/fsl_component_serial_port_uart.o
+                0x00006090                Serial_UartWrite
  .text.BOARD_InitDebugConsole
-                0x000060b8       0x2c ./board/board.o
-                0x000060b8                BOARD_InitDebugConsole
+                0x000060c8       0x2c ./board/board.o
+                0x000060c8                BOARD_InitDebugConsole
  .text.BOARD_InitBootClocks
-                0x000060e4        0xe ./board/clock_config.o
-                0x000060e4                BOARD_InitBootClocks
+                0x000060f4        0xe ./board/clock_config.o
+                0x000060f4                BOARD_InitBootClocks
  .text.BOARD_InitPeripherals
-                0x000060f2        0xa ./board/peripherals.o
-                0x000060f2                BOARD_InitPeripherals
+                0x00006102        0xa ./board/peripherals.o
+                0x00006102                BOARD_InitPeripherals
  .text.BOARD_InitBootPeripherals
-                0x000060fc        0xe ./board/peripherals.o
-                0x000060fc                BOARD_InitBootPeripherals
+                0x0000610c        0xe ./board/peripherals.o
+                0x0000610c                BOARD_InitBootPeripherals
  .text.BOARD_InitBootPins
-                0x0000610a        0xe ./board/pin_mux.o
-                0x0000610a                BOARD_InitBootPins
- .text.__main   0x00006118        0xc /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
-                0x00006118                __main
- .text.memcpy   0x00006124        0x8 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
-                0x00006124                memcpy
- .text.memset   0x0000612c        0x8 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
-                0x0000612c                memset
- .text.free     0x00006134       0x2c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
-                0x00006134                free
- .text.remove   0x00006160       0x12 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
-                0x00006160                remove
+                0x0000611a        0xe ./board/pin_mux.o
+                0x0000611a                BOARD_InitBootPins
+ .text.__main   0x00006128        0xc /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
+                0x00006128                __main
+ .text.memcpy   0x00006134        0x8 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
+                0x00006134                memcpy
+ .text.memset   0x0000613c        0x8 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
+                0x0000613c                memset
+ .text.free     0x00006144       0x2c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
+                0x00006144                free
+ .text.remove   0x00006170       0x12 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
+                0x00006170                remove
  .text.__aeabi_division_idivmod
-                0x00006172       0x78 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(division_32.o)
-                0x00006172                __aeabi_idiv
-                0x00006172                __aeabi_idivmod
-                0x00006178                __aeabi_uidiv
-                0x00006178                __aeabi_uidivmod
+                0x00006182       0x78 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(division_32.o)
+                0x00006182                __aeabi_idiv
+                0x00006182                __aeabi_idivmod
+                0x00006188                __aeabi_uidiv
+                0x00006188                __aeabi_uidivmod
  .text.__aeabi_division_uldivmod
-                0x000061ea       0x5a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(division_64.o)
-                0x000061ea                __aeabi_uldivmod
+                0x000061fa       0x5a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(division_64.o)
+                0x000061fa                __aeabi_uldivmod
  .text.__aeabi_division_idiv0
-                0x00006244        0x2 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(division_idiv0.o)
-                0x00006244                __aeabi_idiv0
+                0x00006254        0x2 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(division_idiv0.o)
+                0x00006254                __aeabi_idiv0
  .text.__aeabi_llong_lmul
-                0x00006246       0x2e /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(llong.o)
-                0x00006246                __aeabi_lmul
+                0x00006256       0x2e /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(llong.o)
+                0x00006256                __aeabi_lmul
  .text.__aeabi_memcpy
-                0x00006274       0x2c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(memcpy.o)
-                0x00006274                __aeabi_memcpy
-                0x00006274                __aeabi_memcpy4
-                0x00006274                __aeabi_memcpy8
+                0x00006284       0x2c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(memcpy.o)
+                0x00006284                __aeabi_memcpy
+                0x00006284                __aeabi_memcpy4
+                0x00006284                __aeabi_memcpy8
  .text.__aeabi_memset_lowlevel
-                0x000062a0       0x2a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(memcpy.o)
-                0x000062a0                __aeabi_lowlevel_memset
+                0x000062b0       0x2a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(memcpy.o)
+                0x000062b0                __aeabi_lowlevel_memset
  .text.__sys_close
-                0x000062ca        0x6 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
-                0x000062ca                __sys_close
+                0x000062da        0x6 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
+                0x000062da                __sys_close
  .text.__sys_flen
-                0x000062d0        0x6 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
-                0x000062d0                __sys_flen
+                0x000062e0        0x6 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
+                0x000062e0                __sys_flen
  .text.__sys_istty
-                0x000062d6        0x6 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
-                0x000062d6                __sys_istty
+                0x000062e6        0x6 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
+                0x000062e6                __sys_istty
  .text.__sys_remove
-                0x000062dc        0x6 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
-                0x000062dc                __sys_remove
+                0x000062ec        0x6 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
+                0x000062ec                __sys_remove
  .text.__sys_seek
-                0x000062e2        0x6 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
-                0x000062e2                __sys_seek
+                0x000062f2        0x6 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
+                0x000062f2                __sys_seek
  .text.__sys_tmpnam
-                0x000062e8        0x6 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
-                0x000062e8                __sys_tmpnam
+                0x000062f8        0x6 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
+                0x000062f8                __sys_tmpnam
  *freertos*/tasks.o(SORT_BY_ALIGNMENT(.rodata*))
- *fill*         0x000062ee        0x2 ff
+ *fill*         0x000062fe        0x2 ff
  .rodata.uxTopUsedPriority
-                0x000062f0        0x4 ./freertos/freertos-kernel/tasks.o
+                0x00006300        0x4 ./freertos/freertos-kernel/tasks.o
  .rodata.prvCreateIdleTasks.str1.4
-                0x000062f4        0x5 ./freertos/freertos-kernel/tasks.o
+                0x00006304        0x5 ./freertos/freertos-kernel/tasks.o
  .rodata.xTaskGenericNotify
-                0x000062f4       0x14 ./freertos/freertos-kernel/tasks.o
+                0x00006304       0x14 ./freertos/freertos-kernel/tasks.o
  .rodata.xTaskGenericNotifyFromISR
-                0x00006308       0x14 ./freertos/freertos-kernel/tasks.o
+                0x00006318       0x14 ./freertos/freertos-kernel/tasks.o
  *(SORT_BY_ALIGNMENT(.rodata) SORT_BY_ALIGNMENT(.rodata.*) SORT_BY_ALIGNMENT(.constdata) SORT_BY_ALIGNMENT(.constdata.*))
  .rodata.__assertion_failed.str1.4
-                0x0000631c      0x527 ./utilities/fsl_assert.o
+                0x0000632c      0x527 ./utilities/fsl_assert.o
                                  0x14 (size before relaxing)
  .rodata.buttonTask.str1.4
-                0x00006843       0x83 ./source/main.o
+                0x00006853       0x83 ./source/main.o
  .rodata.printTask.str1.4
-                0x00006843      0x13d ./source/main.o
+                0x00006853      0x13d ./source/main.o
  .rodata.main.str1.4
-                0x00006843       0x4f ./source/main.o
+                0x00006853       0x4f ./source/main.o
  .rodata.xTimerCreateTimerTask.str1.4
-                0x00006843        0x8 ./freertos/freertos-kernel/timers.o
- *fill*         0x00006843        0x1 ff
+                0x00006853        0x8 ./freertos/freertos-kernel/timers.o
+ *fill*         0x00006853        0x1 ff
  .rodata.prvProcessReceivedCommands
-                0x00006844       0x28 ./freertos/freertos-kernel/timers.o
+                0x00006854       0x28 ./freertos/freertos-kernel/timers.o
  .rodata.prvCheckForValidListAndQueue.str1.4
-                0x0000686c        0x5 ./freertos/freertos-kernel/timers.o
+                0x0000687c        0x5 ./freertos/freertos-kernel/timers.o
  .rodata.CLOCK_GetOsc0ErClkFreq.str1.4
-                0x0000686c       0x1e ./drivers/fsl_clock.o
+                0x0000687c       0x1e ./drivers/fsl_clock.o
  .rodata.CLOCK_GetEr32kClkFreq.str1.4
-                0x0000686c       0x1f ./drivers/fsl_clock.o
+                0x0000687c       0x1f ./drivers/fsl_clock.o
  .rodata.CLOCK_GetFreq
-                0x0000686c       0x50 ./drivers/fsl_clock.o
+                0x0000687c       0x50 ./drivers/fsl_clock.o
  .rodata.CLOCK_GetOutClkFreq.str1.4
-                0x000068bc       0x1e ./drivers/fsl_clock.o
+                0x000068cc       0x1e ./drivers/fsl_clock.o
  .rodata.CLOCK_SetMcgliteConfig.str1.4
-                0x000068bc       0x1f ./drivers/fsl_clock.o
+                0x000068cc       0x1f ./drivers/fsl_clock.o
  .rodata.lircFreqs.0
-                0x000068bc        0x8 ./drivers/fsl_clock.o
+                0x000068cc        0x8 ./drivers/fsl_clock.o
  .rodata.s_lpuartBases
-                0x000068c4        0x8 ./drivers/fsl_lpuart.o
+                0x000068d4        0x8 ./drivers/fsl_lpuart.o
  .rodata.s_lpuartClock
-                0x000068cc        0x8 ./drivers/fsl_lpuart.o
+                0x000068dc        0x8 ./drivers/fsl_lpuart.o
  .rodata.LPUART_GetInstance.str1.4
-                0x000068d4       0x38 ./drivers/fsl_lpuart.o
+                0x000068e4       0x38 ./drivers/fsl_lpuart.o
  .rodata.LPUART_Init.str1.4
-                0x000068d4       0x51 ./drivers/fsl_lpuart.o
+                0x000068e4       0x51 ./drivers/fsl_lpuart.o
  .rodata.LPUART_GetDefaultConfig.str1.4
-                0x000068d4       0x22 ./drivers/fsl_lpuart.o
+                0x000068e4       0x22 ./drivers/fsl_lpuart.o
  .rodata.LPUART_WriteBlocking.str1.4
-                0x000068d4       0x21 ./drivers/fsl_lpuart.o
+                0x000068e4       0x21 ./drivers/fsl_lpuart.o
  .rodata.s_LpuartAdapterBase
-                0x000068d4        0x8 ./component/uart/fsl_adapter_lpuart.o
+                0x000068e4        0x8 ./component/uart/fsl_adapter_lpuart.o
  .rodata.HAL_UartInit.str1.4
-                0x000068dc      0x116 ./component/uart/fsl_adapter_lpuart.o
+                0x000068ec      0x116 ./component/uart/fsl_adapter_lpuart.o
  .rodata.HAL_UartSendBlocking.str1.4
-                0x000068dc       0x7b ./component/uart/fsl_adapter_lpuart.o
+                0x000068ec       0x7b ./component/uart/fsl_adapter_lpuart.o
  .rodata.mcgliteConfig_BOARD_BootClockRUN
-                0x000068dc        0x6 ./board/clock_config.o
-                0x000068dc                mcgliteConfig_BOARD_BootClockRUN
- *fill*         0x000068e2        0x2 ff
+                0x000068ec        0x6 ./board/clock_config.o
+                0x000068ec                mcgliteConfig_BOARD_BootClockRUN
+ *fill*         0x000068f2        0x2 ff
  .rodata.simConfig_BOARD_BootClockRUN
-                0x000068e4        0x8 ./board/clock_config.o
-                0x000068e4                simConfig_BOARD_BootClockRUN
+                0x000068f4        0x8 ./board/clock_config.o
+                0x000068f4                simConfig_BOARD_BootClockRUN
  .rodata.__num_Ciob_streams
-                0x000068ec        0x4 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
-                0x000068ec                __num_Ciob_streams
+                0x000068fc        0x4 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
+                0x000068fc                __num_Ciob_streams
  .rodata._initio.str1.1
-                0x000068f0        0x4 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
-                0x000068f4                        . = ALIGN (0x4)
+                0x00006900        0x4 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
+                0x00006904                        . = ALIGN (0x4)
 
-.glue_7         0x000068f4        0x0
- .glue_7        0x000068f4        0x0 linker stubs
+.glue_7         0x00006904        0x0
+ .glue_7        0x00006904        0x0 linker stubs
 
-.glue_7t        0x000068f4        0x0
- .glue_7t       0x000068f4        0x0 linker stubs
+.glue_7t        0x00006904        0x0
+ .glue_7t       0x00006904        0x0 linker stubs
 
-.vfp11_veneer   0x000068f4        0x0
- .vfp11_veneer  0x000068f4        0x0 linker stubs
+.vfp11_veneer   0x00006904        0x0
+ .vfp11_veneer  0x00006904        0x0 linker stubs
 
-.v4_bx          0x000068f4        0x0
- .v4_bx         0x000068f4        0x0 linker stubs
+.v4_bx          0x00006904        0x0
+ .v4_bx         0x00006904        0x0 linker stubs
 
-.iplt           0x000068f4        0x0
- .iplt          0x000068f4        0x0 ./utilities/str/fsl_str.o
+.iplt           0x00006904        0x0
+ .iplt          0x00006904        0x0 ./utilities/str/fsl_str.o
 
-.rel.dyn        0x000068f4        0x0
- .rel.iplt      0x000068f4        0x0 ./utilities/str/fsl_str.o
+.rel.dyn        0x00006904        0x0
+ .rel.iplt      0x00006904        0x0 ./utilities/str/fsl_str.o
 
 .ARM.extab
  *(SORT_BY_ALIGNMENT(.ARM.extab*) SORT_BY_ALIGNMENT(.gnu.linkonce.armextab.*))
 
-.ARM.exidx      0x000068f4        0x0
-                0x000068f4                        __exidx_start = .
+.ARM.exidx      0x00006904        0x0
+                0x00006904                        __exidx_start = .
  *(SORT_BY_ALIGNMENT(.ARM.exidx*) SORT_BY_ALIGNMENT(.gnu.linkonce.armexidx.*))
-                0x000068f4                        __exidx_end = .
-                0x000068f4                        _etext = .
+                0x00006904                        __exidx_end = .
+                0x00006904                        _etext = .
 
 .mtb_buffer_default
                 0x1fffe000       0x80
@@ -4961,7 +4957,7 @@ END GROUP
                 0x1fffe080                        . = ALIGN (0x4)
                 0x1fffe080                        _end_uninit_RESERVED = .
 
-.data           0x1fffe080        0x8 load address 0x000068f4
+.data           0x1fffe080        0x8 load address 0x00006904
  FILL mask 0xff
                 0x1fffe080                        _data = .
                 [!provide]                        PROVIDE (__start_data_RAM = .)
@@ -4982,7 +4978,7 @@ END GROUP
                 [!provide]                        PROVIDE (__end_data_RAM = .)
                 [!provide]                        PROVIDE (__end_data_SRAM = .)
 
-.igot.plt       0x1fffe088        0x0 load address 0x000068fc
+.igot.plt       0x1fffe088        0x0 load address 0x0000690c
  .igot.plt      0x1fffe088        0x0 ./utilities/str/fsl_str.o
 
 .bss            0x1fffe088     0x2ab8
@@ -5156,114 +5152,114 @@ END GROUP
                 0x20005800                        . = ALIGN (0x4)
                 0x20006000                        _vStackTop = (. + _StackSize)
                 0x00000000                        _image_start = LOADADDR (.text)
-                0x000068fc                        _image_end = (LOADADDR (.data) + SIZEOF (.data))
-                0x000068fc                        _image_size = (_image_end - _image_start)
+                0x0000690c                        _image_end = (LOADADDR (.data) + SIZEOF (.data))
+                0x0000690c                        _image_size = (_image_end - _image_start)
 OUTPUT(Final_Project_CG2271.axf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x00000000    0x11e3f
+.debug_info     0x00000000    0x11dee
  .debug_info    0x00000000      0xd5e ./utilities/str/fsl_str.o
  .debug_info    0x00000d5e      0xed5 ./utilities/debug_console/fsl_debug_console.o
  .debug_info    0x00001c33      0x135 ./utilities/fsl_assert.o
  .debug_info    0x00001d68      0x686 ./startup/startup_mcxc444.o
- .debug_info    0x000023ee     0x1390 ./source/main.o
- .debug_info    0x0000377e       0x53 ./source/mtb.o
- .debug_info    0x000037d1       0x3c ./source/semihost_hardfault.o
- .debug_info    0x0000380d      0x4db ./freertos/freertos-kernel/portable/MemMang/heap_4.o
- .debug_info    0x00003ce8      0x335 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
- .debug_info    0x0000401d      0x150 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
- .debug_info    0x0000416d      0x2b9 ./freertos/freertos-kernel/list.o
- .debug_info    0x00004426     0x13b2 ./freertos/freertos-kernel/queue.o
- .debug_info    0x000057d8     0x225e ./freertos/freertos-kernel/tasks.o
- .debug_info    0x00007a36      0xf5d ./freertos/freertos-kernel/timers.o
- .debug_info    0x00008993     0x1391 ./drivers/fsl_clock.o
- .debug_info    0x00009d24     0x1f91 ./drivers/fsl_lpuart.o
- .debug_info    0x0000bcb5      0x42a ./device/system_MCXC444.o
- .debug_info    0x0000c0df      0xb1e ./component/uart/fsl_adapter_lpuart.o
- .debug_info    0x0000cbfd      0xdd2 ./component/serial_manager/fsl_component_serial_manager.o
- .debug_info    0x0000d9cf      0x558 ./component/serial_manager/fsl_component_serial_port_uart.o
- .debug_info    0x0000df27      0x411 ./board/board.o
- .debug_info    0x0000e338      0xa96 ./board/clock_config.o
- .debug_info    0x0000edce       0x9b ./board/peripherals.o
- .debug_info    0x0000ee69      0x589 ./board/pin_mux.o
- .debug_info    0x0000f3f2       0x85 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
- .debug_info    0x0000f477      0x12b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
- .debug_info    0x0000f5a2       0xfc /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
- .debug_info    0x0000f69e      0x526 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
- .debug_info    0x0000fbc4       0x44 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(errno.o)
- .debug_info    0x0000fc08      0x353 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
- .debug_info    0x0000ff5b      0x1fd /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
- .debug_info    0x00010158       0xdd /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
- .debug_info    0x00010235      0x391 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
- .debug_info    0x000105c6      0x24b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
- .debug_info    0x00010811      0x1ea /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
- .debug_info    0x000109fb      0x28a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
- .debug_info    0x00010c85      0x325 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
- .debug_info    0x00010faa      0x210 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
- .debug_info    0x000111ba      0x27f /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
- .debug_info    0x00011439      0x197 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
- .debug_info    0x000115d0      0x1d0 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
- .debug_info    0x000117a0      0x241 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
- .debug_info    0x000119e1      0x18b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
- .debug_info    0x00011b6c       0x6a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
- .debug_info    0x00011bd6       0x6a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
- .debug_info    0x00011c40       0x6a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
- .debug_info    0x00011caa       0x8a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
- .debug_info    0x00011d34       0x78 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
- .debug_info    0x00011dac       0x93 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
+ .debug_info    0x000023ee     0x133f ./source/main.o
+ .debug_info    0x0000372d       0x53 ./source/mtb.o
+ .debug_info    0x00003780       0x3c ./source/semihost_hardfault.o
+ .debug_info    0x000037bc      0x4db ./freertos/freertos-kernel/portable/MemMang/heap_4.o
+ .debug_info    0x00003c97      0x335 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+ .debug_info    0x00003fcc      0x150 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
+ .debug_info    0x0000411c      0x2b9 ./freertos/freertos-kernel/list.o
+ .debug_info    0x000043d5     0x13b2 ./freertos/freertos-kernel/queue.o
+ .debug_info    0x00005787     0x225e ./freertos/freertos-kernel/tasks.o
+ .debug_info    0x000079e5      0xf5d ./freertos/freertos-kernel/timers.o
+ .debug_info    0x00008942     0x1391 ./drivers/fsl_clock.o
+ .debug_info    0x00009cd3     0x1f91 ./drivers/fsl_lpuart.o
+ .debug_info    0x0000bc64      0x42a ./device/system_MCXC444.o
+ .debug_info    0x0000c08e      0xb1e ./component/uart/fsl_adapter_lpuart.o
+ .debug_info    0x0000cbac      0xdd2 ./component/serial_manager/fsl_component_serial_manager.o
+ .debug_info    0x0000d97e      0x558 ./component/serial_manager/fsl_component_serial_port_uart.o
+ .debug_info    0x0000ded6      0x411 ./board/board.o
+ .debug_info    0x0000e2e7      0xa96 ./board/clock_config.o
+ .debug_info    0x0000ed7d       0x9b ./board/peripherals.o
+ .debug_info    0x0000ee18      0x589 ./board/pin_mux.o
+ .debug_info    0x0000f3a1       0x85 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
+ .debug_info    0x0000f426      0x12b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
+ .debug_info    0x0000f551       0xfc /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
+ .debug_info    0x0000f64d      0x526 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
+ .debug_info    0x0000fb73       0x44 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(errno.o)
+ .debug_info    0x0000fbb7      0x353 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
+ .debug_info    0x0000ff0a      0x1fd /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
+ .debug_info    0x00010107       0xdd /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
+ .debug_info    0x000101e4      0x391 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
+ .debug_info    0x00010575      0x24b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
+ .debug_info    0x000107c0      0x1ea /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
+ .debug_info    0x000109aa      0x28a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
+ .debug_info    0x00010c34      0x325 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
+ .debug_info    0x00010f59      0x210 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
+ .debug_info    0x00011169      0x27f /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
+ .debug_info    0x000113e8      0x197 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
+ .debug_info    0x0001157f      0x1d0 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
+ .debug_info    0x0001174f      0x241 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
+ .debug_info    0x00011990      0x18b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
+ .debug_info    0x00011b1b       0x6a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
+ .debug_info    0x00011b85       0x6a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
+ .debug_info    0x00011bef       0x6a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
+ .debug_info    0x00011c59       0x8a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
+ .debug_info    0x00011ce3       0x78 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
+ .debug_info    0x00011d5b       0x93 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
 
-.debug_abbrev   0x00000000     0x42b9
+.debug_abbrev   0x00000000     0x429f
  .debug_abbrev  0x00000000      0x270 ./utilities/str/fsl_str.o
  .debug_abbrev  0x00000270      0x28e ./utilities/debug_console/fsl_debug_console.o
  .debug_abbrev  0x000004fe       0xbd ./utilities/fsl_assert.o
  .debug_abbrev  0x000005bb      0x1a7 ./startup/startup_mcxc444.o
- .debug_abbrev  0x00000762      0x3dc ./source/main.o
- .debug_abbrev  0x00000b3e       0x46 ./source/mtb.o
- .debug_abbrev  0x00000b84       0x31 ./source/semihost_hardfault.o
- .debug_abbrev  0x00000bb5      0x1ec ./freertos/freertos-kernel/portable/MemMang/heap_4.o
- .debug_abbrev  0x00000da1      0x1ba ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
- .debug_abbrev  0x00000f5b       0xb9 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
- .debug_abbrev  0x00001014       0xeb ./freertos/freertos-kernel/list.o
- .debug_abbrev  0x000010ff      0x2bd ./freertos/freertos-kernel/queue.o
- .debug_abbrev  0x000013bc      0x30f ./freertos/freertos-kernel/tasks.o
- .debug_abbrev  0x000016cb      0x2c1 ./freertos/freertos-kernel/timers.o
- .debug_abbrev  0x0000198c      0x2e0 ./drivers/fsl_clock.o
- .debug_abbrev  0x00001c6c      0x406 ./drivers/fsl_lpuart.o
- .debug_abbrev  0x00002072      0x139 ./device/system_MCXC444.o
- .debug_abbrev  0x000021ab      0x1e7 ./component/uart/fsl_adapter_lpuart.o
- .debug_abbrev  0x00002392      0x2be ./component/serial_manager/fsl_component_serial_manager.o
- .debug_abbrev  0x00002650      0x18c ./component/serial_manager/fsl_component_serial_port_uart.o
- .debug_abbrev  0x000027dc      0x163 ./board/board.o
- .debug_abbrev  0x0000293f      0x1e0 ./board/clock_config.o
- .debug_abbrev  0x00002b1f       0x61 ./board/peripherals.o
- .debug_abbrev  0x00002b80      0x1a3 ./board/pin_mux.o
- .debug_abbrev  0x00002d23       0x62 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
- .debug_abbrev  0x00002d85       0xb3 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
- .debug_abbrev  0x00002e38       0xa5 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
- .debug_abbrev  0x00002edd      0x27b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
- .debug_abbrev  0x00003158       0x44 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(errno.o)
- .debug_abbrev  0x0000319c      0x14b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
- .debug_abbrev  0x000032e7       0xe1 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
- .debug_abbrev  0x000033c8       0xa5 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
- .debug_abbrev  0x0000346d      0x183 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
- .debug_abbrev  0x000035f0      0x119 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
- .debug_abbrev  0x00003709       0xf1 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
- .debug_abbrev  0x000037fa      0x126 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
- .debug_abbrev  0x00003920      0x158 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
- .debug_abbrev  0x00003a78      0x122 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
- .debug_abbrev  0x00003b9a      0x11b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
- .debug_abbrev  0x00003cb5       0xc2 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
- .debug_abbrev  0x00003d77       0xed /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
- .debug_abbrev  0x00003e64      0x12c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
- .debug_abbrev  0x00003f90       0xb5 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
- .debug_abbrev  0x00004045       0x5c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
- .debug_abbrev  0x000040a1       0x5c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
- .debug_abbrev  0x000040fd       0x5c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
- .debug_abbrev  0x00004159       0x7d /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
- .debug_abbrev  0x000041d6       0x6d /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
- .debug_abbrev  0x00004243       0x76 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
+ .debug_abbrev  0x00000762      0x3c2 ./source/main.o
+ .debug_abbrev  0x00000b24       0x46 ./source/mtb.o
+ .debug_abbrev  0x00000b6a       0x31 ./source/semihost_hardfault.o
+ .debug_abbrev  0x00000b9b      0x1ec ./freertos/freertos-kernel/portable/MemMang/heap_4.o
+ .debug_abbrev  0x00000d87      0x1ba ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+ .debug_abbrev  0x00000f41       0xb9 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
+ .debug_abbrev  0x00000ffa       0xeb ./freertos/freertos-kernel/list.o
+ .debug_abbrev  0x000010e5      0x2bd ./freertos/freertos-kernel/queue.o
+ .debug_abbrev  0x000013a2      0x30f ./freertos/freertos-kernel/tasks.o
+ .debug_abbrev  0x000016b1      0x2c1 ./freertos/freertos-kernel/timers.o
+ .debug_abbrev  0x00001972      0x2e0 ./drivers/fsl_clock.o
+ .debug_abbrev  0x00001c52      0x406 ./drivers/fsl_lpuart.o
+ .debug_abbrev  0x00002058      0x139 ./device/system_MCXC444.o
+ .debug_abbrev  0x00002191      0x1e7 ./component/uart/fsl_adapter_lpuart.o
+ .debug_abbrev  0x00002378      0x2be ./component/serial_manager/fsl_component_serial_manager.o
+ .debug_abbrev  0x00002636      0x18c ./component/serial_manager/fsl_component_serial_port_uart.o
+ .debug_abbrev  0x000027c2      0x163 ./board/board.o
+ .debug_abbrev  0x00002925      0x1e0 ./board/clock_config.o
+ .debug_abbrev  0x00002b05       0x61 ./board/peripherals.o
+ .debug_abbrev  0x00002b66      0x1a3 ./board/pin_mux.o
+ .debug_abbrev  0x00002d09       0x62 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
+ .debug_abbrev  0x00002d6b       0xb3 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
+ .debug_abbrev  0x00002e1e       0xa5 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
+ .debug_abbrev  0x00002ec3      0x27b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
+ .debug_abbrev  0x0000313e       0x44 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(errno.o)
+ .debug_abbrev  0x00003182      0x14b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
+ .debug_abbrev  0x000032cd       0xe1 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
+ .debug_abbrev  0x000033ae       0xa5 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
+ .debug_abbrev  0x00003453      0x183 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
+ .debug_abbrev  0x000035d6      0x119 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
+ .debug_abbrev  0x000036ef       0xf1 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
+ .debug_abbrev  0x000037e0      0x126 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
+ .debug_abbrev  0x00003906      0x158 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
+ .debug_abbrev  0x00003a5e      0x122 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
+ .debug_abbrev  0x00003b80      0x11b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
+ .debug_abbrev  0x00003c9b       0xc2 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
+ .debug_abbrev  0x00003d5d       0xed /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
+ .debug_abbrev  0x00003e4a      0x12c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
+ .debug_abbrev  0x00003f76       0xb5 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
+ .debug_abbrev  0x0000402b       0x5c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
+ .debug_abbrev  0x00004087       0x5c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
+ .debug_abbrev  0x000040e3       0x5c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
+ .debug_abbrev  0x0000413f       0x7d /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
+ .debug_abbrev  0x000041bc       0x6d /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
+ .debug_abbrev  0x00004229       0x76 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
 
-.debug_aranges  0x00000000     0x1230
+.debug_aranges  0x00000000     0x1220
  .debug_aranges
                 0x00000000       0xe8 ./utilities/str/fsl_str.o
  .debug_aranges
@@ -5273,143 +5269,143 @@ LOAD linker stubs
  .debug_aranges
                 0x000001c8      0x160 ./startup/startup_mcxc444.o
  .debug_aranges
-                0x00000328       0xd0 ./source/main.o
+                0x00000328       0xc0 ./source/main.o
  .debug_aranges
-                0x000003f8       0x18 ./source/mtb.o
+                0x000003e8       0x18 ./source/mtb.o
  .debug_aranges
-                0x00000410       0x20 ./source/semihost_hardfault.o
+                0x00000400       0x20 ./source/semihost_hardfault.o
  .debug_aranges
-                0x00000430       0x70 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
+                0x00000420       0x70 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
  .debug_aranges
-                0x000004a0       0x70 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+                0x00000490       0x70 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
  .debug_aranges
-                0x00000510       0x60 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
+                0x00000500       0x60 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
  .debug_aranges
-                0x00000570       0x40 ./freertos/freertos-kernel/list.o
+                0x00000560       0x40 ./freertos/freertos-kernel/list.o
  .debug_aranges
-                0x000005b0      0x140 ./freertos/freertos-kernel/queue.o
+                0x000005a0      0x140 ./freertos/freertos-kernel/queue.o
  .debug_aranges
-                0x000006f0      0x238 ./freertos/freertos-kernel/tasks.o
+                0x000006e0      0x238 ./freertos/freertos-kernel/tasks.o
  .debug_aranges
-                0x00000928      0x108 ./freertos/freertos-kernel/timers.o
+                0x00000918      0x108 ./freertos/freertos-kernel/timers.o
  .debug_aranges
-                0x00000a30       0xd0 ./drivers/fsl_clock.o
+                0x00000a20       0xd0 ./drivers/fsl_clock.o
  .debug_aranges
-                0x00000b00      0x190 ./drivers/fsl_lpuart.o
+                0x00000af0      0x190 ./drivers/fsl_lpuart.o
  .debug_aranges
-                0x00000c90       0x30 ./device/system_MCXC444.o
+                0x00000c80       0x30 ./device/system_MCXC444.o
  .debug_aranges
-                0x00000cc0       0x58 ./component/uart/fsl_adapter_lpuart.o
+                0x00000cb0       0x58 ./component/uart/fsl_adapter_lpuart.o
  .debug_aranges
-                0x00000d18       0xa0 ./component/serial_manager/fsl_component_serial_manager.o
+                0x00000d08       0xa0 ./component/serial_manager/fsl_component_serial_manager.o
  .debug_aranges
-                0x00000db8       0x48 ./component/serial_manager/fsl_component_serial_port_uart.o
+                0x00000da8       0x48 ./component/serial_manager/fsl_component_serial_port_uart.o
  .debug_aranges
-                0x00000e00       0x28 ./board/board.o
+                0x00000df0       0x28 ./board/board.o
  .debug_aranges
-                0x00000e28       0x48 ./board/clock_config.o
+                0x00000e18       0x48 ./board/clock_config.o
  .debug_aranges
-                0x00000e70       0x28 ./board/peripherals.o
+                0x00000e60       0x28 ./board/peripherals.o
  .debug_aranges
-                0x00000e98       0x50 ./board/pin_mux.o
+                0x00000e88       0x50 ./board/pin_mux.o
  .debug_aranges
-                0x00000ee8       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
+                0x00000ed8       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
  .debug_aranges
-                0x00000f08       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
+                0x00000ef8       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
  .debug_aranges
-                0x00000f28       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
+                0x00000f18       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
  .debug_aranges
-                0x00000f48       0x40 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
+                0x00000f38       0x40 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
  .debug_aranges
-                0x00000f88       0x18 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(errno.o)
+                0x00000f78       0x18 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(errno.o)
  .debug_aranges
-                0x00000fa0       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
+                0x00000f90       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
  .debug_aranges
-                0x00000fc8       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
+                0x00000fb8       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
  .debug_aranges
-                0x00000fe8       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
+                0x00000fd8       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
  .debug_aranges
-                0x00001008       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
+                0x00000ff8       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
  .debug_aranges
-                0x00001030       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
+                0x00001020       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
  .debug_aranges
-                0x00001050       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
+                0x00001040       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
  .debug_aranges
-                0x00001070       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
+                0x00001060       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
  .debug_aranges
-                0x00001090       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
+                0x00001080       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
  .debug_aranges
-                0x000010b0       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
+                0x000010a0       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
  .debug_aranges
-                0x000010d0       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
+                0x000010c0       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
  .debug_aranges
-                0x000010f0       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
+                0x000010e0       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
  .debug_aranges
-                0x00001110       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
+                0x00001100       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
  .debug_aranges
-                0x00001138       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
+                0x00001128       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
  .debug_aranges
-                0x00001158       0x18 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
+                0x00001148       0x18 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
  .debug_aranges
-                0x00001170       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
+                0x00001160       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
  .debug_aranges
-                0x00001190       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
+                0x00001180       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
  .debug_aranges
-                0x000011b0       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
+                0x000011a0       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
  .debug_aranges
-                0x000011d0       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
+                0x000011c0       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
  .debug_aranges
-                0x000011f0       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
+                0x000011e0       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
  .debug_aranges
-                0x00001210       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
+                0x00001200       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
 
-.debug_ranges   0x00000000     0x1010
+.debug_ranges   0x00000000     0x1000
  .debug_ranges  0x00000000      0x108 ./utilities/str/fsl_str.o
  .debug_ranges  0x00000108       0xa8 ./utilities/debug_console/fsl_debug_console.o
  .debug_ranges  0x000001b0       0x18 ./utilities/fsl_assert.o
  .debug_ranges  0x000001c8      0x150 ./startup/startup_mcxc444.o
- .debug_ranges  0x00000318       0xc0 ./source/main.o
- .debug_ranges  0x000003d8       0x10 ./source/semihost_hardfault.o
- .debug_ranges  0x000003e8       0x60 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
- .debug_ranges  0x00000448       0x60 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
- .debug_ranges  0x000004a8       0x50 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
- .debug_ranges  0x000004f8       0x30 ./freertos/freertos-kernel/list.o
- .debug_ranges  0x00000528      0x130 ./freertos/freertos-kernel/queue.o
- .debug_ranges  0x00000658      0x248 ./freertos/freertos-kernel/tasks.o
- .debug_ranges  0x000008a0       0xf8 ./freertos/freertos-kernel/timers.o
- .debug_ranges  0x00000998       0xc0 ./drivers/fsl_clock.o
- .debug_ranges  0x00000a58      0x180 ./drivers/fsl_lpuart.o
- .debug_ranges  0x00000bd8       0x20 ./device/system_MCXC444.o
- .debug_ranges  0x00000bf8       0x48 ./component/uart/fsl_adapter_lpuart.o
- .debug_ranges  0x00000c40       0x90 ./component/serial_manager/fsl_component_serial_manager.o
- .debug_ranges  0x00000cd0       0x38 ./component/serial_manager/fsl_component_serial_port_uart.o
- .debug_ranges  0x00000d08       0x18 ./board/board.o
- .debug_ranges  0x00000d20       0x38 ./board/clock_config.o
- .debug_ranges  0x00000d58       0x18 ./board/peripherals.o
- .debug_ranges  0x00000d70       0x40 ./board/pin_mux.o
- .debug_ranges  0x00000db0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
- .debug_ranges  0x00000dc0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
- .debug_ranges  0x00000dd0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
- .debug_ranges  0x00000de0       0x50 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
- .debug_ranges  0x00000e30       0x38 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
- .debug_ranges  0x00000e68       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
- .debug_ranges  0x00000e78       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
- .debug_ranges  0x00000ea0       0x48 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
- .debug_ranges  0x00000ee8       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
- .debug_ranges  0x00000ef8       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
- .debug_ranges  0x00000f08       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
- .debug_ranges  0x00000f18       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
- .debug_ranges  0x00000f28       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
- .debug_ranges  0x00000f50       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
- .debug_ranges  0x00000f60       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
- .debug_ranges  0x00000f70       0x18 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
- .debug_ranges  0x00000f88       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
- .debug_ranges  0x00000fb0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
- .debug_ranges  0x00000fc0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
- .debug_ranges  0x00000fd0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
- .debug_ranges  0x00000fe0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
- .debug_ranges  0x00000ff0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
- .debug_ranges  0x00001000       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
+ .debug_ranges  0x00000318       0xb0 ./source/main.o
+ .debug_ranges  0x000003c8       0x10 ./source/semihost_hardfault.o
+ .debug_ranges  0x000003d8       0x60 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
+ .debug_ranges  0x00000438       0x60 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+ .debug_ranges  0x00000498       0x50 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
+ .debug_ranges  0x000004e8       0x30 ./freertos/freertos-kernel/list.o
+ .debug_ranges  0x00000518      0x130 ./freertos/freertos-kernel/queue.o
+ .debug_ranges  0x00000648      0x248 ./freertos/freertos-kernel/tasks.o
+ .debug_ranges  0x00000890       0xf8 ./freertos/freertos-kernel/timers.o
+ .debug_ranges  0x00000988       0xc0 ./drivers/fsl_clock.o
+ .debug_ranges  0x00000a48      0x180 ./drivers/fsl_lpuart.o
+ .debug_ranges  0x00000bc8       0x20 ./device/system_MCXC444.o
+ .debug_ranges  0x00000be8       0x48 ./component/uart/fsl_adapter_lpuart.o
+ .debug_ranges  0x00000c30       0x90 ./component/serial_manager/fsl_component_serial_manager.o
+ .debug_ranges  0x00000cc0       0x38 ./component/serial_manager/fsl_component_serial_port_uart.o
+ .debug_ranges  0x00000cf8       0x18 ./board/board.o
+ .debug_ranges  0x00000d10       0x38 ./board/clock_config.o
+ .debug_ranges  0x00000d48       0x18 ./board/peripherals.o
+ .debug_ranges  0x00000d60       0x40 ./board/pin_mux.o
+ .debug_ranges  0x00000da0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
+ .debug_ranges  0x00000db0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
+ .debug_ranges  0x00000dc0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
+ .debug_ranges  0x00000dd0       0x50 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
+ .debug_ranges  0x00000e20       0x38 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
+ .debug_ranges  0x00000e58       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
+ .debug_ranges  0x00000e68       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
+ .debug_ranges  0x00000e90       0x48 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
+ .debug_ranges  0x00000ed8       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
+ .debug_ranges  0x00000ee8       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
+ .debug_ranges  0x00000ef8       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
+ .debug_ranges  0x00000f08       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
+ .debug_ranges  0x00000f18       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
+ .debug_ranges  0x00000f40       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
+ .debug_ranges  0x00000f50       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
+ .debug_ranges  0x00000f60       0x18 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
+ .debug_ranges  0x00000f78       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
+ .debug_ranges  0x00000fa0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
+ .debug_ranges  0x00000fb0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
+ .debug_ranges  0x00000fc0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
+ .debug_ranges  0x00000fd0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
+ .debug_ranges  0x00000fe0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
+ .debug_ranges  0x00000ff0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
 
 .debug_macro    0x00000000    0x114dd
  .debug_macro   0x00000000      0x2b4 ./utilities/str/fsl_str.o
@@ -5535,108 +5531,108 @@ LOAD linker stubs
  .debug_macro   0x0001123a      0x28d ./board/pin_mux.o
  .debug_macro   0x000114c7       0x16 ./board/pin_mux.o
 
-.debug_line     0x00000000    0x12416
+.debug_line     0x00000000    0x123b1
  .debug_line    0x00000000     0x1003 ./utilities/str/fsl_str.o
  .debug_line    0x00001003     0x1023 ./utilities/debug_console/fsl_debug_console.o
  .debug_line    0x00002026      0xb57 ./utilities/fsl_assert.o
  .debug_line    0x00002b7d      0x2a4 ./startup/startup_mcxc444.o
- .debug_line    0x00002e21     0x1324 ./source/main.o
- .debug_line    0x00004145       0xd6 ./source/mtb.o
- .debug_line    0x0000421b       0x59 ./source/semihost_hardfault.o
- .debug_line    0x00004274      0x842 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
- .debug_line    0x00004ab6      0x692 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
- .debug_line    0x00005148      0x51e ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
- .debug_line    0x00005666      0x533 ./freertos/freertos-kernel/list.o
- .debug_line    0x00005b99     0x11cc ./freertos/freertos-kernel/queue.o
- .debug_line    0x00006d65     0x1ae7 ./freertos/freertos-kernel/tasks.o
- .debug_line    0x0000884c      0xab8 ./freertos/freertos-kernel/timers.o
- .debug_line    0x00009304      0xc67 ./drivers/fsl_clock.o
- .debug_line    0x00009f6b     0x1636 ./drivers/fsl_lpuart.o
- .debug_line    0x0000b5a1      0x6c5 ./device/system_MCXC444.o
- .debug_line    0x0000bc66      0xb3c ./component/uart/fsl_adapter_lpuart.o
- .debug_line    0x0000c7a2      0xdd3 ./component/serial_manager/fsl_component_serial_manager.o
- .debug_line    0x0000d575      0xb8a ./component/serial_manager/fsl_component_serial_port_uart.o
- .debug_line    0x0000e0ff      0xb76 ./board/board.o
- .debug_line    0x0000ec75      0x7c3 ./board/clock_config.o
- .debug_line    0x0000f438      0x72a ./board/peripherals.o
- .debug_line    0x0000fb62      0x7eb ./board/pin_mux.o
- .debug_line    0x0001034d       0xc9 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
- .debug_line    0x00010416      0x112 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
- .debug_line    0x00010528       0xba /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
- .debug_line    0x000105e2      0x429 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
- .debug_line    0x00010a0b       0x86 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(errno.o)
- .debug_line    0x00010a91      0x1b6 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
- .debug_line    0x00010c47      0x167 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
- .debug_line    0x00010dae      0x156 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
- .debug_line    0x00010f04      0x36f /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
- .debug_line    0x00011273      0x1ab /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
- .debug_line    0x0001141e      0x197 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
- .debug_line    0x000115b5      0x1ba /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
- .debug_line    0x0001176f      0x17a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
- .debug_line    0x000118e9      0x153 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
- .debug_line    0x00011a3c      0x2ae /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
- .debug_line    0x00011cea      0x180 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
- .debug_line    0x00011e6a      0x15a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
- .debug_line    0x00011fc4      0x170 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
- .debug_line    0x00012134       0xea /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
- .debug_line    0x0001221e       0x54 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
- .debug_line    0x00012272       0x53 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
- .debug_line    0x000122c5       0x54 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
- .debug_line    0x00012319       0x55 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
- .debug_line    0x0001236e       0x53 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
- .debug_line    0x000123c1       0x55 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
+ .debug_line    0x00002e21     0x12bf ./source/main.o
+ .debug_line    0x000040e0       0xd6 ./source/mtb.o
+ .debug_line    0x000041b6       0x59 ./source/semihost_hardfault.o
+ .debug_line    0x0000420f      0x842 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
+ .debug_line    0x00004a51      0x692 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+ .debug_line    0x000050e3      0x51e ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
+ .debug_line    0x00005601      0x533 ./freertos/freertos-kernel/list.o
+ .debug_line    0x00005b34     0x11cc ./freertos/freertos-kernel/queue.o
+ .debug_line    0x00006d00     0x1ae7 ./freertos/freertos-kernel/tasks.o
+ .debug_line    0x000087e7      0xab8 ./freertos/freertos-kernel/timers.o
+ .debug_line    0x0000929f      0xc67 ./drivers/fsl_clock.o
+ .debug_line    0x00009f06     0x1636 ./drivers/fsl_lpuart.o
+ .debug_line    0x0000b53c      0x6c5 ./device/system_MCXC444.o
+ .debug_line    0x0000bc01      0xb3c ./component/uart/fsl_adapter_lpuart.o
+ .debug_line    0x0000c73d      0xdd3 ./component/serial_manager/fsl_component_serial_manager.o
+ .debug_line    0x0000d510      0xb8a ./component/serial_manager/fsl_component_serial_port_uart.o
+ .debug_line    0x0000e09a      0xb76 ./board/board.o
+ .debug_line    0x0000ec10      0x7c3 ./board/clock_config.o
+ .debug_line    0x0000f3d3      0x72a ./board/peripherals.o
+ .debug_line    0x0000fafd      0x7eb ./board/pin_mux.o
+ .debug_line    0x000102e8       0xc9 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
+ .debug_line    0x000103b1      0x112 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
+ .debug_line    0x000104c3       0xba /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
+ .debug_line    0x0001057d      0x429 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
+ .debug_line    0x000109a6       0x86 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(errno.o)
+ .debug_line    0x00010a2c      0x1b6 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
+ .debug_line    0x00010be2      0x167 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
+ .debug_line    0x00010d49      0x156 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
+ .debug_line    0x00010e9f      0x36f /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
+ .debug_line    0x0001120e      0x1ab /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
+ .debug_line    0x000113b9      0x197 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
+ .debug_line    0x00011550      0x1ba /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
+ .debug_line    0x0001170a      0x17a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
+ .debug_line    0x00011884      0x153 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
+ .debug_line    0x000119d7      0x2ae /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
+ .debug_line    0x00011c85      0x180 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
+ .debug_line    0x00011e05      0x15a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
+ .debug_line    0x00011f5f      0x170 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
+ .debug_line    0x000120cf       0xea /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
+ .debug_line    0x000121b9       0x54 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
+ .debug_line    0x0001220d       0x53 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
+ .debug_line    0x00012260       0x54 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
+ .debug_line    0x000122b4       0x55 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
+ .debug_line    0x00012309       0x53 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
+ .debug_line    0x0001235c       0x55 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
 
-.debug_str      0x00000000    0x6941f
- .debug_str     0x00000000    0x6941f ./utilities/str/fsl_str.o
+.debug_str      0x00000000    0x693ee
+ .debug_str     0x00000000    0x693ee ./utilities/str/fsl_str.o
                               0x507a8 (size before relaxing)
- .debug_str     0x0006941f    0x5dd8a ./utilities/debug_console/fsl_debug_console.o
- .debug_str     0x0006941f    0x59691 ./utilities/fsl_assert.o
- .debug_str     0x0006941f     0x32cc ./startup/startup_mcxc444.o
- .debug_str     0x0006941f    0x5f09f ./source/main.o
- .debug_str     0x0006941f     0x33ab ./source/mtb.o
- .debug_str     0x0006941f     0x2e98 ./source/semihost_hardfault.o
- .debug_str     0x0006941f     0xffa3 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
- .debug_str     0x0006941f    0x10f37 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
- .debug_str     0x0006941f     0xe27b ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
- .debug_str     0x0006941f     0xe4ae ./freertos/freertos-kernel/list.o
- .debug_str     0x0006941f    0x10d36 ./freertos/freertos-kernel/queue.o
- .debug_str     0x0006941f    0x11c88 ./freertos/freertos-kernel/tasks.o
- .debug_str     0x0006941f    0x1114c ./freertos/freertos-kernel/timers.o
- .debug_str     0x0006941f    0x51402 ./drivers/fsl_clock.o
- .debug_str     0x0006941f    0x51a58 ./drivers/fsl_lpuart.o
- .debug_str     0x0006941f    0x4e4bd ./device/system_MCXC444.o
- .debug_str     0x0006941f    0x59fe4 ./component/uart/fsl_adapter_lpuart.o
- .debug_str     0x0006941f    0x5a9eb ./component/serial_manager/fsl_component_serial_manager.o
- .debug_str     0x0006941f    0x59a8d ./component/serial_manager/fsl_component_serial_port_uart.o
- .debug_str     0x0006941f    0x5a709 ./board/board.o
- .debug_str     0x0006941f    0x50caf ./board/clock_config.o
- .debug_str     0x0006941f    0x4fa0f ./board/peripherals.o
- .debug_str     0x0006941f    0x506c2 ./board/pin_mux.o
- .debug_str     0x0006941f      0x16a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
- .debug_str     0x0006941f      0x1b8 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
- .debug_str     0x0006941f      0x181 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
- .debug_str     0x0006941f      0x234 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
- .debug_str     0x0006941f      0x115 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(errno.o)
- .debug_str     0x0006941f      0x23e /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
- .debug_str     0x0006941f      0x234 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
- .debug_str     0x0006941f      0x17b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
- .debug_str     0x0006941f      0x278 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
- .debug_str     0x0006941f      0x231 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
- .debug_str     0x0006941f      0x22a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
- .debug_str     0x0006941f      0x244 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
- .debug_str     0x0006941f      0x25f /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
- .debug_str     0x0006941f      0x236 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
- .debug_str     0x0006941f      0x24f /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
- .debug_str     0x0006941f      0x215 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
- .debug_str     0x0006941f      0x1d4 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
- .debug_str     0x0006941f      0x240 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
- .debug_str     0x0006941f      0x202 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
- .debug_str     0x0006941f      0x15b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
- .debug_str     0x0006941f      0x154 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
- .debug_str     0x0006941f      0x156 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
- .debug_str     0x0006941f      0x161 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
- .debug_str     0x0006941f      0x154 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
- .debug_str     0x0006941f      0x16e /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
+ .debug_str     0x000693ee    0x5dd8a ./utilities/debug_console/fsl_debug_console.o
+ .debug_str     0x000693ee    0x59691 ./utilities/fsl_assert.o
+ .debug_str     0x000693ee     0x32cc ./startup/startup_mcxc444.o
+ .debug_str     0x000693ee    0x5f049 ./source/main.o
+ .debug_str     0x000693ee     0x33ab ./source/mtb.o
+ .debug_str     0x000693ee     0x2e98 ./source/semihost_hardfault.o
+ .debug_str     0x000693ee     0xffa3 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
+ .debug_str     0x000693ee    0x10f37 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+ .debug_str     0x000693ee     0xe27b ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
+ .debug_str     0x000693ee     0xe4ae ./freertos/freertos-kernel/list.o
+ .debug_str     0x000693ee    0x10d36 ./freertos/freertos-kernel/queue.o
+ .debug_str     0x000693ee    0x11c88 ./freertos/freertos-kernel/tasks.o
+ .debug_str     0x000693ee    0x1114c ./freertos/freertos-kernel/timers.o
+ .debug_str     0x000693ee    0x51402 ./drivers/fsl_clock.o
+ .debug_str     0x000693ee    0x51a58 ./drivers/fsl_lpuart.o
+ .debug_str     0x000693ee    0x4e4bd ./device/system_MCXC444.o
+ .debug_str     0x000693ee    0x59fe4 ./component/uart/fsl_adapter_lpuart.o
+ .debug_str     0x000693ee    0x5a9eb ./component/serial_manager/fsl_component_serial_manager.o
+ .debug_str     0x000693ee    0x59a8d ./component/serial_manager/fsl_component_serial_port_uart.o
+ .debug_str     0x000693ee    0x5a709 ./board/board.o
+ .debug_str     0x000693ee    0x50caf ./board/clock_config.o
+ .debug_str     0x000693ee    0x4fa0f ./board/peripherals.o
+ .debug_str     0x000693ee    0x506c2 ./board/pin_mux.o
+ .debug_str     0x000693ee      0x16a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
+ .debug_str     0x000693ee      0x1b8 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
+ .debug_str     0x000693ee      0x181 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
+ .debug_str     0x000693ee      0x234 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
+ .debug_str     0x000693ee      0x115 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(errno.o)
+ .debug_str     0x000693ee      0x23e /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
+ .debug_str     0x000693ee      0x234 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
+ .debug_str     0x000693ee      0x17b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
+ .debug_str     0x000693ee      0x278 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
+ .debug_str     0x000693ee      0x231 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
+ .debug_str     0x000693ee      0x22a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
+ .debug_str     0x000693ee      0x244 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
+ .debug_str     0x000693ee      0x25f /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
+ .debug_str     0x000693ee      0x236 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
+ .debug_str     0x000693ee      0x24f /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
+ .debug_str     0x000693ee      0x215 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
+ .debug_str     0x000693ee      0x1d4 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
+ .debug_str     0x000693ee      0x240 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
+ .debug_str     0x000693ee      0x202 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
+ .debug_str     0x000693ee      0x15b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
+ .debug_str     0x000693ee      0x154 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
+ .debug_str     0x000693ee      0x156 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
+ .debug_str     0x000693ee      0x161 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
+ .debug_str     0x000693ee      0x154 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
+ .debug_str     0x000693ee      0x16e /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
 
 .comment        0x00000000       0x45
  .comment       0x00000000       0x45 ./utilities/str/fsl_str.o
@@ -5801,53 +5797,53 @@ LOAD linker stubs
  .ARM.attributes
                 0x000008cc       0x2c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
 
-.debug_frame    0x00000000     0x3604
+.debug_frame    0x00000000     0x35c8
  .debug_frame   0x00000000      0x35c ./utilities/str/fsl_str.o
  .debug_frame   0x0000035c      0x29c ./utilities/debug_console/fsl_debug_console.o
  .debug_frame   0x000005f8       0x50 ./utilities/fsl_assert.o
  .debug_frame   0x00000648      0x3a8 ./startup/startup_mcxc444.o
- .debug_frame   0x000009f0      0x2ec ./source/main.o
- .debug_frame   0x00000cdc       0x20 ./source/semihost_hardfault.o
- .debug_frame   0x00000cfc      0x15c ./freertos/freertos-kernel/portable/MemMang/heap_4.o
- .debug_frame   0x00000e58      0x15c ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
- .debug_frame   0x00000fb4       0xa0 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
- .debug_frame   0x00001054       0xb0 ./freertos/freertos-kernel/list.o
- .debug_frame   0x00001104      0x4b8 ./freertos/freertos-kernel/queue.o
- .debug_frame   0x000015bc      0x880 ./freertos/freertos-kernel/tasks.o
- .debug_frame   0x00001e3c      0x3c4 ./freertos/freertos-kernel/timers.o
- .debug_frame   0x00002200      0x2e8 ./drivers/fsl_clock.o
- .debug_frame   0x000024e8      0x5f0 ./drivers/fsl_lpuart.o
- .debug_frame   0x00002ad8       0x68 ./device/system_MCXC444.o
- .debug_frame   0x00002b40      0x118 ./component/uart/fsl_adapter_lpuart.o
- .debug_frame   0x00002c58      0x230 ./component/serial_manager/fsl_component_serial_manager.o
- .debug_frame   0x00002e88       0xd0 ./component/serial_manager/fsl_component_serial_port_uart.o
- .debug_frame   0x00002f58       0x50 ./board/board.o
- .debug_frame   0x00002fa8       0xc0 ./board/clock_config.o
- .debug_frame   0x00003068       0x48 ./board/peripherals.o
- .debug_frame   0x000030b0       0xdc ./board/pin_mux.o
- .debug_frame   0x0000318c       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
- .debug_frame   0x000031b4       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
- .debug_frame   0x000031dc       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
- .debug_frame   0x00003204       0x9c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
- .debug_frame   0x000032a0       0x4c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
- .debug_frame   0x000032ec       0x30 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
- .debug_frame   0x0000331c       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
- .debug_frame   0x00003344       0x48 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
- .debug_frame   0x0000338c       0x34 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
- .debug_frame   0x000033c0       0x2c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
- .debug_frame   0x000033ec       0x34 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
- .debug_frame   0x00003420       0x30 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
- .debug_frame   0x00003450       0x30 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
- .debug_frame   0x00003480       0x34 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
- .debug_frame   0x000034b4       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
- .debug_frame   0x000034d4       0x44 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
- .debug_frame   0x00003518       0x2c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
- .debug_frame   0x00003544       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
- .debug_frame   0x00003564       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
- .debug_frame   0x00003584       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
- .debug_frame   0x000035a4       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
- .debug_frame   0x000035c4       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
- .debug_frame   0x000035e4       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
+ .debug_frame   0x000009f0      0x2b0 ./source/main.o
+ .debug_frame   0x00000ca0       0x20 ./source/semihost_hardfault.o
+ .debug_frame   0x00000cc0      0x15c ./freertos/freertos-kernel/portable/MemMang/heap_4.o
+ .debug_frame   0x00000e1c      0x15c ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+ .debug_frame   0x00000f78       0xa0 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
+ .debug_frame   0x00001018       0xb0 ./freertos/freertos-kernel/list.o
+ .debug_frame   0x000010c8      0x4b8 ./freertos/freertos-kernel/queue.o
+ .debug_frame   0x00001580      0x880 ./freertos/freertos-kernel/tasks.o
+ .debug_frame   0x00001e00      0x3c4 ./freertos/freertos-kernel/timers.o
+ .debug_frame   0x000021c4      0x2e8 ./drivers/fsl_clock.o
+ .debug_frame   0x000024ac      0x5f0 ./drivers/fsl_lpuart.o
+ .debug_frame   0x00002a9c       0x68 ./device/system_MCXC444.o
+ .debug_frame   0x00002b04      0x118 ./component/uart/fsl_adapter_lpuart.o
+ .debug_frame   0x00002c1c      0x230 ./component/serial_manager/fsl_component_serial_manager.o
+ .debug_frame   0x00002e4c       0xd0 ./component/serial_manager/fsl_component_serial_port_uart.o
+ .debug_frame   0x00002f1c       0x50 ./board/board.o
+ .debug_frame   0x00002f6c       0xc0 ./board/clock_config.o
+ .debug_frame   0x0000302c       0x48 ./board/peripherals.o
+ .debug_frame   0x00003074       0xdc ./board/pin_mux.o
+ .debug_frame   0x00003150       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
+ .debug_frame   0x00003178       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
+ .debug_frame   0x000031a0       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
+ .debug_frame   0x000031c8       0x9c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
+ .debug_frame   0x00003264       0x4c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
+ .debug_frame   0x000032b0       0x30 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
+ .debug_frame   0x000032e0       0x28 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
+ .debug_frame   0x00003308       0x48 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
+ .debug_frame   0x00003350       0x34 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
+ .debug_frame   0x00003384       0x2c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
+ .debug_frame   0x000033b0       0x34 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
+ .debug_frame   0x000033e4       0x30 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
+ .debug_frame   0x00003414       0x30 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
+ .debug_frame   0x00003444       0x34 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
+ .debug_frame   0x00003478       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
+ .debug_frame   0x00003498       0x44 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
+ .debug_frame   0x000034dc       0x2c /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
+ .debug_frame   0x00003508       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
+ .debug_frame   0x00003528       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
+ .debug_frame   0x00003548       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
+ .debug_frame   0x00003568       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
+ .debug_frame   0x00003588       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
+ .debug_frame   0x000035a8       0x20 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
 
 .debug_loc      0x00000000     0x1a8c
  .debug_loc     0x00000000      0x1de ./startup/startup_mcxc444.o
@@ -6487,8 +6483,6 @@ uxTaskResetEventItemValue                         ./freertos/freertos-kernel/tas
                                                   ./freertos/freertos-kernel/event_groups.o
 uxTimerGetReloadMode                              ./freertos/freertos-kernel/timers.o
 uxTimerGetTimerNumber                             ./freertos/freertos-kernel/timers.o
-vApplicationMallocFailedHook                      ./source/main.o
-vApplicationStackOverflowHook                     ./source/main.o
 vClearInterruptMask                               ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
                                                   ./freertos/freertos-kernel/tasks.o
                                                   ./freertos/freertos-kernel/stream_buffer.o

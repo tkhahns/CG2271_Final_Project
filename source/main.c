@@ -20,25 +20,31 @@
 #include "queue.h"
 #include "semphr.h"
 
+/* =========================================================
+   PIN DEFINITIONS
+   ========================================================= */
 
-#define RED_PIN                 30U    /* PTE30 */
-#define GREEN_PIN               5U     /* PTD5  */
-#define BLUE_PIN                29U    /* PTE29 */
+#define RED_PIN                 30    /* PTE30 */
+#define GREEN_PIN               5     /* PTD5  */
+#define BLUE_PIN                29    /* PTE29 */
 
 
-#define PHOTO_ADC_CH            8U     /* PTB0 = ADC0_SE8 */
-#define MIC_ADC_CH              9U     /* PTB1 = ADC0_SE9 */
+#define PHOTO_ADC_CH            8     /* PTB0 = ADC0_SE8 */
+#define MIC_ADC_CH              9     /* PTB1 = ADC0_SE9 */
 
 
-#define SW2_START_PIN           3U     /* PTC3 = SW2 */
-#define SW3_ACK_PIN             4U     /* PTA4 = SW3 */
+#define SW2_START_PIN           3     /* PTC3 = SW2 */
+#define SW3_ACK_PIN             4    /* PTA4 = SW3 */
 
 #define SW2_START_IRQ           PORTC_PORTD_IRQn
 #define SW3_ACK_IRQ             PORTA_IRQn
 
-#define MIC_P2P_THRESHOLD       9U
-#define DEBOUNCE_MS             200U
+#define MIC_P2P_THRESHOLD       9
+#define DEBOUNCE_MS             200
 
+/* =========================================================
+   TYPES
+   ========================================================= */
 
 typedef enum {
     RED, GREEN, BLUE
@@ -53,7 +59,9 @@ typedef struct {
     uint8_t p2pFlag;
 } SensorPacket;
 
-
+/* =========================================================
+   GLOBALS
+   ========================================================= */
 
 volatile uint16_t g_adcValue = 0;
 volatile bool g_adcDone = false;
@@ -75,7 +83,9 @@ QueueHandle_t sensorQueue;
 SemaphoreHandle_t buttonSema;
 SemaphoreHandle_t statusMutex;
 
-
+/* =========================================================
+   LED FUNCTIONS
+   ========================================================= */
 
 void initLEDs(void) {
     SIM->SCGC5 |= (SIM_SCGC5_PORTD_MASK | SIM_SCGC5_PORTE_MASK);
@@ -89,23 +99,23 @@ void initLEDs(void) {
     PORTD->PCR[GREEN_PIN] &= ~PORT_PCR_MUX_MASK;
     PORTD->PCR[GREEN_PIN] |= PORT_PCR_MUX(1);
 
-    GPIOE->PDDR |= ((1U << RED_PIN) | (1U << BLUE_PIN));
-    GPIOD->PDDR |= (1U << GREEN_PIN);
+    GPIOE->PDDR |= ((1 << RED_PIN) | (1 << BLUE_PIN));
+    GPIOD->PDDR |= (1 << GREEN_PIN);
 }
 
 void offLED(TLED led) {
     switch (led) {
-        case RED:   GPIOE->PSOR |= (1U << RED_PIN); break;
-        case GREEN: GPIOD->PSOR |= (1U << GREEN_PIN); break;
-        case BLUE:  GPIOE->PSOR |= (1U << BLUE_PIN); break;
+        case RED:   GPIOE->PSOR |= (1 << RED_PIN); break;
+        case GREEN: GPIOD->PSOR |= (1 << GREEN_PIN); break;
+        case BLUE:  GPIOE->PSOR |= (1 << BLUE_PIN); break;
     }
 }
 
 void onLED(TLED led) {
     switch (led) {
-        case RED:   GPIOE->PCOR |= (1U << RED_PIN); break;
-        case GREEN: GPIOD->PCOR |= (1U << GREEN_PIN); break;
-        case BLUE:  GPIOE->PCOR |= (1U << BLUE_PIN); break;
+        case RED:   GPIOE->PCOR |= (1 << RED_PIN); break;
+        case GREEN: GPIOD->PCOR |= (1 << GREEN_PIN); break;
+        case BLUE:  GPIOE->PCOR |= (1 << BLUE_PIN); break;
     }
 }
 
@@ -121,6 +131,9 @@ void setRGB(bool r, bool g, bool b) {
     if (b) onLED(BLUE); else offLED(BLUE);
 }
 
+/* =========================================================
+   ADC FUNCTIONS
+   ========================================================= */
 
 void initADCInputs(void) {
     NVIC_DisableIRQ(ADC0_IRQn);
@@ -128,22 +141,22 @@ void initADCInputs(void) {
     SIM->SCGC6 |= SIM_SCGC6_ADC0_MASK;
     SIM->SCGC5 |= SIM_SCGC5_PORTB_MASK;
 
-    /* PTB0 -> ADC0_SE8 */
+
     PORTB->PCR[0] &= ~PORT_PCR_MUX_MASK;
     PORTB->PCR[0] |= PORT_PCR_MUX(0);
 
-    /* PTB1 -> ADC0_SE9 */
+
     PORTB->PCR[1] &= ~PORT_PCR_MUX_MASK;
     PORTB->PCR[1] |= PORT_PCR_MUX(0);
 
-    /* Disable channel first */
+
     ADC0->SC1[0] = ADC_SC1_AIEN_MASK | ADC_SC1_ADCH(0x1F);
 
-    /* 12-bit single-ended */
+
     ADC0->CFG1 = 0;
     ADC0->CFG1 |= ADC_CFG1_MODE(0b01);
 
-    /* Software trigger */
+
     ADC0->SC2 = 0;
     ADC0->SC2 |= ADC_SC2_REFSEL(0b01);
 
@@ -188,6 +201,9 @@ void readMicWindow(uint16_t *micRaw, uint16_t *micMin, uint16_t *micMax, uint16_
     *micP2P = maxVal - minVal;
 }
 
+/* =========================================================
+   BUTTON IRQ SETUP
+   ========================================================= */
 
 void initButtonIRQs(void) {
     NVIC_DisableIRQ(SW2_START_IRQ);
@@ -196,27 +212,27 @@ void initButtonIRQs(void) {
     SIM->SCGC5 |= SIM_SCGC5_PORTC_MASK;
     SIM->SCGC5 |= SIM_SCGC5_PORTA_MASK;
 
-    /* SW2 = PTC3 = START */
+
     PORTC->PCR[SW2_START_PIN] &= ~PORT_PCR_MUX_MASK;
     PORTC->PCR[SW2_START_PIN] |= PORT_PCR_MUX(1);
-    GPIOC->PDDR &= ~(1U << SW2_START_PIN);
+    GPIOC->PDDR &= ~(1 << SW2_START_PIN);
     PORTC->PCR[SW2_START_PIN] |= PORT_PCR_PE_MASK;
     PORTC->PCR[SW2_START_PIN] |= PORT_PCR_PS_MASK;
     PORTC->PCR[SW2_START_PIN] &= ~PORT_PCR_IRQC_MASK;
-    PORTC->PCR[SW2_START_PIN] |= PORT_PCR_IRQC(0b1010);   /* falling edge */
+    PORTC->PCR[SW2_START_PIN] |= PORT_PCR_IRQC(0b1010);
 
-    /* SW3 = PTA4 = ACK */
+
     PORTA->PCR[SW3_ACK_PIN] &= ~PORT_PCR_MUX_MASK;
     PORTA->PCR[SW3_ACK_PIN] |= PORT_PCR_MUX(1);
-    GPIOA->PDDR &= ~(1U << SW3_ACK_PIN);
+    GPIOA->PDDR &= ~(1 << SW3_ACK_PIN);
     PORTA->PCR[SW3_ACK_PIN] |= PORT_PCR_PE_MASK;
     PORTA->PCR[SW3_ACK_PIN] |= PORT_PCR_PS_MASK;
     PORTA->PCR[SW3_ACK_PIN] &= ~PORT_PCR_IRQC_MASK;
-    PORTA->PCR[SW3_ACK_PIN] |= PORT_PCR_IRQC(0b1010);     /* falling edge */
+    PORTA->PCR[SW3_ACK_PIN] |= PORT_PCR_IRQC(0b1010);
 
-    /* Clear stale flags (FIXED: Using '=' instead of '|=') */
-    PORTC->ISFR = (1U << SW2_START_PIN);
-    PORTA->ISFR = (1U << SW3_ACK_PIN);
+
+    PORTC->ISFR |= (1 << SW2_START_PIN);
+    PORTA->ISFR |= (1 << SW3_ACK_PIN);
 
     NVIC_SetPriority(SW2_START_IRQ, 3);
     NVIC_ClearPendingIRQ(SW2_START_IRQ);
@@ -227,14 +243,13 @@ void initButtonIRQs(void) {
     NVIC_EnableIRQ(SW3_ACK_IRQ);
 }
 
-/* SW3 on PTA4 */
+
 void PORTA_IRQHandler(void) {
     BaseType_t hpw = pdFALSE;
     TickType_t now = xTaskGetTickCountFromISR();
 
-    if (PORTA->ISFR & (1U << SW3_ACK_PIN)) {
-        /* FIXED: Using '=' to clear w1c register */
-        PORTA->ISFR = (1U << SW3_ACK_PIN);
+    if (PORTA->ISFR & (1 << SW3_ACK_PIN)) {
+        PORTA->ISFR |= (1 << SW3_ACK_PIN);
 
         if ((now - g_lastSw3IsrTick) >= pdMS_TO_TICKS(DEBOUNCE_MS)) {
             g_lastSw3IsrTick = now;
@@ -246,14 +261,12 @@ void PORTA_IRQHandler(void) {
     portYIELD_FROM_ISR(hpw);
 }
 
-/* SW2 on PTC3 */
 void PORTC_PORTD_IRQHandler(void) {
     BaseType_t hpw = pdFALSE;
     TickType_t now = xTaskGetTickCountFromISR();
 
-    if (PORTC->ISFR & (1U << SW2_START_PIN)) {
-        /* FIXED: Using '=' to clear w1c register */
-        PORTC->ISFR = (1U << SW2_START_PIN);
+    if (PORTC->ISFR & (1 << SW2_START_PIN)) {
+        PORTC->ISFR |= (1 << SW2_START_PIN);
 
         if ((now - g_lastSw2IsrTick) >= pdMS_TO_TICKS(DEBOUNCE_MS)) {
             g_lastSw2IsrTick = now;
@@ -265,7 +278,9 @@ void PORTC_PORTD_IRQHandler(void) {
     portYIELD_FROM_ISR(hpw);
 }
 
-
+/* =========================================================
+   TASKS
+   ========================================================= */
 
 static void sensorTask(void *p) {
     (void)p;
@@ -285,7 +300,7 @@ static void sensorTask(void *p) {
         if (started) {
             pkt.lightRaw = readADCChannel(PHOTO_ADC_CH);
             readMicWindow(&pkt.micRaw, &pkt.micMin, &pkt.micMax, &pkt.micP2P);
-            pkt.p2pFlag = (pkt.micP2P > MIC_P2P_THRESHOLD) ? 1U : 0U;
+            pkt.p2pFlag = (pkt.micP2P > MIC_P2P_THRESHOLD) ? 1 : 0;
 
             xQueueOverwrite(sensorQueue, &pkt);
         }
@@ -296,8 +311,6 @@ static void sensorTask(void *p) {
 
 static void buttonTask(void *p) {
     (void)p;
-
-    initButtonIRQs();
 
     while (1) {
         if (xSemaphoreTake(buttonSema, portMAX_DELAY) == pdTRUE) {
@@ -352,9 +365,9 @@ static void alertTask(void *p) {
                     }
 
                     if (g_alertLatched) {
-                        setRGB(true, false, false);   /* red */
+                        setRGB(true, false, false);
                     } else {
-                        setRGB(false, true, false);   /* green */
+                        setRGB(false, true, false);
                     }
                 }
 
@@ -366,9 +379,9 @@ static void alertTask(void *p) {
                     g_alertLatched = false;
                     offAllLEDs();
                 } else if (g_alertLatched) {
-                    setRGB(true, false, false);       /* red */
+                    setRGB(true, false, false);
                 } else {
-                    setRGB(false, true, false);       /* green */
+                    setRGB(false, true, false);
                 }
                 xSemaphoreGive(statusMutex);
             }
@@ -404,8 +417,8 @@ static void printTask(void *p) {
         }
 
         PRINTF("STARTED=%u | ALERT=%u | LIGHT_ADC=%u | MIC_RAW=%u | MIC_MIN=%u | MIC_MAX=%u | MIC_P2P=%u | P2P_FLAG=%u\r\n",
-               started ? 1U : 0U,
-               alert ? 1U : 0U,
+               started ? 1 : 0,
+               alert ? 1 : 0,
                pkt.lightRaw,
                pkt.micRaw,
                pkt.micMin,
@@ -417,6 +430,9 @@ static void printTask(void *p) {
     }
 }
 
+/* =========================================================
+   MAIN
+   ========================================================= */
 
 int main(void) {
     BOARD_InitBootPins();
@@ -441,6 +457,7 @@ int main(void) {
         }
     }
 
+    initButtonIRQs();
 
     xTaskCreate(sensorTask, "sensor_task",
                 configMINIMAL_STACK_SIZE + 250, NULL, 2, NULL);
@@ -452,7 +469,7 @@ int main(void) {
                 configMINIMAL_STACK_SIZE + 200, NULL, 2, NULL);
 
     xTaskCreate(printTask, "print_task",
-                configMINIMAL_STACK_SIZE + 350, NULL, 1, NULL);
+                configMINIMAL_STACK_SIZE + 250, NULL, 1, NULL);
 
     vTaskStartScheduler();
 
@@ -461,26 +478,4 @@ int main(void) {
     }
 
     return 0;
-}
-
-
-
-void vApplicationMallocFailedHook(void) {
-    /* Trap if RTOS runs out of heap memory */
-    taskDISABLE_INTERRUPTS();
-    setRGB(true, false, false); /* Turn on RED LED */
-    while (1) {
-        __asm volatile ("nop");
-    }
-}
-
-void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName) {
-    /* Trap if a specific task overflows its stack */
-    (void) pcTaskName;
-    (void) pxTask;
-    taskDISABLE_INTERRUPTS();
-    setRGB(true, false, false); /* Turn on RED LED */
-    while (1) {
-        __asm volatile ("nop");
-    }
 }
