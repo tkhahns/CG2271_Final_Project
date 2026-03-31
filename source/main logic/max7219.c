@@ -48,43 +48,43 @@
 /* Configuration                                                        */
 /* ================================================================== */
 
-#define NUM_MOD     MAX7219_NUM_MODULES      // 4
-#define DIGS_PER    MAX7219_DIGITS_PER_MOD   // 8
+#define NUM_MOD     MAX7219_NUM_MODULES      /* 4 */
+#define DIGS_PER    MAX7219_DIGITS_PER_MOD   /* 8 */
 
 /* SPI0 / GPIO pin numbers on Port D */
-#define PIN_CS      0   /* PTD0  GPIO output */
-#define PIN_SCK     1   /* PTD1  ALT2 = SPI0_SCK  */
-#define PIN_MOSI    2   /* PTD2  ALT2 = SPI0_MOSI */
+#define PIN_CS      0U   /* PTD0  GPIO output */
+#define PIN_SCK     1U   /* PTD1  ALT2 = SPI0_SCK  */
+#define PIN_MOSI    2U   /* PTD2  ALT2 = SPI0_MOSI */
 
 /* ================================================================== */
 /* MAX7219 register addresses                                           */
 /* ================================================================== */
 
-#define REG_NOOP         0x00
-#define REG_DIGIT(n)     ((uint8_t)(n))
-#define REG_DECODE_MODE  0x09
-#define REG_INTENSITY    0x0A
-#define REG_SCAN_LIMIT   0x0B
-#define REG_SHUTDOWN     0x0C
-#define REG_DISP_TEST    0x0F
+#define REG_NOOP         0x00U
+#define REG_DIGIT(n)     ((uint8_t)(n))   /* 0x01..0x08 */
+#define REG_DECODE_MODE  0x09U
+#define REG_INTENSITY    0x0AU
+#define REG_SCAN_LIMIT   0x0BU
+#define REG_SHUTDOWN     0x0CU
+#define REG_DISP_TEST    0x0FU
 
 /* Decode mode: lower nibble = digits 1..4 decoded (Code-B),
  * upper nibble = digits 5..8 raw.  0x0F = 0b00001111             */
-#define DECODE_LOWER_ONLY  0x0F
-#define DECODE_ALL         0xFF
-#define DECODE_NONE        0x00
+#define DECODE_LOWER_ONLY  0x0FU
+#define DECODE_ALL         0xFFU
+#define DECODE_NONE        0x00U
 
 /* ================================================================== */
 /* Code-B special codes (used in value digits 1..4)                   */
 /* ================================================================== */
 
-#define CB_DASH   0x0A
-#define CB_E      0x0B
-#define CB_H      0x0C
-#define CB_L      0x0D
-#define CB_P      0x0E
-#define CB_BLANK  0x0F
-
+#define CB_DASH   0x0AU
+#define CB_E      0x0BU
+#define CB_H      0x0CU
+#define CB_L      0x0DU
+#define CB_P      0x0EU
+#define CB_BLANK  0x0FU
+/* 0x00..0x09 = digits 0-9 directly */
 
 /* ================================================================== */
 /* Raw 7-segment codes for label characters                            */
@@ -96,27 +96,27 @@
 /* ================================================================== */
 
 /*  Character   gfedcba  hex  */
-#define SEG_A   0x77   /* 0111 0111 */
-#define SEG_C   0x39   /* 0011 1001 */
-#define SEG_E   0x79   /* 0111 1001 */
-#define SEG_F   0x71   /* 0111 0001 */
-#define SEG_G   0x3D   /* 0011 1101 - looks like 6 without top-right */
-#define SEG_H   0x76   /* 0111 0110 */
-#define SEG_I   0x06   /* 0000 0110 - two right segments */
-#define SEG_K   0x76   /* reuse H (no true K on 7-seg) */
-#define SEG_L   0x38   /* 0011 1000 */
-#define SEG_M   0x37   /* approximate - 7-seg cannot do M well */
-#define SEG_N   0x54   /* 0101 0100 - small n */
-#define SEG_O   0x3F   /* 0011 1111 - same as 0 */
-#define SEG_P   0x73   /* 0111 0011 */
-#define SEG_R   0x50   /* 0101 0000 - small r */
-#define SEG_S   0x6D   /* 0110 1101 - same as 5 */
-#define SEG_T   0x78   /* 0111 1000 */
-#define SEG_U   0x3E   /* 0011 1110 */
-#define SEG_Y   0x6E   /* 0110 1110 */
-#define SEG_COLON  0x00  /* no colon on 7-seg; leave blank, separator handled by layout */
-#define SEG_DASH   0x40  /* 0100 0000 - middle segment only */
-#define SEG_BLANK  0x00  /* all off */
+#define SEG_A   0x77U   /* 0111 0111 */
+#define SEG_C   0x39U   /* 0011 1001 */
+#define SEG_E   0x79U   /* 0111 1001 */
+#define SEG_F   0x71U   /* 0111 0001 */
+#define SEG_G   0x3DU   /* 0011 1101 - looks like 6 without top-right */
+#define SEG_H   0x76U   /* 0111 0110 */
+#define SEG_I   0x06U   /* 0000 0110 - two right segments */
+#define SEG_K   0x76U   /* reuse H (no true K on 7-seg) */
+#define SEG_L   0x38U   /* 0011 1000 */
+#define SEG_M   0x37U   /* approximate - 7-seg cannot do M well */
+#define SEG_N   0x54U   /* 0101 0100 - small n */
+#define SEG_O   0x3FU   /* 0011 1111 - same as 0 */
+#define SEG_P   0x73U   /* 0111 0011 */
+#define SEG_R   0x50U   /* 0101 0000 - small r */
+#define SEG_S   0x6DU   /* 0110 1101 - same as 5 */
+#define SEG_T   0x78U   /* 0111 1000 */
+#define SEG_U   0x3EU   /* 0011 1110 */
+#define SEG_Y   0x6EU   /* 0110 1110 */
+#define SEG_COLON  0x00U  /* no colon on 7-seg; leave blank, separator handled by layout */
+#define SEG_DASH   0x40U  /* 0100 0000 - middle segment only */
+#define SEG_BLANK  0x00U  /* all off */
 
 /* ================================================================== */
 /* CS / SPI helpers                                                     */

@@ -1,9 +1,9 @@
-#include "tasks.h"
-#include "app_types.h"
-#include "adc.h"
-#include "led.h"
-#include "buttons.h"
-#include "max7219.h"
+#include <main logic/adc.h>
+#include <main logic/app_types.h>
+#include <main logic/buttons.h>
+#include <main logic/led.h>
+#include <main logic/max7219.h>
+#include <main logic/tasks.h>
 #include "fsl_debug_console.h"
 
 #include "FreeRTOS.h"

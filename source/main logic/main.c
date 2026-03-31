@@ -5,6 +5,11 @@
  *
  */
 
+#include <main logic/adc.h>
+#include <main logic/app_types.h>
+#include <main logic/led.h>
+#include <main logic/max7219.h>
+#include <main logic/tasks.h>
 #include "board.h"
 #include "peripherals.h"
 #include "pin_mux.h"
@@ -16,11 +21,6 @@
 #include "queue.h"
 #include "semphr.h"
 
-#include "app_types.h"
-#include "led.h"
-#include "adc.h"
-#include "max7219.h"
-#include "tasks.h"
 
 /* ------------------------------------------------------------------ */
 /* Shared FreeRTOS objects (declared extern in app_types.h)            */

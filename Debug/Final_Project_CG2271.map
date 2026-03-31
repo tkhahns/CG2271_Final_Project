@@ -488,776 +488,778 @@ Discarded input sections
  .data          0x00000000        0x0 ./startup/startup_mcxc444.o
  .bss           0x00000000        0x0 ./startup/startup_mcxc444.o
  .debug_macro   0x00000000      0xaf0 ./startup/startup_mcxc444.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/adc.o
- .text          0x00000000        0x0 ./source/headers/adc.o
- .data          0x00000000        0x0 ./source/headers/adc.o
- .bss           0x00000000        0x0 ./source/headers/adc.o
- .debug_macro   0x00000000      0xaf0 ./source/headers/adc.o
- .debug_macro   0x00000000       0x10 ./source/headers/adc.o
- .debug_macro   0x00000000      0x12e ./source/headers/adc.o
- .debug_macro   0x00000000      0x5b3 ./source/headers/adc.o
- .debug_macro   0x00000000       0x3e ./source/headers/adc.o
- .debug_macro   0x00000000       0x2e ./source/headers/adc.o
- .debug_macro   0x00000000       0x10 ./source/headers/adc.o
- .debug_macro   0x00000000       0x2e ./source/headers/adc.o
- .debug_macro   0x00000000       0xb4 ./source/headers/adc.o
- .debug_macro   0x00000000       0x28 ./source/headers/adc.o
- .debug_macro   0x00000000      0x3bc ./source/headers/adc.o
- .debug_macro   0x00000000       0x3a ./source/headers/adc.o
- .debug_macro   0x00000000     0x124f ./source/headers/adc.o
- .debug_macro   0x00000000      0x846 ./source/headers/adc.o
- .debug_macro   0x00000000      0x3c1 ./source/headers/adc.o
- .debug_macro   0x00000000      0x1ed ./source/headers/adc.o
- .debug_macro   0x00000000      0x16e ./source/headers/adc.o
- .debug_macro   0x00000000      0x247 ./source/headers/adc.o
- .debug_macro   0x00000000       0x4e ./source/headers/adc.o
- .debug_macro   0x00000000       0x88 ./source/headers/adc.o
- .debug_macro   0x00000000      0x41b ./source/headers/adc.o
- .debug_macro   0x00000000      0x280 ./source/headers/adc.o
- .debug_macro   0x00000000       0x88 ./source/headers/adc.o
- .debug_macro   0x00000000      0x3bb ./source/headers/adc.o
- .debug_macro   0x00000000      0x691 ./source/headers/adc.o
- .debug_macro   0x00000000     0x31e6 ./source/headers/adc.o
- .debug_macro   0x00000000      0x478 ./source/headers/adc.o
- .debug_macro   0x00000000      0x105 ./source/headers/adc.o
- .debug_macro   0x00000000      0x631 ./source/headers/adc.o
- .debug_macro   0x00000000      0x199 ./source/headers/adc.o
- .debug_macro   0x00000000      0x11b ./source/headers/adc.o
- .debug_macro   0x00000000      0x2da ./source/headers/adc.o
- .debug_macro   0x00000000      0x20e ./source/headers/adc.o
- .debug_macro   0x00000000      0x1ed ./source/headers/adc.o
- .debug_macro   0x00000000       0x86 ./source/headers/adc.o
- .debug_macro   0x00000000       0xfe ./source/headers/adc.o
- .debug_macro   0x00000000      0x119 ./source/headers/adc.o
- .debug_macro   0x00000000      0x121 ./source/headers/adc.o
- .debug_macro   0x00000000      0x1ed ./source/headers/adc.o
- .debug_macro   0x00000000       0x63 ./source/headers/adc.o
- .debug_macro   0x00000000      0x112 ./source/headers/adc.o
- .debug_macro   0x00000000      0x295 ./source/headers/adc.o
- .debug_macro   0x00000000      0x6c4 ./source/headers/adc.o
- .debug_macro   0x00000000       0xdb ./source/headers/adc.o
- .debug_macro   0x00000000      0x3a6 ./source/headers/adc.o
- .debug_macro   0x00000000      0x366 ./source/headers/adc.o
- .debug_macro   0x00000000      0x703 ./source/headers/adc.o
- .debug_macro   0x00000000      0x5d5 ./source/headers/adc.o
- .debug_macro   0x00000000       0x9b ./source/headers/adc.o
- .debug_macro   0x00000000       0x22 ./source/headers/adc.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/buttons.o
- .text          0x00000000        0x0 ./source/headers/buttons.o
- .data          0x00000000        0x0 ./source/headers/buttons.o
- .bss           0x00000000        0x0 ./source/headers/buttons.o
- .debug_macro   0x00000000      0xaf0 ./source/headers/buttons.o
- .debug_macro   0x00000000       0x22 ./source/headers/buttons.o
- .debug_macro   0x00000000       0x10 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x12e ./source/headers/buttons.o
- .debug_macro   0x00000000      0x5b3 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x180 ./source/headers/buttons.o
- .debug_macro   0x00000000       0x1c ./source/headers/buttons.o
- .debug_macro   0x00000000       0x1c ./source/headers/buttons.o
- .debug_macro   0x00000000      0x182 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x267 ./source/headers/buttons.o
- .debug_macro   0x00000000       0x22 ./source/headers/buttons.o
- .debug_macro   0x00000000       0x1f ./source/headers/buttons.o
- .debug_macro   0x00000000       0x12 ./source/headers/buttons.o
- .debug_macro   0x00000000     0x102c ./source/headers/buttons.o
- .debug_macro   0x00000000       0xc3 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x14f ./source/headers/buttons.o
- .debug_macro   0x00000000       0x80 ./source/headers/buttons.o
- .debug_macro   0x00000000       0x77 ./source/headers/buttons.o
- .debug_macro   0x00000000       0x3e ./source/headers/buttons.o
- .debug_macro   0x00000000       0x2e ./source/headers/buttons.o
- .debug_macro   0x00000000       0x10 ./source/headers/buttons.o
- .debug_macro   0x00000000       0x2e ./source/headers/buttons.o
- .debug_macro   0x00000000       0xb4 ./source/headers/buttons.o
- .debug_macro   0x00000000       0x28 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x3bc ./source/headers/buttons.o
- .debug_macro   0x00000000       0x3a ./source/headers/buttons.o
- .debug_macro   0x00000000     0x124f ./source/headers/buttons.o
- .debug_macro   0x00000000      0x846 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x3c1 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x1ed ./source/headers/buttons.o
- .debug_macro   0x00000000      0x16e ./source/headers/buttons.o
- .debug_macro   0x00000000      0x247 ./source/headers/buttons.o
- .debug_macro   0x00000000       0x4e ./source/headers/buttons.o
- .debug_macro   0x00000000       0x88 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x41b ./source/headers/buttons.o
- .debug_macro   0x00000000      0x280 ./source/headers/buttons.o
- .debug_macro   0x00000000       0x88 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x3bb ./source/headers/buttons.o
- .debug_macro   0x00000000      0x691 ./source/headers/buttons.o
- .debug_macro   0x00000000     0x31e6 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x478 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x105 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x631 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x199 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x11b ./source/headers/buttons.o
- .debug_macro   0x00000000      0x2da ./source/headers/buttons.o
- .debug_macro   0x00000000      0x20e ./source/headers/buttons.o
- .debug_macro   0x00000000      0x1ed ./source/headers/buttons.o
- .debug_macro   0x00000000       0x86 ./source/headers/buttons.o
- .debug_macro   0x00000000       0xfe ./source/headers/buttons.o
- .debug_macro   0x00000000      0x119 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x121 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x1ed ./source/headers/buttons.o
- .debug_macro   0x00000000       0x63 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x112 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x295 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x6c4 ./source/headers/buttons.o
- .debug_macro   0x00000000       0xdb ./source/headers/buttons.o
- .debug_macro   0x00000000      0x3a6 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x366 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x703 ./source/headers/buttons.o
- .debug_macro   0x00000000      0x5d5 ./source/headers/buttons.o
- .debug_macro   0x00000000       0x9b ./source/headers/buttons.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/led.o
- .text          0x00000000        0x0 ./source/headers/led.o
- .data          0x00000000        0x0 ./source/headers/led.o
- .bss           0x00000000        0x0 ./source/headers/led.o
- .debug_macro   0x00000000      0xaf0 ./source/headers/led.o
- .debug_macro   0x00000000       0x22 ./source/headers/led.o
- .debug_macro   0x00000000       0x3e ./source/headers/led.o
- .debug_macro   0x00000000       0x10 ./source/headers/led.o
- .debug_macro   0x00000000      0x12e ./source/headers/led.o
- .debug_macro   0x00000000      0x5b3 ./source/headers/led.o
- .debug_macro   0x00000000       0x2e ./source/headers/led.o
- .debug_macro   0x00000000       0x10 ./source/headers/led.o
- .debug_macro   0x00000000       0x2e ./source/headers/led.o
- .debug_macro   0x00000000       0xb4 ./source/headers/led.o
- .debug_macro   0x00000000       0x28 ./source/headers/led.o
- .debug_macro   0x00000000      0x3bc ./source/headers/led.o
- .debug_macro   0x00000000       0x3a ./source/headers/led.o
- .debug_macro   0x00000000     0x124f ./source/headers/led.o
- .debug_macro   0x00000000      0x846 ./source/headers/led.o
- .debug_macro   0x00000000      0x3c1 ./source/headers/led.o
- .debug_macro   0x00000000      0x1ed ./source/headers/led.o
- .debug_macro   0x00000000      0x16e ./source/headers/led.o
- .debug_macro   0x00000000      0x247 ./source/headers/led.o
- .debug_macro   0x00000000       0x4e ./source/headers/led.o
- .debug_macro   0x00000000       0x88 ./source/headers/led.o
- .debug_macro   0x00000000      0x41b ./source/headers/led.o
- .debug_macro   0x00000000      0x280 ./source/headers/led.o
- .debug_macro   0x00000000       0x88 ./source/headers/led.o
- .debug_macro   0x00000000      0x3bb ./source/headers/led.o
- .debug_macro   0x00000000      0x691 ./source/headers/led.o
- .debug_macro   0x00000000     0x31e6 ./source/headers/led.o
- .debug_macro   0x00000000      0x478 ./source/headers/led.o
- .debug_macro   0x00000000      0x105 ./source/headers/led.o
- .debug_macro   0x00000000      0x631 ./source/headers/led.o
- .debug_macro   0x00000000      0x199 ./source/headers/led.o
- .debug_macro   0x00000000      0x11b ./source/headers/led.o
- .debug_macro   0x00000000      0x2da ./source/headers/led.o
- .debug_macro   0x00000000      0x20e ./source/headers/led.o
- .debug_macro   0x00000000      0x1ed ./source/headers/led.o
- .debug_macro   0x00000000       0x86 ./source/headers/led.o
- .debug_macro   0x00000000       0xfe ./source/headers/led.o
- .debug_macro   0x00000000      0x119 ./source/headers/led.o
- .debug_macro   0x00000000      0x121 ./source/headers/led.o
- .debug_macro   0x00000000      0x1ed ./source/headers/led.o
- .debug_macro   0x00000000       0x63 ./source/headers/led.o
- .debug_macro   0x00000000      0x112 ./source/headers/led.o
- .debug_macro   0x00000000      0x295 ./source/headers/led.o
- .debug_macro   0x00000000      0x6c4 ./source/headers/led.o
- .debug_macro   0x00000000       0xdb ./source/headers/led.o
- .debug_macro   0x00000000      0x3a6 ./source/headers/led.o
- .debug_macro   0x00000000      0x366 ./source/headers/led.o
- .debug_macro   0x00000000      0x703 ./source/headers/led.o
- .debug_macro   0x00000000      0x5d5 ./source/headers/led.o
- .debug_macro   0x00000000       0x9b ./source/headers/led.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/main.o
- .text          0x00000000        0x0 ./source/headers/main.o
- .data          0x00000000        0x0 ./source/headers/main.o
- .bss           0x00000000        0x0 ./source/headers/main.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/adc.o
+ .text          0x00000000        0x0 ./source/main logic/adc.o
+ .data          0x00000000        0x0 ./source/main logic/adc.o
+ .bss           0x00000000        0x0 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0xaf0 ./source/main logic/adc.o
+ .debug_macro   0x00000000       0x10 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x12e ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x5b3 ./source/main logic/adc.o
+ .debug_macro   0x00000000       0x3e ./source/main logic/adc.o
+ .debug_macro   0x00000000       0x2e ./source/main logic/adc.o
+ .debug_macro   0x00000000       0x10 ./source/main logic/adc.o
+ .debug_macro   0x00000000       0x2e ./source/main logic/adc.o
+ .debug_macro   0x00000000       0xb4 ./source/main logic/adc.o
+ .debug_macro   0x00000000       0x28 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x3bc ./source/main logic/adc.o
+ .debug_macro   0x00000000       0x3a ./source/main logic/adc.o
+ .debug_macro   0x00000000     0x124f ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x846 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x3c1 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x16e ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x247 ./source/main logic/adc.o
+ .debug_macro   0x00000000       0x4e ./source/main logic/adc.o
+ .debug_macro   0x00000000       0x88 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x41b ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x280 ./source/main logic/adc.o
+ .debug_macro   0x00000000       0x88 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x3bb ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x691 ./source/main logic/adc.o
+ .debug_macro   0x00000000     0x31e6 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x478 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x105 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x631 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x199 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x11b ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x2da ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x20e ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/adc.o
+ .debug_macro   0x00000000       0x86 ./source/main logic/adc.o
+ .debug_macro   0x00000000       0xfe ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x119 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x121 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/adc.o
+ .debug_macro   0x00000000       0x63 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x112 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x295 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x6c4 ./source/main logic/adc.o
+ .debug_macro   0x00000000       0xdb ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x3a6 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x366 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x703 ./source/main logic/adc.o
+ .debug_macro   0x00000000      0x5d5 ./source/main logic/adc.o
+ .debug_macro   0x00000000       0x9b ./source/main logic/adc.o
+ .debug_macro   0x00000000       0x22 ./source/main logic/adc.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/buttons.o
+ .text          0x00000000        0x0 ./source/main logic/buttons.o
+ .data          0x00000000        0x0 ./source/main logic/buttons.o
+ .bss           0x00000000        0x0 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0xaf0 ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x22 ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x10 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x12e ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x5b3 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x180 ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x1c ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x1c ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x182 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x267 ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x22 ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x1f ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x12 ./source/main logic/buttons.o
+ .debug_macro   0x00000000     0x102c ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0xc3 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x14f ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x80 ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x77 ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x3e ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x2e ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x10 ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x2e ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0xb4 ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x28 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x3bc ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x3a ./source/main logic/buttons.o
+ .debug_macro   0x00000000     0x124f ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x846 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x3c1 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x16e ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x247 ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x4e ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x88 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x41b ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x280 ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x88 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x3bb ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x691 ./source/main logic/buttons.o
+ .debug_macro   0x00000000     0x31e6 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x478 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x105 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x631 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x199 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x11b ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x2da ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x20e ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x86 ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0xfe ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x119 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x121 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x63 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x112 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x295 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x6c4 ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0xdb ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x3a6 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x366 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x703 ./source/main logic/buttons.o
+ .debug_macro   0x00000000      0x5d5 ./source/main logic/buttons.o
+ .debug_macro   0x00000000       0x9b ./source/main logic/buttons.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/led.o
+ .text          0x00000000        0x0 ./source/main logic/led.o
+ .data          0x00000000        0x0 ./source/main logic/led.o
+ .bss           0x00000000        0x0 ./source/main logic/led.o
+ .debug_macro   0x00000000      0xaf0 ./source/main logic/led.o
+ .debug_macro   0x00000000       0x22 ./source/main logic/led.o
+ .debug_macro   0x00000000       0x3e ./source/main logic/led.o
+ .debug_macro   0x00000000       0x10 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x12e ./source/main logic/led.o
+ .debug_macro   0x00000000      0x5b3 ./source/main logic/led.o
+ .debug_macro   0x00000000       0x2e ./source/main logic/led.o
+ .debug_macro   0x00000000       0x10 ./source/main logic/led.o
+ .debug_macro   0x00000000       0x2e ./source/main logic/led.o
+ .debug_macro   0x00000000       0xb4 ./source/main logic/led.o
+ .debug_macro   0x00000000       0x28 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x3bc ./source/main logic/led.o
+ .debug_macro   0x00000000       0x3a ./source/main logic/led.o
+ .debug_macro   0x00000000     0x124f ./source/main logic/led.o
+ .debug_macro   0x00000000      0x846 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x3c1 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/led.o
+ .debug_macro   0x00000000      0x16e ./source/main logic/led.o
+ .debug_macro   0x00000000      0x247 ./source/main logic/led.o
+ .debug_macro   0x00000000       0x4e ./source/main logic/led.o
+ .debug_macro   0x00000000       0x88 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x41b ./source/main logic/led.o
+ .debug_macro   0x00000000      0x280 ./source/main logic/led.o
+ .debug_macro   0x00000000       0x88 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x3bb ./source/main logic/led.o
+ .debug_macro   0x00000000      0x691 ./source/main logic/led.o
+ .debug_macro   0x00000000     0x31e6 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x478 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x105 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x631 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x199 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x11b ./source/main logic/led.o
+ .debug_macro   0x00000000      0x2da ./source/main logic/led.o
+ .debug_macro   0x00000000      0x20e ./source/main logic/led.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/led.o
+ .debug_macro   0x00000000       0x86 ./source/main logic/led.o
+ .debug_macro   0x00000000       0xfe ./source/main logic/led.o
+ .debug_macro   0x00000000      0x119 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x121 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/led.o
+ .debug_macro   0x00000000       0x63 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x112 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x295 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x6c4 ./source/main logic/led.o
+ .debug_macro   0x00000000       0xdb ./source/main logic/led.o
+ .debug_macro   0x00000000      0x3a6 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x366 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x703 ./source/main logic/led.o
+ .debug_macro   0x00000000      0x5d5 ./source/main logic/led.o
+ .debug_macro   0x00000000       0x9b ./source/main logic/led.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/main.o
+ .text          0x00000000        0x0 ./source/main logic/main.o
+ .data          0x00000000        0x0 ./source/main logic/main.o
+ .bss           0x00000000        0x0 ./source/main logic/main.o
  .text.vApplicationMallocFailedHook
-                0x00000000       0x14 ./source/headers/main.o
+                0x00000000       0x14 ./source/main logic/main.o
  .text.vApplicationStackOverflowHook
-                0x00000000       0x1a ./source/headers/main.o
- .debug_macro   0x00000000      0xaf0 ./source/headers/main.o
- .debug_macro   0x00000000       0x10 ./source/headers/main.o
- .debug_macro   0x00000000       0x1c ./source/headers/main.o
- .debug_macro   0x00000000       0x22 ./source/headers/main.o
- .debug_macro   0x00000000      0x12e ./source/headers/main.o
- .debug_macro   0x00000000      0x5b3 ./source/headers/main.o
- .debug_macro   0x00000000       0x22 ./source/headers/main.o
- .debug_macro   0x00000000       0x3e ./source/headers/main.o
- .debug_macro   0x00000000       0x2e ./source/headers/main.o
- .debug_macro   0x00000000       0x10 ./source/headers/main.o
- .debug_macro   0x00000000       0x2e ./source/headers/main.o
- .debug_macro   0x00000000       0xb4 ./source/headers/main.o
- .debug_macro   0x00000000       0x28 ./source/headers/main.o
- .debug_macro   0x00000000      0x3bc ./source/headers/main.o
- .debug_macro   0x00000000       0x3a ./source/headers/main.o
- .debug_macro   0x00000000     0x124f ./source/headers/main.o
- .debug_macro   0x00000000      0x846 ./source/headers/main.o
- .debug_macro   0x00000000      0x3c1 ./source/headers/main.o
- .debug_macro   0x00000000      0x1ed ./source/headers/main.o
- .debug_macro   0x00000000      0x16e ./source/headers/main.o
- .debug_macro   0x00000000      0x247 ./source/headers/main.o
- .debug_macro   0x00000000       0x4e ./source/headers/main.o
- .debug_macro   0x00000000       0x88 ./source/headers/main.o
- .debug_macro   0x00000000      0x41b ./source/headers/main.o
- .debug_macro   0x00000000      0x280 ./source/headers/main.o
- .debug_macro   0x00000000       0x88 ./source/headers/main.o
- .debug_macro   0x00000000      0x3bb ./source/headers/main.o
- .debug_macro   0x00000000      0x691 ./source/headers/main.o
- .debug_macro   0x00000000     0x31e6 ./source/headers/main.o
- .debug_macro   0x00000000      0x478 ./source/headers/main.o
- .debug_macro   0x00000000      0x105 ./source/headers/main.o
- .debug_macro   0x00000000      0x631 ./source/headers/main.o
- .debug_macro   0x00000000      0x199 ./source/headers/main.o
- .debug_macro   0x00000000      0x11b ./source/headers/main.o
- .debug_macro   0x00000000      0x2da ./source/headers/main.o
- .debug_macro   0x00000000      0x20e ./source/headers/main.o
- .debug_macro   0x00000000      0x1ed ./source/headers/main.o
- .debug_macro   0x00000000       0x86 ./source/headers/main.o
- .debug_macro   0x00000000       0xfe ./source/headers/main.o
- .debug_macro   0x00000000      0x119 ./source/headers/main.o
- .debug_macro   0x00000000      0x121 ./source/headers/main.o
- .debug_macro   0x00000000      0x1ed ./source/headers/main.o
- .debug_macro   0x00000000       0x63 ./source/headers/main.o
- .debug_macro   0x00000000      0x112 ./source/headers/main.o
- .debug_macro   0x00000000      0x295 ./source/headers/main.o
- .debug_macro   0x00000000      0x6c4 ./source/headers/main.o
- .debug_macro   0x00000000       0xdb ./source/headers/main.o
- .debug_macro   0x00000000      0x3a6 ./source/headers/main.o
- .debug_macro   0x00000000      0x366 ./source/headers/main.o
- .debug_macro   0x00000000      0x703 ./source/headers/main.o
- .debug_macro   0x00000000      0x5d5 ./source/headers/main.o
- .debug_macro   0x00000000       0x9b ./source/headers/main.o
- .debug_macro   0x00000000       0x88 ./source/headers/main.o
- .debug_macro   0x00000000       0xce ./source/headers/main.o
- .debug_macro   0x00000000       0xfb ./source/headers/main.o
- .debug_macro   0x00000000       0x1c ./source/headers/main.o
- .debug_macro   0x00000000       0x70 ./source/headers/main.o
- .debug_macro   0x00000000       0x1c ./source/headers/main.o
- .debug_macro   0x00000000      0x180 ./source/headers/main.o
- .debug_macro   0x00000000       0x1c ./source/headers/main.o
- .debug_macro   0x00000000       0x1c ./source/headers/main.o
- .debug_macro   0x00000000      0x182 ./source/headers/main.o
- .debug_macro   0x00000000      0x267 ./source/headers/main.o
- .debug_macro   0x00000000       0x22 ./source/headers/main.o
- .debug_macro   0x00000000       0x1f ./source/headers/main.o
- .debug_macro   0x00000000       0x12 ./source/headers/main.o
- .debug_macro   0x00000000     0x102c ./source/headers/main.o
- .debug_macro   0x00000000       0x41 ./source/headers/main.o
- .debug_macro   0x00000000       0x16 ./source/headers/main.o
- .debug_macro   0x00000000       0x6d ./source/headers/main.o
- .debug_macro   0x00000000       0x1c ./source/headers/main.o
- .debug_macro   0x00000000       0x1c ./source/headers/main.o
- .debug_macro   0x00000000       0xc3 ./source/headers/main.o
- .debug_macro   0x00000000      0x14f ./source/headers/main.o
- .debug_macro   0x00000000       0x80 ./source/headers/main.o
- .debug_macro   0x00000000       0x77 ./source/headers/main.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/max7219.o
- .text          0x00000000        0x0 ./source/headers/max7219.o
- .data          0x00000000        0x0 ./source/headers/max7219.o
- .bss           0x00000000        0x0 ./source/headers/max7219.o
+                0x00000000       0x1a ./source/main logic/main.o
+ .debug_macro   0x00000000      0xaf0 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x10 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x12e ./source/main logic/main.o
+ .debug_macro   0x00000000      0x5b3 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x10 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x22 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x16 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x16 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x180 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x1c ./source/main logic/main.o
+ .debug_macro   0x00000000       0x1c ./source/main logic/main.o
+ .debug_macro   0x00000000      0x182 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x267 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x22 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x1f ./source/main logic/main.o
+ .debug_macro   0x00000000       0x12 ./source/main logic/main.o
+ .debug_macro   0x00000000     0x102c ./source/main logic/main.o
+ .debug_macro   0x00000000       0xc3 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x14f ./source/main logic/main.o
+ .debug_macro   0x00000000       0x80 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x77 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x16 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x3e ./source/main logic/main.o
+ .debug_macro   0x00000000       0x2e ./source/main logic/main.o
+ .debug_macro   0x00000000       0x10 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x2e ./source/main logic/main.o
+ .debug_macro   0x00000000       0xb4 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x28 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x3bc ./source/main logic/main.o
+ .debug_macro   0x00000000       0x3a ./source/main logic/main.o
+ .debug_macro   0x00000000     0x124f ./source/main logic/main.o
+ .debug_macro   0x00000000      0x846 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x3c1 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/main.o
+ .debug_macro   0x00000000      0x16e ./source/main logic/main.o
+ .debug_macro   0x00000000      0x247 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x4e ./source/main logic/main.o
+ .debug_macro   0x00000000       0x88 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x41b ./source/main logic/main.o
+ .debug_macro   0x00000000      0x280 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x88 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x3bb ./source/main logic/main.o
+ .debug_macro   0x00000000      0x691 ./source/main logic/main.o
+ .debug_macro   0x00000000     0x31e6 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x478 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x105 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x631 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x199 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x11b ./source/main logic/main.o
+ .debug_macro   0x00000000      0x2da ./source/main logic/main.o
+ .debug_macro   0x00000000      0x20e ./source/main logic/main.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/main.o
+ .debug_macro   0x00000000       0x86 ./source/main logic/main.o
+ .debug_macro   0x00000000       0xfe ./source/main logic/main.o
+ .debug_macro   0x00000000      0x119 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x121 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/main.o
+ .debug_macro   0x00000000       0x63 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x112 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x295 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x6c4 ./source/main logic/main.o
+ .debug_macro   0x00000000       0xdb ./source/main logic/main.o
+ .debug_macro   0x00000000      0x3a6 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x366 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x703 ./source/main logic/main.o
+ .debug_macro   0x00000000      0x5d5 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x9b ./source/main logic/main.o
+ .debug_macro   0x00000000       0x88 ./source/main logic/main.o
+ .debug_macro   0x00000000       0xce ./source/main logic/main.o
+ .debug_macro   0x00000000       0xfb ./source/main logic/main.o
+ .debug_macro   0x00000000       0x1c ./source/main logic/main.o
+ .debug_macro   0x00000000       0x70 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x16 ./source/main logic/main.o
+ .debug_macro   0x00000000       0x6d ./source/main logic/main.o
+ .debug_macro   0x00000000       0x1c ./source/main logic/main.o
+ .debug_macro   0x00000000       0x1c ./source/main logic/main.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/max7219.o
+ .text          0x00000000        0x0 ./source/main logic/max7219.o
+ .data          0x00000000        0x0 ./source/main logic/max7219.o
+ .bss           0x00000000        0x0 ./source/main logic/max7219.o
  .text.writeModuleDigits
-                0x00000000       0x5e ./source/headers/max7219.o
+                0x00000000       0x5e ./source/main logic/max7219.o
  .text.writePanel
-                0x00000000       0xba ./source/headers/max7219.o
- .debug_macro   0x00000000      0xaf0 ./source/headers/max7219.o
- .debug_macro   0x00000000       0x10 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x12e ./source/headers/max7219.o
- .debug_macro   0x00000000      0x5b3 ./source/headers/max7219.o
- .debug_macro   0x00000000       0x22 ./source/headers/max7219.o
- .debug_macro   0x00000000       0x3e ./source/headers/max7219.o
- .debug_macro   0x00000000       0x2e ./source/headers/max7219.o
- .debug_macro   0x00000000       0x10 ./source/headers/max7219.o
- .debug_macro   0x00000000       0x2e ./source/headers/max7219.o
- .debug_macro   0x00000000       0xb4 ./source/headers/max7219.o
- .debug_macro   0x00000000       0x28 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x3bc ./source/headers/max7219.o
- .debug_macro   0x00000000       0x3a ./source/headers/max7219.o
- .debug_macro   0x00000000     0x124f ./source/headers/max7219.o
- .debug_macro   0x00000000      0x846 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x3c1 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x1ed ./source/headers/max7219.o
- .debug_macro   0x00000000      0x16e ./source/headers/max7219.o
- .debug_macro   0x00000000      0x247 ./source/headers/max7219.o
- .debug_macro   0x00000000       0x4e ./source/headers/max7219.o
- .debug_macro   0x00000000       0x88 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x41b ./source/headers/max7219.o
- .debug_macro   0x00000000      0x280 ./source/headers/max7219.o
- .debug_macro   0x00000000       0x88 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x3bb ./source/headers/max7219.o
- .debug_macro   0x00000000      0x691 ./source/headers/max7219.o
- .debug_macro   0x00000000     0x31e6 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x478 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x105 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x631 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x199 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x11b ./source/headers/max7219.o
- .debug_macro   0x00000000      0x2da ./source/headers/max7219.o
- .debug_macro   0x00000000      0x20e ./source/headers/max7219.o
- .debug_macro   0x00000000      0x1ed ./source/headers/max7219.o
- .debug_macro   0x00000000       0x86 ./source/headers/max7219.o
- .debug_macro   0x00000000       0xfe ./source/headers/max7219.o
- .debug_macro   0x00000000      0x119 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x121 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x1ed ./source/headers/max7219.o
- .debug_macro   0x00000000       0x63 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x112 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x295 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x6c4 ./source/headers/max7219.o
- .debug_macro   0x00000000       0xdb ./source/headers/max7219.o
- .debug_macro   0x00000000      0x3a6 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x366 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x703 ./source/headers/max7219.o
- .debug_macro   0x00000000      0x5d5 ./source/headers/max7219.o
- .debug_macro   0x00000000       0x9b ./source/headers/max7219.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .group         0x00000000        0xc ./source/headers/tasks.o
- .text          0x00000000        0x0 ./source/headers/tasks.o
- .data          0x00000000        0x0 ./source/headers/tasks.o
- .bss           0x00000000        0x0 ./source/headers/tasks.o
- .debug_macro   0x00000000      0xaf0 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x10 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x12e ./source/headers/tasks.o
- .debug_macro   0x00000000      0x5b3 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x22 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x16 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x16 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x180 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x1c ./source/headers/tasks.o
- .debug_macro   0x00000000       0x1c ./source/headers/tasks.o
- .debug_macro   0x00000000      0x182 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x267 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x22 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x1f ./source/headers/tasks.o
- .debug_macro   0x00000000       0x12 ./source/headers/tasks.o
- .debug_macro   0x00000000     0x102c ./source/headers/tasks.o
- .debug_macro   0x00000000       0xc3 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x14f ./source/headers/tasks.o
- .debug_macro   0x00000000       0x80 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x77 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x16 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x3e ./source/headers/tasks.o
- .debug_macro   0x00000000       0x2e ./source/headers/tasks.o
- .debug_macro   0x00000000       0x10 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x2e ./source/headers/tasks.o
- .debug_macro   0x00000000       0xb4 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x28 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x3bc ./source/headers/tasks.o
- .debug_macro   0x00000000       0x3a ./source/headers/tasks.o
- .debug_macro   0x00000000     0x124f ./source/headers/tasks.o
- .debug_macro   0x00000000      0x846 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x3c1 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x1ed ./source/headers/tasks.o
- .debug_macro   0x00000000      0x16e ./source/headers/tasks.o
- .debug_macro   0x00000000      0x247 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x4e ./source/headers/tasks.o
- .debug_macro   0x00000000       0x88 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x41b ./source/headers/tasks.o
- .debug_macro   0x00000000      0x280 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x88 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x3bb ./source/headers/tasks.o
- .debug_macro   0x00000000      0x691 ./source/headers/tasks.o
- .debug_macro   0x00000000     0x31e6 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x478 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x105 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x631 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x199 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x11b ./source/headers/tasks.o
- .debug_macro   0x00000000      0x2da ./source/headers/tasks.o
- .debug_macro   0x00000000      0x20e ./source/headers/tasks.o
- .debug_macro   0x00000000      0x1ed ./source/headers/tasks.o
- .debug_macro   0x00000000       0x86 ./source/headers/tasks.o
- .debug_macro   0x00000000       0xfe ./source/headers/tasks.o
- .debug_macro   0x00000000      0x119 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x121 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x1ed ./source/headers/tasks.o
- .debug_macro   0x00000000       0x63 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x112 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x295 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x6c4 ./source/headers/tasks.o
- .debug_macro   0x00000000       0xdb ./source/headers/tasks.o
- .debug_macro   0x00000000      0x3a6 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x366 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x703 ./source/headers/tasks.o
- .debug_macro   0x00000000      0x5d5 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x9b ./source/headers/tasks.o
- .debug_macro   0x00000000       0x16 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x16 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x88 ./source/headers/tasks.o
- .debug_macro   0x00000000       0xce ./source/headers/tasks.o
- .debug_macro   0x00000000       0xfb ./source/headers/tasks.o
- .debug_macro   0x00000000       0x70 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x16 ./source/headers/tasks.o
- .debug_macro   0x00000000       0x6d ./source/headers/tasks.o
- .debug_macro   0x00000000       0x1c ./source/headers/tasks.o
- .debug_macro   0x00000000       0x1c ./source/headers/tasks.o
+                0x00000000       0xba ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0xaf0 ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0x10 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x12e ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x5b3 ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0x22 ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0x3e ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0x2e ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0x10 ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0x2e ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0xb4 ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0x28 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x3bc ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0x3a ./source/main logic/max7219.o
+ .debug_macro   0x00000000     0x124f ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x846 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x3c1 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x16e ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x247 ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0x4e ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0x88 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x41b ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x280 ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0x88 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x3bb ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x691 ./source/main logic/max7219.o
+ .debug_macro   0x00000000     0x31e6 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x478 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x105 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x631 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x199 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x11b ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x2da ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x20e ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0x86 ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0xfe ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x119 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x121 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0x63 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x112 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x295 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x6c4 ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0xdb ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x3a6 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x366 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x703 ./source/main logic/max7219.o
+ .debug_macro   0x00000000      0x5d5 ./source/main logic/max7219.o
+ .debug_macro   0x00000000       0x9b ./source/main logic/max7219.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .group         0x00000000        0xc ./source/main logic/tasks.o
+ .text          0x00000000        0x0 ./source/main logic/tasks.o
+ .data          0x00000000        0x0 ./source/main logic/tasks.o
+ .bss           0x00000000        0x0 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0xaf0 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x10 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x12e ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x5b3 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x10 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x22 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x16 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x16 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x180 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x1c ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x1c ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x182 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x267 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x22 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x1f ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x12 ./source/main logic/tasks.o
+ .debug_macro   0x00000000     0x102c ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0xc3 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x14f ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x80 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x77 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x3e ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x2e ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x10 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x2e ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0xb4 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x28 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x3bc ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x3a ./source/main logic/tasks.o
+ .debug_macro   0x00000000     0x124f ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x846 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x3c1 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x16e ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x247 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x4e ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x88 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x41b ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x280 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x88 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x3bb ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x691 ./source/main logic/tasks.o
+ .debug_macro   0x00000000     0x31e6 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x478 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x105 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x631 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x199 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x11b ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x2da ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x20e ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x86 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0xfe ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x119 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x121 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x1ed ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x63 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x112 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x295 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x6c4 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0xdb ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x3a6 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x366 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x703 ./source/main logic/tasks.o
+ .debug_macro   0x00000000      0x5d5 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x9b ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x16 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x16 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x1c ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x88 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0xce ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0xfb ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x70 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x47 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x16 ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x6d ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x1c ./source/main logic/tasks.o
+ .debug_macro   0x00000000       0x1c ./source/main logic/tasks.o
  .group         0x00000000        0xc ./source/mtb.o
  .group         0x00000000        0xc ./source/mtb.o
  .group         0x00000000        0xc ./source/mtb.o
@@ -4779,12 +4781,12 @@ LOAD ./utilities/str/fsl_str.o
 LOAD ./utilities/debug_console/fsl_debug_console.o
 LOAD ./utilities/fsl_assert.o
 LOAD ./startup/startup_mcxc444.o
-LOAD ./source/headers/adc.o
-LOAD ./source/headers/buttons.o
-LOAD ./source/headers/led.o
-LOAD ./source/headers/main.o
-LOAD ./source/headers/max7219.o
-LOAD ./source/headers/tasks.o
+LOAD ./source/main logic/adc.o
+LOAD ./source/main logic/buttons.o
+LOAD ./source/main logic/led.o
+LOAD ./source/main logic/main.o
+LOAD ./source/main logic/max7219.o
+LOAD ./source/main logic/tasks.o
 LOAD ./source/mtb.o
 LOAD ./source/semihost_hardfault.o
 LOAD ./freertos/freertos-kernel/portable/MemMang/heap_4.o
@@ -4959,73 +4961,73 @@ END GROUP
                 0x00000748       0x34 ./utilities/fsl_assert.o
                 0x00000748                __assertion_failed
  .text.__NVIC_EnableIRQ
-                0x0000077c       0x34 ./source/headers/adc.o
+                0x0000077c       0x34 ./source/main logic/adc.o
  .text.__NVIC_DisableIRQ
-                0x000007b0       0x44 ./source/headers/adc.o
+                0x000007b0       0x44 ./source/main logic/adc.o
  .text.__NVIC_ClearPendingIRQ
-                0x000007f4       0x38 ./source/headers/adc.o
+                0x000007f4       0x38 ./source/main logic/adc.o
  .text.__NVIC_SetPriority
-                0x0000082c       0xdc ./source/headers/adc.o
+                0x0000082c       0xdc ./source/main logic/adc.o
  .text.ADC_Init
-                0x00000908       0x80 ./source/headers/adc.o
+                0x00000908       0x80 ./source/main logic/adc.o
                 0x00000908                ADC_Init
  .text.ADC0_IRQHandler
-                0x00000988       0x30 ./source/headers/adc.o
+                0x00000988       0x30 ./source/main logic/adc.o
                 0x00000988                ADC0_IRQHandler
  .text.ADC_ReadChannel
-                0x000009b8       0x50 ./source/headers/adc.o
+                0x000009b8       0x50 ./source/main logic/adc.o
                 0x000009b8                ADC_ReadChannel
  .text.__NVIC_EnableIRQ
-                0x00000a08       0x34 ./source/headers/buttons.o
+                0x00000a08       0x34 ./source/main logic/buttons.o
  .text.__NVIC_DisableIRQ
-                0x00000a3c       0x44 ./source/headers/buttons.o
+                0x00000a3c       0x44 ./source/main logic/buttons.o
  .text.__NVIC_ClearPendingIRQ
-                0x00000a80       0x38 ./source/headers/buttons.o
+                0x00000a80       0x38 ./source/main logic/buttons.o
  .text.__NVIC_SetPriority
-                0x00000ab8       0xdc ./source/headers/buttons.o
+                0x00000ab8       0xdc ./source/main logic/buttons.o
  .text.Buttons_Init
-                0x00000b94       0xb0 ./source/headers/buttons.o
+                0x00000b94       0xb0 ./source/main logic/buttons.o
                 0x00000b94                Buttons_Init
  .text.PORTC_PORTD_IRQHandler
-                0x00000c44       0x78 ./source/headers/buttons.o
+                0x00000c44       0x78 ./source/main logic/buttons.o
                 0x00000c44                PORTC_PORTD_IRQHandler
  .text.PORTA_IRQHandler
-                0x00000cbc       0x78 ./source/headers/buttons.o
+                0x00000cbc       0x78 ./source/main logic/buttons.o
                 0x00000cbc                PORTA_IRQHandler
  .text.LED_Init
-                0x00000d34       0x68 ./source/headers/led.o
+                0x00000d34       0x68 ./source/main logic/led.o
                 0x00000d34                LED_Init
- .text.LED_On   0x00000d9c       0x4c ./source/headers/led.o
+ .text.LED_On   0x00000d9c       0x4c ./source/main logic/led.o
                 0x00000d9c                LED_On
- .text.LED_Off  0x00000de8       0x4c ./source/headers/led.o
+ .text.LED_Off  0x00000de8       0x4c ./source/main logic/led.o
                 0x00000de8                LED_Off
- .text.main     0x00000e34      0x108 ./source/headers/main.o
+ .text.main     0x00000e34      0x108 ./source/main logic/main.o
                 0x00000e34                main
  .text.spi_txByte
-                0x00000f3c       0x44 ./source/headers/max7219.o
+                0x00000f3c       0x44 ./source/main logic/max7219.o
  .text.writeAll
-                0x00000f80       0x60 ./source/headers/max7219.o
+                0x00000f80       0x60 ./source/main logic/max7219.o
  .text.writeOne
-                0x00000fe0       0x88 ./source/headers/max7219.o
+                0x00000fe0       0x88 ./source/main logic/max7219.o
  .text.decimalToCodeB
-                0x00001068      0x10c ./source/headers/max7219.o
+                0x00001068      0x10c ./source/main logic/max7219.o
  .text.MAX7219_Init
-                0x00001174       0xb0 ./source/headers/max7219.o
+                0x00001174       0xb0 ./source/main logic/max7219.o
                 0x00001174                MAX7219_Init
  .text.MAX7219_ShowSystemStatus
-                0x00001224      0x11c ./source/headers/max7219.o
+                0x00001224      0x11c ./source/main logic/max7219.o
                 0x00001224                MAX7219_ShowSystemStatus
  .text.sensorTask
-                0x00001340       0xc0 ./source/headers/tasks.o
+                0x00001340       0xc0 ./source/main logic/tasks.o
                 0x00001340                sensorTask
  .text.buttonTask
-                0x00001400       0xf4 ./source/headers/tasks.o
+                0x00001400       0xf4 ./source/main logic/tasks.o
                 0x00001400                buttonTask
  .text.alertTask
-                0x000014f4       0xe0 ./source/headers/tasks.o
+                0x000014f4       0xe0 ./source/main logic/tasks.o
                 0x000014f4                alertTask
  .text.printTask
-                0x000015d4      0x158 ./source/headers/tasks.o
+                0x000015d4      0x158 ./source/main logic/tasks.o
                 0x000015d4                printTask
  .text.HardFault_Handler
                 0x0000172c       0x38 ./source/semihost_hardfault.o
@@ -5322,28 +5324,28 @@ END GROUP
                 0x0000549c       0x16 ./utilities/fsl_assert.o
                 0x0000549c                fsl_assert_hook
  .text.ADC_ReadMicWindow
-                0x000054b2       0xaa ./source/headers/adc.o
+                0x000054b2       0xaa ./source/main logic/adc.o
                 0x000054b2                ADC_ReadMicWindow
  .text.LED_OffAll
-                0x0000555c       0x1c ./source/headers/led.o
+                0x0000555c       0x1c ./source/main logic/led.o
                 0x0000555c                LED_OffAll
  .text.LED_SetRGB
-                0x00005578       0x68 ./source/headers/led.o
+                0x00005578       0x68 ./source/main logic/led.o
                 0x00005578                LED_SetRGB
  .text.MAX7219_Clear
-                0x000055e0       0x3e ./source/headers/max7219.o
+                0x000055e0       0x3e ./source/main logic/max7219.o
                 0x000055e0                MAX7219_Clear
  .text.MAX7219_ShowAlertStatus
-                0x0000561e       0xaa ./source/headers/max7219.o
+                0x0000561e       0xaa ./source/main logic/max7219.o
                 0x0000561e                MAX7219_ShowAlertStatus
  .text.MAX7219_ShowLightAdc
-                0x000056c8       0x8e ./source/headers/max7219.o
+                0x000056c8       0x8e ./source/main logic/max7219.o
                 0x000056c8                MAX7219_ShowLightAdc
  .text.MAX7219_ShowMicP2P
-                0x00005756       0x8e ./source/headers/max7219.o
+                0x00005756       0x8e ./source/main logic/max7219.o
                 0x00005756                MAX7219_ShowMicP2P
  .text.MAX7219_ShowAll
-                0x000057e4       0x56 ./source/headers/max7219.o
+                0x000057e4       0x56 ./source/main logic/max7219.o
                 0x000057e4                MAX7219_ShowAll
  .text.vPortSVCHandler_C
                 0x0000583a       0x38 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
@@ -5518,11 +5520,11 @@ END GROUP
                 0x000069d8      0x50f ./utilities/fsl_assert.o
                                  0x14 (size before relaxing)
  .rodata.main.str1.4
-                0x00006ee7       0x46 ./source/headers/main.o
+                0x00006ee7       0x46 ./source/main logic/main.o
  .rodata.buttonTask.str1.4
-                0x00006ee7       0x63 ./source/headers/tasks.o
+                0x00006ee7       0x63 ./source/main logic/tasks.o
  .rodata.printTask.str1.4
-                0x00006ee7      0x14d ./source/headers/tasks.o
+                0x00006ee7      0x14d ./source/main logic/tasks.o
  .rodata.xTimerCreateTimerTask.str1.4
                 0x00006ee7        0x8 ./freertos/freertos-kernel/timers.o
  *fill*         0x00006ee7        0x1 ff
@@ -5649,20 +5651,20 @@ END GROUP
                 0x1fffe0a8        0x4 ./utilities/debug_console/fsl_debug_console.o
                 0x1fffe0a8                g_serialHandle
  .bss.g_buttonSema
-                0x1fffe0ac        0x4 ./source/headers/buttons.o
+                0x1fffe0ac        0x4 ./source/main logic/buttons.o
                 0x1fffe0ac                g_buttonSema
  .bss.s_lastSw2Tick
-                0x1fffe0b0        0x4 ./source/headers/buttons.o
+                0x1fffe0b0        0x4 ./source/main logic/buttons.o
  .bss.s_lastSw3Tick
-                0x1fffe0b4        0x4 ./source/headers/buttons.o
+                0x1fffe0b4        0x4 ./source/main logic/buttons.o
  .bss.g_sensorQueue
-                0x1fffe0b8        0x4 ./source/headers/main.o
+                0x1fffe0b8        0x4 ./source/main logic/main.o
                 0x1fffe0b8                g_sensorQueue
  .bss.g_statusMutex
-                0x1fffe0bc        0x4 ./source/headers/main.o
+                0x1fffe0bc        0x4 ./source/main logic/main.o
                 0x1fffe0bc                g_statusMutex
  .bss.g_latestPacket
-                0x1fffe0c0        0xc ./source/headers/main.o
+                0x1fffe0c0        0xc ./source/main logic/main.o
                 0x1fffe0c0                g_latestPacket
  .bss.ucHeap    0x1fffe0cc     0x2800 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
  .bss.xStart    0x200008cc        0x8 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
@@ -5752,22 +5754,22 @@ END GROUP
  .bss.__Ciob    0x20000a84       0xb4 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
                 0x20000a84                __Ciob
  .bss.s_adcValue
-                0x20000b38        0x2 ./source/headers/adc.o
+                0x20000b38        0x2 ./source/main logic/adc.o
  .bss.s_debugConsoleReadWaitSemaphore
                 0x20000b3a        0x1 ./utilities/debug_console/fsl_debug_console.o
  .bss.s_adcDone
-                0x20000b3b        0x1 ./source/headers/adc.o
+                0x20000b3b        0x1 ./source/main logic/adc.o
  .bss.g_sw2StartPending
-                0x20000b3c        0x1 ./source/headers/buttons.o
+                0x20000b3c        0x1 ./source/main logic/buttons.o
                 0x20000b3c                g_sw2StartPending
  .bss.g_sw3AckPending
-                0x20000b3d        0x1 ./source/headers/buttons.o
+                0x20000b3d        0x1 ./source/main logic/buttons.o
                 0x20000b3d                g_sw3AckPending
  .bss.g_systemStarted
-                0x20000b3e        0x1 ./source/headers/main.o
+                0x20000b3e        0x1 ./source/main logic/main.o
                 0x20000b3e                g_systemStarted
  .bss.g_alertLatched
-                0x20000b3f        0x1 ./source/headers/main.o
+                0x20000b3f        0x1 ./source/main logic/main.o
                 0x20000b3f                g_alertLatched
  *(SORT_BY_ALIGNMENT(COMMON))
                 0x20000b40                        . = ALIGN (0x4)
@@ -5815,12 +5817,12 @@ LOAD linker stubs
  .debug_info    0x00000d5e      0xed5 ./utilities/debug_console/fsl_debug_console.o
  .debug_info    0x00001c33      0x135 ./utilities/fsl_assert.o
  .debug_info    0x00001d68      0x686 ./startup/startup_mcxc444.o
- .debug_info    0x000023ee      0x928 ./source/headers/adc.o
- .debug_info    0x00002d16      0x881 ./source/headers/buttons.o
- .debug_info    0x00003597      0x433 ./source/headers/led.o
- .debug_info    0x000039ca      0x752 ./source/headers/main.o
- .debug_info    0x0000411c      0x7d0 ./source/headers/max7219.o
- .debug_info    0x000048ec      0x47e ./source/headers/tasks.o
+ .debug_info    0x000023ee      0x928 ./source/main logic/adc.o
+ .debug_info    0x00002d16      0x881 ./source/main logic/buttons.o
+ .debug_info    0x00003597      0x433 ./source/main logic/led.o
+ .debug_info    0x000039ca      0x752 ./source/main logic/main.o
+ .debug_info    0x0000411c      0x7d0 ./source/main logic/max7219.o
+ .debug_info    0x000048ec      0x47e ./source/main logic/tasks.o
  .debug_info    0x00004d6a       0x53 ./source/mtb.o
  .debug_info    0x00004dbd       0x3c ./source/semihost_hardfault.o
  .debug_info    0x00004df9      0x4db ./freertos/freertos-kernel/portable/MemMang/heap_4.o
@@ -5871,12 +5873,12 @@ LOAD linker stubs
  .debug_abbrev  0x00000270      0x28e ./utilities/debug_console/fsl_debug_console.o
  .debug_abbrev  0x000004fe       0xbd ./utilities/fsl_assert.o
  .debug_abbrev  0x000005bb      0x1a7 ./startup/startup_mcxc444.o
- .debug_abbrev  0x00000762      0x25f ./source/headers/adc.o
- .debug_abbrev  0x000009c1      0x251 ./source/headers/buttons.o
- .debug_abbrev  0x00000c12      0x158 ./source/headers/led.o
- .debug_abbrev  0x00000d6a      0x1b0 ./source/headers/main.o
- .debug_abbrev  0x00000f1a      0x1a1 ./source/headers/max7219.o
- .debug_abbrev  0x000010bb      0x184 ./source/headers/tasks.o
+ .debug_abbrev  0x00000762      0x25f ./source/main logic/adc.o
+ .debug_abbrev  0x000009c1      0x251 ./source/main logic/buttons.o
+ .debug_abbrev  0x00000c12      0x158 ./source/main logic/led.o
+ .debug_abbrev  0x00000d6a      0x1b0 ./source/main logic/main.o
+ .debug_abbrev  0x00000f1a      0x1a1 ./source/main logic/max7219.o
+ .debug_abbrev  0x000010bb      0x184 ./source/main logic/tasks.o
  .debug_abbrev  0x0000123f       0x46 ./source/mtb.o
  .debug_abbrev  0x00001285       0x31 ./source/semihost_hardfault.o
  .debug_abbrev  0x000012b6      0x1ec ./freertos/freertos-kernel/portable/MemMang/heap_4.o
@@ -5932,17 +5934,17 @@ LOAD linker stubs
  .debug_aranges
                 0x000001c8      0x160 ./startup/startup_mcxc444.o
  .debug_aranges
-                0x00000328       0x58 ./source/headers/adc.o
+                0x00000328       0x58 ./source/main logic/adc.o
  .debug_aranges
-                0x00000380       0x50 ./source/headers/buttons.o
+                0x00000380       0x50 ./source/main logic/buttons.o
  .debug_aranges
-                0x000003d0       0x40 ./source/headers/led.o
+                0x000003d0       0x40 ./source/main logic/led.o
  .debug_aranges
-                0x00000410       0x30 ./source/headers/main.o
+                0x00000410       0x30 ./source/main logic/main.o
  .debug_aranges
-                0x00000440       0x80 ./source/headers/max7219.o
+                0x00000440       0x80 ./source/main logic/max7219.o
  .debug_aranges
-                0x000004c0       0x38 ./source/headers/tasks.o
+                0x000004c0       0x38 ./source/main logic/tasks.o
  .debug_aranges
                 0x000004f8       0x18 ./source/mtb.o
  .debug_aranges
@@ -6037,12 +6039,12 @@ LOAD linker stubs
  .debug_ranges  0x00000108       0xa8 ./utilities/debug_console/fsl_debug_console.o
  .debug_ranges  0x000001b0       0x18 ./utilities/fsl_assert.o
  .debug_ranges  0x000001c8      0x150 ./startup/startup_mcxc444.o
- .debug_ranges  0x00000318       0x48 ./source/headers/adc.o
- .debug_ranges  0x00000360       0x40 ./source/headers/buttons.o
- .debug_ranges  0x000003a0       0x30 ./source/headers/led.o
- .debug_ranges  0x000003d0       0x20 ./source/headers/main.o
- .debug_ranges  0x000003f0       0x70 ./source/headers/max7219.o
- .debug_ranges  0x00000460       0x28 ./source/headers/tasks.o
+ .debug_ranges  0x00000318       0x48 ./source/main logic/adc.o
+ .debug_ranges  0x00000360       0x40 ./source/main logic/buttons.o
+ .debug_ranges  0x000003a0       0x30 ./source/main logic/led.o
+ .debug_ranges  0x000003d0       0x20 ./source/main logic/main.o
+ .debug_ranges  0x000003f0       0x70 ./source/main logic/max7219.o
+ .debug_ranges  0x00000460       0x28 ./source/main logic/tasks.o
  .debug_ranges  0x00000488       0x10 ./source/semihost_hardfault.o
  .debug_ranges  0x00000498       0x60 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
  .debug_ranges  0x000004f8       0x60 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
@@ -6085,7 +6087,7 @@ LOAD linker stubs
  .debug_ranges  0x000010a0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
  .debug_ranges  0x000010b0       0x10 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
 
-.debug_macro    0x00000000    0x122a5
+.debug_macro    0x00000000    0x12291
  .debug_macro   0x00000000      0x2b4 ./utilities/str/fsl_str.o
  .debug_macro   0x000002b4      0xaf0 ./utilities/str/fsl_str.o
  .debug_macro   0x00000da4       0x10 ./utilities/str/fsl_str.o
@@ -6175,165 +6177,163 @@ LOAD linker stubs
  .debug_macro   0x0000e4da       0x1c ./utilities/fsl_assert.o
  .debug_macro   0x0000e4f6       0x22 ./utilities/fsl_assert.o
  .debug_macro   0x0000e518       0x29 ./startup/startup_mcxc444.o
- .debug_macro   0x0000e541      0x212 ./source/headers/adc.o
- .debug_macro   0x0000e753       0x10 ./source/headers/adc.o
- .debug_macro   0x0000e763      0x2d6 ./source/headers/buttons.o
- .debug_macro   0x0000ea39       0x16 ./source/headers/buttons.o
- .debug_macro   0x0000ea4f       0x16 ./source/headers/buttons.o
- .debug_macro   0x0000ea65      0x21f ./source/headers/led.o
- .debug_macro   0x0000ec84      0x3ca ./source/headers/main.o
- .debug_macro   0x0000f04e       0x10 ./source/headers/main.o
- .debug_macro   0x0000f05e       0x16 ./source/headers/main.o
- .debug_macro   0x0000f074      0x1e5 ./source/headers/main.o
- .debug_macro   0x0000f259      0x133 ./source/headers/main.o
- .debug_macro   0x0000f38c       0x10 ./source/headers/main.o
- .debug_macro   0x0000f39c       0x16 ./source/headers/main.o
- .debug_macro   0x0000f3b2       0x16 ./source/headers/main.o
- .debug_macro   0x0000f3c8      0x32e ./source/headers/max7219.o
- .debug_macro   0x0000f6f6       0x10 ./source/headers/max7219.o
- .debug_macro   0x0000f706      0x3a6 ./source/headers/tasks.o
- .debug_macro   0x0000faac       0x1c ./source/headers/tasks.o
- .debug_macro   0x0000fac8       0x16 ./source/headers/tasks.o
- .debug_macro   0x0000fade       0x47 ./source/headers/tasks.o
- .debug_macro   0x0000fb25       0x2f ./source/mtb.o
- .debug_macro   0x0000fb54       0x82 ./source/mtb.o
- .debug_macro   0x0000fbd6       0x10 ./source/mtb.o
- .debug_macro   0x0000fbe6       0x11 ./source/semihost_hardfault.o
- .debug_macro   0x0000fbf7      0x155 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
- .debug_macro   0x0000fd4c      0x25a ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
- .debug_macro   0x0000ffa6       0xdc ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
- .debug_macro   0x00010082       0xe2 ./freertos/freertos-kernel/list.o
- .debug_macro   0x00010164      0x157 ./freertos/freertos-kernel/queue.o
- .debug_macro   0x000102bb      0x1e4 ./freertos/freertos-kernel/tasks.o
- .debug_macro   0x0001049f       0x17 ./freertos/freertos-kernel/tasks.o
- .debug_macro   0x000104b6      0x131 ./freertos/freertos-kernel/timers.o
- .debug_macro   0x000105e7      0x2ba ./drivers/fsl_clock.o
- .debug_macro   0x000108a1      0x28d ./drivers/fsl_lpuart.o
- .debug_macro   0x00010b2e       0x10 ./drivers/fsl_lpuart.o
- .debug_macro   0x00010b3e      0x204 ./device/system_MCXC444.o
- .debug_macro   0x00010d42      0x310 ./component/uart/fsl_adapter_lpuart.o
- .debug_macro   0x00011052       0x41 ./component/uart/fsl_adapter_lpuart.o
- .debug_macro   0x00011093      0x366 ./component/serial_manager/fsl_component_serial_manager.o
- .debug_macro   0x000113f9       0x6a ./component/serial_manager/fsl_component_serial_manager.o
- .debug_macro   0x00011463      0x324 ./component/serial_manager/fsl_component_serial_port_uart.o
- .debug_macro   0x00011787      0x34c ./board/board.o
- .debug_macro   0x00011ad3      0x2ad ./board/clock_config.o
- .debug_macro   0x00011d80      0x282 ./board/peripherals.o
- .debug_macro   0x00012002      0x28d ./board/pin_mux.o
- .debug_macro   0x0001228f       0x16 ./board/pin_mux.o
+ .debug_macro   0x0000e541      0x212 ./source/main logic/adc.o
+ .debug_macro   0x0000e753       0x10 ./source/main logic/adc.o
+ .debug_macro   0x0000e763      0x2d6 ./source/main logic/buttons.o
+ .debug_macro   0x0000ea39       0x16 ./source/main logic/buttons.o
+ .debug_macro   0x0000ea4f       0x16 ./source/main logic/buttons.o
+ .debug_macro   0x0000ea65      0x21f ./source/main logic/led.o
+ .debug_macro   0x0000ec84      0x3d6 ./source/main logic/main.o
+ .debug_macro   0x0000f05a       0x16 ./source/main logic/main.o
+ .debug_macro   0x0000f070       0x1c ./source/main logic/main.o
+ .debug_macro   0x0000f08c       0x10 ./source/main logic/main.o
+ .debug_macro   0x0000f09c       0x16 ./source/main logic/main.o
+ .debug_macro   0x0000f0b2      0x1e5 ./source/main logic/main.o
+ .debug_macro   0x0000f297      0x133 ./source/main logic/main.o
+ .debug_macro   0x0000f3ca       0x47 ./source/main logic/main.o
+ .debug_macro   0x0000f411      0x32e ./source/main logic/max7219.o
+ .debug_macro   0x0000f73f       0x10 ./source/main logic/max7219.o
+ .debug_macro   0x0000f74f      0x3ac ./source/main logic/tasks.o
+ .debug_macro   0x0000fafb       0x16 ./source/main logic/tasks.o
+ .debug_macro   0x0000fb11       0x2f ./source/mtb.o
+ .debug_macro   0x0000fb40       0x82 ./source/mtb.o
+ .debug_macro   0x0000fbc2       0x10 ./source/mtb.o
+ .debug_macro   0x0000fbd2       0x11 ./source/semihost_hardfault.o
+ .debug_macro   0x0000fbe3      0x155 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
+ .debug_macro   0x0000fd38      0x25a ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+ .debug_macro   0x0000ff92       0xdc ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
+ .debug_macro   0x0001006e       0xe2 ./freertos/freertos-kernel/list.o
+ .debug_macro   0x00010150      0x157 ./freertos/freertos-kernel/queue.o
+ .debug_macro   0x000102a7      0x1e4 ./freertos/freertos-kernel/tasks.o
+ .debug_macro   0x0001048b       0x17 ./freertos/freertos-kernel/tasks.o
+ .debug_macro   0x000104a2      0x131 ./freertos/freertos-kernel/timers.o
+ .debug_macro   0x000105d3      0x2ba ./drivers/fsl_clock.o
+ .debug_macro   0x0001088d      0x28d ./drivers/fsl_lpuart.o
+ .debug_macro   0x00010b1a       0x10 ./drivers/fsl_lpuart.o
+ .debug_macro   0x00010b2a      0x204 ./device/system_MCXC444.o
+ .debug_macro   0x00010d2e      0x310 ./component/uart/fsl_adapter_lpuart.o
+ .debug_macro   0x0001103e       0x41 ./component/uart/fsl_adapter_lpuart.o
+ .debug_macro   0x0001107f      0x366 ./component/serial_manager/fsl_component_serial_manager.o
+ .debug_macro   0x000113e5       0x6a ./component/serial_manager/fsl_component_serial_manager.o
+ .debug_macro   0x0001144f      0x324 ./component/serial_manager/fsl_component_serial_port_uart.o
+ .debug_macro   0x00011773      0x34c ./board/board.o
+ .debug_macro   0x00011abf      0x2ad ./board/clock_config.o
+ .debug_macro   0x00011d6c      0x282 ./board/peripherals.o
+ .debug_macro   0x00011fee      0x28d ./board/pin_mux.o
+ .debug_macro   0x0001227b       0x16 ./board/pin_mux.o
 
-.debug_line     0x00000000    0x14e4e
+.debug_line     0x00000000    0x1504a
  .debug_line    0x00000000     0x1003 ./utilities/str/fsl_str.o
  .debug_line    0x00001003     0x1023 ./utilities/debug_console/fsl_debug_console.o
  .debug_line    0x00002026      0xb57 ./utilities/fsl_assert.o
  .debug_line    0x00002b7d      0x2a4 ./startup/startup_mcxc444.o
- .debug_line    0x00002e21      0x820 ./source/headers/adc.o
- .debug_line    0x00003641      0xaa3 ./source/headers/buttons.o
- .debug_line    0x000040e4      0x726 ./source/headers/led.o
- .debug_line    0x0000480a      0xcbd ./source/headers/main.o
- .debug_line    0x000054c7      0x975 ./source/headers/max7219.o
- .debug_line    0x00005e3c      0xd41 ./source/headers/tasks.o
- .debug_line    0x00006b7d       0xd6 ./source/mtb.o
- .debug_line    0x00006c53       0x59 ./source/semihost_hardfault.o
- .debug_line    0x00006cac      0x842 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
- .debug_line    0x000074ee      0x692 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
- .debug_line    0x00007b80      0x51e ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
- .debug_line    0x0000809e      0x533 ./freertos/freertos-kernel/list.o
- .debug_line    0x000085d1     0x11cc ./freertos/freertos-kernel/queue.o
- .debug_line    0x0000979d     0x1ae7 ./freertos/freertos-kernel/tasks.o
- .debug_line    0x0000b284      0xab8 ./freertos/freertos-kernel/timers.o
- .debug_line    0x0000bd3c      0xc67 ./drivers/fsl_clock.o
- .debug_line    0x0000c9a3     0x1636 ./drivers/fsl_lpuart.o
- .debug_line    0x0000dfd9      0x6c5 ./device/system_MCXC444.o
- .debug_line    0x0000e69e      0xb3c ./component/uart/fsl_adapter_lpuart.o
- .debug_line    0x0000f1da      0xdd3 ./component/serial_manager/fsl_component_serial_manager.o
- .debug_line    0x0000ffad      0xb8a ./component/serial_manager/fsl_component_serial_port_uart.o
- .debug_line    0x00010b37      0xb76 ./board/board.o
- .debug_line    0x000116ad      0x7c3 ./board/clock_config.o
- .debug_line    0x00011e70      0x72a ./board/peripherals.o
- .debug_line    0x0001259a      0x7eb ./board/pin_mux.o
- .debug_line    0x00012d85       0xc9 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
- .debug_line    0x00012e4e      0x112 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
- .debug_line    0x00012f60       0xba /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
- .debug_line    0x0001301a      0x429 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
- .debug_line    0x00013443       0x86 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(errno.o)
- .debug_line    0x000134c9      0x1b6 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
- .debug_line    0x0001367f      0x167 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
- .debug_line    0x000137e6      0x156 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
- .debug_line    0x0001393c      0x36f /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
- .debug_line    0x00013cab      0x1ab /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
- .debug_line    0x00013e56      0x197 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
- .debug_line    0x00013fed      0x1ba /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
- .debug_line    0x000141a7      0x17a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
- .debug_line    0x00014321      0x153 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
- .debug_line    0x00014474      0x2ae /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
- .debug_line    0x00014722      0x180 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
- .debug_line    0x000148a2      0x15a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
- .debug_line    0x000149fc      0x170 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
- .debug_line    0x00014b6c       0xea /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
- .debug_line    0x00014c56       0x54 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
- .debug_line    0x00014caa       0x53 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
- .debug_line    0x00014cfd       0x54 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
- .debug_line    0x00014d51       0x55 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
- .debug_line    0x00014da6       0x53 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
- .debug_line    0x00014df9       0x55 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
+ .debug_line    0x00002e21      0x885 ./source/main logic/adc.o
+ .debug_line    0x000036a6      0xb08 ./source/main logic/buttons.o
+ .debug_line    0x000041ae      0x78b ./source/main logic/led.o
+ .debug_line    0x00004939      0xd22 ./source/main logic/main.o
+ .debug_line    0x0000565b      0x978 ./source/main logic/max7219.o
+ .debug_line    0x00005fd3      0xda6 ./source/main logic/tasks.o
+ .debug_line    0x00006d79       0xd6 ./source/mtb.o
+ .debug_line    0x00006e4f       0x59 ./source/semihost_hardfault.o
+ .debug_line    0x00006ea8      0x842 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
+ .debug_line    0x000076ea      0x692 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+ .debug_line    0x00007d7c      0x51e ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
+ .debug_line    0x0000829a      0x533 ./freertos/freertos-kernel/list.o
+ .debug_line    0x000087cd     0x11cc ./freertos/freertos-kernel/queue.o
+ .debug_line    0x00009999     0x1ae7 ./freertos/freertos-kernel/tasks.o
+ .debug_line    0x0000b480      0xab8 ./freertos/freertos-kernel/timers.o
+ .debug_line    0x0000bf38      0xc67 ./drivers/fsl_clock.o
+ .debug_line    0x0000cb9f     0x1636 ./drivers/fsl_lpuart.o
+ .debug_line    0x0000e1d5      0x6c5 ./device/system_MCXC444.o
+ .debug_line    0x0000e89a      0xb3c ./component/uart/fsl_adapter_lpuart.o
+ .debug_line    0x0000f3d6      0xdd3 ./component/serial_manager/fsl_component_serial_manager.o
+ .debug_line    0x000101a9      0xb8a ./component/serial_manager/fsl_component_serial_port_uart.o
+ .debug_line    0x00010d33      0xb76 ./board/board.o
+ .debug_line    0x000118a9      0x7c3 ./board/clock_config.o
+ .debug_line    0x0001206c      0x72a ./board/peripherals.o
+ .debug_line    0x00012796      0x7eb ./board/pin_mux.o
+ .debug_line    0x00012f81       0xc9 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
+ .debug_line    0x0001304a      0x112 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
+ .debug_line    0x0001315c       0xba /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
+ .debug_line    0x00013216      0x429 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
+ .debug_line    0x0001363f       0x86 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(errno.o)
+ .debug_line    0x000136c5      0x1b6 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
+ .debug_line    0x0001387b      0x167 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
+ .debug_line    0x000139e2      0x156 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
+ .debug_line    0x00013b38      0x36f /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
+ .debug_line    0x00013ea7      0x1ab /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
+ .debug_line    0x00014052      0x197 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
+ .debug_line    0x000141e9      0x1ba /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
+ .debug_line    0x000143a3      0x17a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
+ .debug_line    0x0001451d      0x153 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
+ .debug_line    0x00014670      0x2ae /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
+ .debug_line    0x0001491e      0x180 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
+ .debug_line    0x00014a9e      0x15a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
+ .debug_line    0x00014bf8      0x170 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
+ .debug_line    0x00014d68       0xea /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
+ .debug_line    0x00014e52       0x54 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
+ .debug_line    0x00014ea6       0x53 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
+ .debug_line    0x00014ef9       0x54 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
+ .debug_line    0x00014f4d       0x55 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
+ .debug_line    0x00014fa2       0x53 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
+ .debug_line    0x00014ff5       0x55 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
 
-.debug_str      0x00000000    0x695d0
- .debug_str     0x00000000    0x695d0 ./utilities/str/fsl_str.o
+.debug_str      0x00000000    0x6960b
+ .debug_str     0x00000000    0x6960b ./utilities/str/fsl_str.o
                               0x507a8 (size before relaxing)
- .debug_str     0x000695d0    0x5dd8a ./utilities/debug_console/fsl_debug_console.o
- .debug_str     0x000695d0    0x59691 ./utilities/fsl_assert.o
- .debug_str     0x000695d0     0x32cc ./startup/startup_mcxc444.o
- .debug_str     0x000695d0    0x4e80b ./source/headers/adc.o
- .debug_str     0x000695d0    0x5a847 ./source/headers/buttons.o
- .debug_str     0x000695d0    0x4e4e9 ./source/headers/led.o
- .debug_str     0x000695d0    0x5e808 ./source/headers/main.o
- .debug_str     0x000695d0    0x4e8a1 ./source/headers/max7219.o
- .debug_str     0x000695d0    0x5c703 ./source/headers/tasks.o
- .debug_str     0x000695d0     0x33ab ./source/mtb.o
- .debug_str     0x000695d0     0x2e98 ./source/semihost_hardfault.o
- .debug_str     0x000695d0     0xffa3 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
- .debug_str     0x000695d0    0x10f37 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
- .debug_str     0x000695d0     0xe27b ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
- .debug_str     0x000695d0     0xe4ae ./freertos/freertos-kernel/list.o
- .debug_str     0x000695d0    0x10d36 ./freertos/freertos-kernel/queue.o
- .debug_str     0x000695d0    0x11c88 ./freertos/freertos-kernel/tasks.o
- .debug_str     0x000695d0    0x1114c ./freertos/freertos-kernel/timers.o
- .debug_str     0x000695d0    0x51402 ./drivers/fsl_clock.o
- .debug_str     0x000695d0    0x51a58 ./drivers/fsl_lpuart.o
- .debug_str     0x000695d0    0x4e4bd ./device/system_MCXC444.o
- .debug_str     0x000695d0    0x59fe4 ./component/uart/fsl_adapter_lpuart.o
- .debug_str     0x000695d0    0x5a9eb ./component/serial_manager/fsl_component_serial_manager.o
- .debug_str     0x000695d0    0x59a8d ./component/serial_manager/fsl_component_serial_port_uart.o
- .debug_str     0x000695d0    0x5a709 ./board/board.o
- .debug_str     0x000695d0    0x50caf ./board/clock_config.o
- .debug_str     0x000695d0    0x4fa0f ./board/peripherals.o
- .debug_str     0x000695d0    0x506c2 ./board/pin_mux.o
- .debug_str     0x000695d0      0x16a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
- .debug_str     0x000695d0      0x1b8 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
- .debug_str     0x000695d0      0x181 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
- .debug_str     0x000695d0      0x234 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
- .debug_str     0x000695d0      0x115 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(errno.o)
- .debug_str     0x000695d0      0x23e /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
- .debug_str     0x000695d0      0x234 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
- .debug_str     0x000695d0      0x17b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
- .debug_str     0x000695d0      0x278 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
- .debug_str     0x000695d0      0x231 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
- .debug_str     0x000695d0      0x22a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
- .debug_str     0x000695d0      0x244 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
- .debug_str     0x000695d0      0x25f /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
- .debug_str     0x000695d0      0x236 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
- .debug_str     0x000695d0      0x24f /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
- .debug_str     0x000695d0      0x215 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
- .debug_str     0x000695d0      0x1d4 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
- .debug_str     0x000695d0      0x240 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
- .debug_str     0x000695d0      0x202 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
- .debug_str     0x000695d0      0x15b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
- .debug_str     0x000695d0      0x154 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
- .debug_str     0x000695d0      0x156 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
- .debug_str     0x000695d0      0x161 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
- .debug_str     0x000695d0      0x154 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
- .debug_str     0x000695d0      0x16e /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
+ .debug_str     0x0006960b    0x5dd8a ./utilities/debug_console/fsl_debug_console.o
+ .debug_str     0x0006960b    0x59691 ./utilities/fsl_assert.o
+ .debug_str     0x0006960b     0x32cc ./startup/startup_mcxc444.o
+ .debug_str     0x0006960b    0x4e80e ./source/main logic/adc.o
+ .debug_str     0x0006960b    0x5a84a ./source/main logic/buttons.o
+ .debug_str     0x0006960b    0x4e4ec ./source/main logic/led.o
+ .debug_str     0x0006960b    0x5e80d ./source/main logic/main.o
+ .debug_str     0x0006960b    0x4e8cd ./source/main logic/max7219.o
+ .debug_str     0x0006960b    0x5c708 ./source/main logic/tasks.o
+ .debug_str     0x0006960b     0x33ab ./source/mtb.o
+ .debug_str     0x0006960b     0x2e98 ./source/semihost_hardfault.o
+ .debug_str     0x0006960b     0xffa3 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
+ .debug_str     0x0006960b    0x10f37 ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
+ .debug_str     0x0006960b     0xe27b ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
+ .debug_str     0x0006960b     0xe4ae ./freertos/freertos-kernel/list.o
+ .debug_str     0x0006960b    0x10d36 ./freertos/freertos-kernel/queue.o
+ .debug_str     0x0006960b    0x11c88 ./freertos/freertos-kernel/tasks.o
+ .debug_str     0x0006960b    0x1114c ./freertos/freertos-kernel/timers.o
+ .debug_str     0x0006960b    0x51402 ./drivers/fsl_clock.o
+ .debug_str     0x0006960b    0x51a58 ./drivers/fsl_lpuart.o
+ .debug_str     0x0006960b    0x4e4bd ./device/system_MCXC444.o
+ .debug_str     0x0006960b    0x59fe4 ./component/uart/fsl_adapter_lpuart.o
+ .debug_str     0x0006960b    0x5a9eb ./component/serial_manager/fsl_component_serial_manager.o
+ .debug_str     0x0006960b    0x59a8d ./component/serial_manager/fsl_component_serial_port_uart.o
+ .debug_str     0x0006960b    0x5a709 ./board/board.o
+ .debug_str     0x0006960b    0x50caf ./board/clock_config.o
+ .debug_str     0x0006960b    0x4fa0f ./board/peripherals.o
+ .debug_str     0x0006960b    0x506c2 ./board/pin_mux.o
+ .debug_str     0x0006960b      0x16a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
+ .debug_str     0x0006960b      0x1b8 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memcpy.o)
+ .debug_str     0x0006960b      0x181 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
+ .debug_str     0x0006960b      0x234 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
+ .debug_str     0x0006960b      0x115 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(errno.o)
+ .debug_str     0x0006960b      0x23e /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
+ .debug_str     0x0006960b      0x234 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
+ .debug_str     0x0006960b      0x17b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(strlen.o)
+ .debug_str     0x0006960b      0x278 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_deferredlazyseek.o)
+ .debug_str     0x0006960b      0x231 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fdopen.o)
+ .debug_str     0x0006960b      0x22a /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_fflush.o)
+ .debug_str     0x0006960b      0x244 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_writebuf.o)
+ .debug_str     0x0006960b      0x25f /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
+ .debug_str     0x0006960b      0x236 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fflush.o)
+ .debug_str     0x0006960b      0x24f /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
+ .debug_str     0x0006960b      0x215 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
+ .debug_str     0x0006960b      0x1d4 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(remove.o)
+ .debug_str     0x0006960b      0x240 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(_do_fflush.o)
+ .debug_str     0x0006960b      0x202 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__ciob.o)
+ .debug_str     0x0006960b      0x15b /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_close.o)
+ .debug_str     0x0006960b      0x154 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_flen.o)
+ .debug_str     0x0006960b      0x156 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_istty.o)
+ .debug_str     0x0006960b      0x161 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_remove.o)
+ .debug_str     0x0006960b      0x154 /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_seek.o)
+ .debug_str     0x0006960b      0x16e /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(__sys_tmpnam.o)
 
 .comment        0x00000000       0x45
  .comment       0x00000000       0x45 ./utilities/str/fsl_str.o
@@ -6341,12 +6341,12 @@ LOAD linker stubs
  .comment       0x00000045       0x46 ./utilities/debug_console/fsl_debug_console.o
  .comment       0x00000045       0x46 ./utilities/fsl_assert.o
  .comment       0x00000045       0x46 ./startup/startup_mcxc444.o
- .comment       0x00000045       0x46 ./source/headers/adc.o
- .comment       0x00000045       0x46 ./source/headers/buttons.o
- .comment       0x00000045       0x46 ./source/headers/led.o
- .comment       0x00000045       0x46 ./source/headers/main.o
- .comment       0x00000045       0x46 ./source/headers/max7219.o
- .comment       0x00000045       0x46 ./source/headers/tasks.o
+ .comment       0x00000045       0x46 ./source/main logic/adc.o
+ .comment       0x00000045       0x46 ./source/main logic/buttons.o
+ .comment       0x00000045       0x46 ./source/main logic/led.o
+ .comment       0x00000045       0x46 ./source/main logic/main.o
+ .comment       0x00000045       0x46 ./source/main logic/max7219.o
+ .comment       0x00000045       0x46 ./source/main logic/tasks.o
  .comment       0x00000045       0x46 ./source/mtb.o
  .comment       0x00000045       0x46 ./source/semihost_hardfault.o
  .comment       0x00000045       0x46 ./freertos/freertos-kernel/portable/MemMang/heap_4.o
@@ -6403,17 +6403,17 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000084       0x2c ./startup/startup_mcxc444.o
  .ARM.attributes
-                0x000000b0       0x2c ./source/headers/adc.o
+                0x000000b0       0x2c ./source/main logic/adc.o
  .ARM.attributes
-                0x000000dc       0x2c ./source/headers/buttons.o
+                0x000000dc       0x2c ./source/main logic/buttons.o
  .ARM.attributes
-                0x00000108       0x2c ./source/headers/led.o
+                0x00000108       0x2c ./source/main logic/led.o
  .ARM.attributes
-                0x00000134       0x2c ./source/headers/main.o
+                0x00000134       0x2c ./source/main logic/main.o
  .ARM.attributes
-                0x00000160       0x2c ./source/headers/max7219.o
+                0x00000160       0x2c ./source/main logic/max7219.o
  .ARM.attributes
-                0x0000018c       0x2c ./source/headers/tasks.o
+                0x0000018c       0x2c ./source/main logic/tasks.o
  .ARM.attributes
                 0x000001b8       0x2c ./source/mtb.o
  .ARM.attributes
@@ -6518,12 +6518,12 @@ LOAD linker stubs
  .debug_frame   0x0000035c      0x29c ./utilities/debug_console/fsl_debug_console.o
  .debug_frame   0x000005f8       0x50 ./utilities/fsl_assert.o
  .debug_frame   0x00000648      0x3a8 ./startup/startup_mcxc444.o
- .debug_frame   0x000009f0      0x10c ./source/headers/adc.o
- .debug_frame   0x00000afc       0xf0 ./source/headers/buttons.o
- .debug_frame   0x00000bec       0xa8 ./source/headers/led.o
- .debug_frame   0x00000c94       0x6c ./source/headers/main.o
- .debug_frame   0x00000d00      0x1b0 ./source/headers/max7219.o
- .debug_frame   0x00000eb0       0xa4 ./source/headers/tasks.o
+ .debug_frame   0x000009f0      0x10c ./source/main logic/adc.o
+ .debug_frame   0x00000afc       0xf0 ./source/main logic/buttons.o
+ .debug_frame   0x00000bec       0xa8 ./source/main logic/led.o
+ .debug_frame   0x00000c94       0x6c ./source/main logic/main.o
+ .debug_frame   0x00000d00      0x1b0 ./source/main logic/max7219.o
+ .debug_frame   0x00000eb0       0xa4 ./source/main logic/tasks.o
  .debug_frame   0x00000f54       0x20 ./source/semihost_hardfault.o
  .debug_frame   0x00000f74      0x15c ./freertos/freertos-kernel/portable/MemMang/heap_4.o
  .debug_frame   0x000010d0      0x15c ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
@@ -6595,31 +6595,31 @@ Cross Reference Table
 
 Symbol                                            File
 ADC0_DriverIRQHandler                             ./startup/startup_mcxc444.o
-ADC0_IRQHandler                                   ./source/headers/adc.o
+ADC0_IRQHandler                                   ./source/main logic/adc.o
                                                   ./startup/startup_mcxc444.o
-ADC_Init                                          ./source/headers/adc.o
-                                                  ./source/headers/main.o
-ADC_ReadChannel                                   ./source/headers/adc.o
-                                                  ./source/headers/tasks.o
-ADC_ReadMicWindow                                 ./source/headers/adc.o
-                                                  ./source/headers/tasks.o
+ADC_Init                                          ./source/main logic/adc.o
+                                                  ./source/main logic/main.o
+ADC_ReadChannel                                   ./source/main logic/adc.o
+                                                  ./source/main logic/tasks.o
+ADC_ReadMicWindow                                 ./source/main logic/adc.o
+                                                  ./source/main logic/tasks.o
 BOARD_BootClockRUN                                ./board/clock_config.o
 BOARD_BootClockVLPR                               ./board/clock_config.o
 BOARD_InitBUTTONsPins                             ./board/pin_mux.o
 BOARD_InitBootClocks                              ./board/clock_config.o
-                                                  ./source/headers/main.o
+                                                  ./source/main logic/main.o
 BOARD_InitBootPeripherals                         ./board/peripherals.o
-                                                  ./source/headers/main.o
+                                                  ./source/main logic/main.o
 BOARD_InitBootPins                                ./board/pin_mux.o
-                                                  ./source/headers/main.o
+                                                  ./source/main logic/main.o
 BOARD_InitDEBUG_UARTPins                          ./board/pin_mux.o
 BOARD_InitDebugConsole                            ./board/board.o
-                                                  ./source/headers/main.o
+                                                  ./source/main logic/main.o
 BOARD_InitLEDsPins                                ./board/pin_mux.o
 BOARD_InitPeripherals                             ./board/peripherals.o
 BOARD_InitSWD_DEBUGPins                           ./board/pin_mux.o
-Buttons_Init                                      ./source/headers/buttons.o
-                                                  ./source/headers/tasks.o
+Buttons_Init                                      ./source/main logic/buttons.o
+                                                  ./source/main logic/tasks.o
 CLOCK_DeinitOsc0                                  ./drivers/fsl_clock.o
 CLOCK_EnableUsbfs0Clock                           ./drivers/fsl_clock.o
 CLOCK_GetBusClkFreq                               ./drivers/fsl_clock.o
@@ -6661,8 +6661,8 @@ DbgConsole_Getchar                                ./utilities/debug_console/fsl_
 DbgConsole_Init                                   ./utilities/debug_console/fsl_debug_console.o
                                                   ./board/board.o
 DbgConsole_Printf                                 ./utilities/debug_console/fsl_debug_console.o
-                                                  ./source/headers/tasks.o
-                                                  ./source/headers/main.o
+                                                  ./source/main logic/tasks.o
+                                                  ./source/main logic/main.o
                                                   ./utilities/fsl_assert.o
 DbgConsole_Putchar                                ./utilities/debug_console/fsl_debug_console.o
 DbgConsole_ReadCharacter                          ./utilities/debug_console/fsl_debug_console.o
@@ -6706,16 +6706,16 @@ I2S0_IRQHandler                                   ./startup/startup_mcxc444.o
 IntDefaultHandler                                 ./startup/startup_mcxc444.o
 LCD_DriverIRQHandler                              ./startup/startup_mcxc444.o
 LCD_IRQHandler                                    ./startup/startup_mcxc444.o
-LED_Init                                          ./source/headers/led.o
-                                                  ./source/headers/main.o
-LED_Off                                           ./source/headers/led.o
-LED_OffAll                                        ./source/headers/led.o
-                                                  ./source/headers/tasks.o
-                                                  ./source/headers/main.o
-LED_On                                            ./source/headers/led.o
-LED_SetRGB                                        ./source/headers/led.o
-                                                  ./source/headers/tasks.o
-                                                  ./source/headers/main.o
+LED_Init                                          ./source/main logic/led.o
+                                                  ./source/main logic/main.o
+LED_Off                                           ./source/main logic/led.o
+LED_OffAll                                        ./source/main logic/led.o
+                                                  ./source/main logic/tasks.o
+                                                  ./source/main logic/main.o
+LED_On                                            ./source/main logic/led.o
+LED_SetRGB                                        ./source/main logic/led.o
+                                                  ./source/main logic/tasks.o
+                                                  ./source/main logic/main.o
 LIST_AddHead                                      ./component/lists/fsl_component_generic_list.o
 LIST_AddPrevElement                               ./component/lists/fsl_component_generic_list.o
 LIST_AddTail                                      ./component/lists/fsl_component_generic_list.o
@@ -6772,26 +6772,26 @@ LPUART_TransferStopRingBuffer                     ./drivers/fsl_lpuart.o
 LPUART_WriteBlocking                              ./drivers/fsl_lpuart.o
                                                   ./component/uart/fsl_adapter_lpuart.o
 LPUART_WriteBlocking16bit                         ./drivers/fsl_lpuart.o
-MAX7219_Clear                                     ./source/headers/max7219.o
-                                                  ./source/headers/tasks.o
-MAX7219_Init                                      ./source/headers/max7219.o
-                                                  ./source/headers/main.o
-MAX7219_ShowAlertStatus                           ./source/headers/max7219.o
-MAX7219_ShowAll                                   ./source/headers/max7219.o
-                                                  ./source/headers/tasks.o
-MAX7219_ShowLightAdc                              ./source/headers/max7219.o
-MAX7219_ShowMicP2P                                ./source/headers/max7219.o
-MAX7219_ShowSystemStatus                          ./source/headers/max7219.o
+MAX7219_Clear                                     ./source/main logic/max7219.o
+                                                  ./source/main logic/tasks.o
+MAX7219_Init                                      ./source/main logic/max7219.o
+                                                  ./source/main logic/main.o
+MAX7219_ShowAlertStatus                           ./source/main logic/max7219.o
+MAX7219_ShowAll                                   ./source/main logic/max7219.o
+                                                  ./source/main logic/tasks.o
+MAX7219_ShowLightAdc                              ./source/main logic/max7219.o
+MAX7219_ShowMicP2P                                ./source/main logic/max7219.o
+MAX7219_ShowSystemStatus                          ./source/main logic/max7219.o
 NMI_Handler                                       ./startup/startup_mcxc444.o
 PIT_DriverIRQHandler                              ./startup/startup_mcxc444.o
 PIT_IRQHandler                                    ./startup/startup_mcxc444.o
 PMC_DriverIRQHandler                              ./startup/startup_mcxc444.o
 PMC_IRQHandler                                    ./startup/startup_mcxc444.o
 PORTA_DriverIRQHandler                            ./startup/startup_mcxc444.o
-PORTA_IRQHandler                                  ./source/headers/buttons.o
+PORTA_IRQHandler                                  ./source/main logic/buttons.o
                                                   ./startup/startup_mcxc444.o
 PORTC_PORTD_DriverIRQHandler                      ./startup/startup_mcxc444.o
-PORTC_PORTD_IRQHandler                            ./source/headers/buttons.o
+PORTC_PORTD_IRQHandler                            ./source/main logic/buttons.o
                                                   ./startup/startup_mcxc444.o
 PendSV_Handler                                    ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
                                                   ./startup/startup_mcxc444.o
@@ -6968,10 +6968,10 @@ __aeabi_uidiv                                     /Applications/MCUXpressoIDE_25
                                                   ./drivers/fsl_clock.o
                                                   ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
                                                   ./freertos/freertos-kernel/portable/MemMang/heap_4.o
-                                                  ./source/headers/max7219.o
+                                                  ./source/main logic/max7219.o
                                                   ./utilities/str/fsl_str.o
 __aeabi_uidivmod                                  /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(division_32.o)
-                                                  ./source/headers/max7219.o
+                                                  ./source/main logic/max7219.o
 __aeabi_ul2d                                      /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(double.o)
 __aeabi_ulcmp                                     /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(llong.o)
 __aeabi_uldivmod                                  /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(division_64.o)
@@ -7064,15 +7064,15 @@ _sbrk                                             /Applications/MCUXpressoIDE_25
                                                   /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
 _terminateio                                      /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
 _vStackTop                                        ./startup/startup_mcxc444.o
-alertTask                                         ./source/headers/tasks.o
-                                                  ./source/headers/main.o
+alertTask                                         ./source/main logic/tasks.o
+                                                  ./source/main logic/main.o
 atof                                              /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(scanf.o)
 atoi                                              /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(scanf.o)
 atol                                              /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(scanf.o)
 atoll                                             /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(scanf.o)
 bss_init                                          ./startup/startup_mcxc444.o
-buttonTask                                        ./source/headers/tasks.o
-                                                  ./source/headers/main.o
+buttonTask                                        ./source/main logic/tasks.o
+                                                  ./source/main logic/main.o
 calloc                                            /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
 data_init                                         ./startup/startup_mcxc444.o
 eTaskGetState                                     ./freertos/freertos-kernel/tasks.o
@@ -7098,25 +7098,25 @@ fseek                                             /Applications/MCUXpressoIDE_25
 fsl_assert_hook                                   ./utilities/fsl_assert.o
 ftell                                             /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ftell.o)
                                                   /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fseek.o)
-g_alertLatched                                    ./source/headers/main.o
-                                                  ./source/headers/tasks.o
-g_buttonSema                                      ./source/headers/buttons.o
-                                                  ./source/headers/tasks.o
-                                                  ./source/headers/main.o
-g_latestPacket                                    ./source/headers/main.o
-                                                  ./source/headers/tasks.o
+g_alertLatched                                    ./source/main logic/main.o
+                                                  ./source/main logic/tasks.o
+g_buttonSema                                      ./source/main logic/buttons.o
+                                                  ./source/main logic/tasks.o
+                                                  ./source/main logic/main.o
+g_latestPacket                                    ./source/main logic/main.o
+                                                  ./source/main logic/tasks.o
 g_pfnVectors                                      ./startup/startup_mcxc444.o
-g_sensorQueue                                     ./source/headers/main.o
-                                                  ./source/headers/tasks.o
+g_sensorQueue                                     ./source/main logic/main.o
+                                                  ./source/main logic/tasks.o
 g_serialHandle                                    ./utilities/debug_console/fsl_debug_console.o
-g_statusMutex                                     ./source/headers/main.o
-                                                  ./source/headers/tasks.o
-g_sw2StartPending                                 ./source/headers/buttons.o
-                                                  ./source/headers/tasks.o
-g_sw3AckPending                                   ./source/headers/buttons.o
-                                                  ./source/headers/tasks.o
-g_systemStarted                                   ./source/headers/main.o
-                                                  ./source/headers/tasks.o
+g_statusMutex                                     ./source/main logic/main.o
+                                                  ./source/main logic/tasks.o
+g_sw2StartPending                                 ./source/main logic/buttons.o
+                                                  ./source/main logic/tasks.o
+g_sw3AckPending                                   ./source/main logic/buttons.o
+                                                  ./source/main logic/tasks.o
+g_systemStarted                                   ./source/main logic/main.o
+                                                  ./source/main logic/tasks.o
 g_xtal0Freq                                       ./drivers/fsl_clock.o
 g_xtal32Freq                                      ./drivers/fsl_clock.o
 isalnum                                           /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ctype.o)
@@ -7130,7 +7130,7 @@ ispunct                                           /Applications/MCUXpressoIDE_25
 isspace                                           /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ctype.o)
 isupper                                           /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ctype.o)
 isxdigit                                          /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(ctype.o)
-main                                              ./source/headers/main.o
+main                                              ./source/main logic/main.o
                                                   /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_nohost_nf.a(_cr__main.o)
 malloc                                            /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
                                                   ./drivers/fsl_common.o
@@ -7140,7 +7140,7 @@ memcpy                                            /Applications/MCUXpressoIDE_25
                                                   /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(alloc.o)
                                                   ./freertos/freertos-kernel/stream_buffer.o
                                                   ./freertos/freertos-kernel/queue.o
-                                                  ./source/headers/tasks.o
+                                                  ./source/main logic/tasks.o
                                                   ./utilities/str/fsl_str.o
 memset                                            /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(memset.o)
                                                   /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(fclose.o)
@@ -7152,15 +7152,15 @@ memset                                            /Applications/MCUXpressoIDE_25
                                                   ./freertos/freertos-kernel/tasks.o
                                                   ./freertos/freertos-kernel/stream_buffer.o
                                                   ./freertos/freertos-kernel/portable/MemMang/heap_4.o
-                                                  ./source/headers/tasks.o
+                                                  ./source/main logic/tasks.o
                                                   ./utilities/debug_console/fsl_debug_console.o
 oscConfig_BOARD_BootClockRUN                      ./board/clock_config.o
 oscConfig_BOARD_BootClockVLPR                     ./board/clock_config.o
 pcQueueGetName                                    ./freertos/freertos-kernel/queue.o
 pcTaskGetName                                     ./freertos/freertos-kernel/tasks.o
 pcTimerGetName                                    ./freertos/freertos-kernel/timers.o
-printTask                                         ./source/headers/tasks.o
-                                                  ./source/headers/main.o
+printTask                                         ./source/main logic/tasks.o
+                                                  ./source/main logic/main.o
 pvPortCalloc                                      ./freertos/freertos-kernel/portable/MemMang/heap_4.o
 pvPortMalloc                                      ./freertos/freertos-kernel/portable/MemMang/heap_4.o
                                                   ./freertos/freertos-kernel/timers.o
@@ -7184,8 +7184,8 @@ s_lpuartHandle                                    ./drivers/fsl_lpuart.o
 s_lpuartIRQ                                       ./drivers/fsl_lpuart.o
 s_lpuartIsr                                       ./drivers/fsl_lpuart.o
 scanf                                             /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(scanf.o)
-sensorTask                                        ./source/headers/tasks.o
-                                                  ./source/headers/main.o
+sensorTask                                        ./source/main logic/tasks.o
+                                                  ./source/main logic/main.o
 setvbuf                                           /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(setvbuf.o)
                                                   /Applications/MCUXpressoIDE_25.6.136/ide/plugins/com.nxp.mcuxpresso.tools.macosx_25.6.0.202501151204/tools/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(initio.o)
 simConfig_BOARD_BootClockRUN                      ./board/clock_config.o
@@ -7240,8 +7240,8 @@ uxTaskResetEventItemValue                         ./freertos/freertos-kernel/tas
                                                   ./freertos/freertos-kernel/event_groups.o
 uxTimerGetReloadMode                              ./freertos/freertos-kernel/timers.o
 uxTimerGetTimerNumber                             ./freertos/freertos-kernel/timers.o
-vApplicationMallocFailedHook                      ./source/headers/main.o
-vApplicationStackOverflowHook                     ./source/headers/main.o
+vApplicationMallocFailedHook                      ./source/main logic/main.o
+vApplicationStackOverflowHook                     ./source/main logic/main.o
 vClearInterruptMask                               ./freertos/freertos-kernel/portable/GCC/ARM_CM0/portasm.o
                                                   ./freertos/freertos-kernel/tasks.o
                                                   ./freertos/freertos-kernel/stream_buffer.o
@@ -7341,7 +7341,7 @@ vTaskSetThreadLocalStoragePointer                 ./freertos/freertos-kernel/tas
 vTaskSetTimeOutState                              ./freertos/freertos-kernel/tasks.o
                                                   ./freertos/freertos-kernel/stream_buffer.o
 vTaskStartScheduler                               ./freertos/freertos-kernel/tasks.o
-                                                  ./source/headers/main.o
+                                                  ./source/main logic/main.o
 vTaskSuspend                                      ./freertos/freertos-kernel/tasks.o
 vTaskSuspendAll                                   ./freertos/freertos-kernel/tasks.o
                                                   ./freertos/freertos-kernel/timers.o
@@ -7374,18 +7374,18 @@ xPortStartScheduler                               ./freertos/freertos-kernel/por
                                                   ./freertos/freertos-kernel/tasks.o
 xQueueCreateCountingSemaphore                     ./freertos/freertos-kernel/queue.o
 xQueueCreateMutex                                 ./freertos/freertos-kernel/queue.o
-                                                  ./source/headers/main.o
+                                                  ./source/main logic/main.o
 xQueueGenericCreate                               ./freertos/freertos-kernel/queue.o
                                                   ./freertos/freertos-kernel/timers.o
-                                                  ./source/headers/main.o
+                                                  ./source/main logic/main.o
 xQueueGenericReset                                ./freertos/freertos-kernel/queue.o
 xQueueGenericSend                                 ./freertos/freertos-kernel/queue.o
                                                   ./freertos/freertos-kernel/timers.o
-                                                  ./source/headers/tasks.o
+                                                  ./source/main logic/tasks.o
 xQueueGenericSendFromISR                          ./freertos/freertos-kernel/queue.o
                                                   ./freertos/freertos-kernel/timers.o
 xQueueGiveFromISR                                 ./freertos/freertos-kernel/queue.o
-                                                  ./source/headers/buttons.o
+                                                  ./source/main logic/buttons.o
 xQueueGiveMutexRecursive                          ./freertos/freertos-kernel/queue.o
 xQueueIsQueueEmptyFromISR                         ./freertos/freertos-kernel/queue.o
 xQueueIsQueueFullFromISR                          ./freertos/freertos-kernel/queue.o
@@ -7393,11 +7393,11 @@ xQueuePeek                                        ./freertos/freertos-kernel/que
 xQueuePeekFromISR                                 ./freertos/freertos-kernel/queue.o
 xQueueReceive                                     ./freertos/freertos-kernel/queue.o
                                                   ./freertos/freertos-kernel/timers.o
-                                                  ./source/headers/tasks.o
+                                                  ./source/main logic/tasks.o
 xQueueReceiveFromISR                              ./freertos/freertos-kernel/queue.o
 xQueueRegistry                                    ./freertos/freertos-kernel/queue.o
 xQueueSemaphoreTake                               ./freertos/freertos-kernel/queue.o
-                                                  ./source/headers/tasks.o
+                                                  ./source/main logic/tasks.o
 xQueueTakeMutexRecursive                          ./freertos/freertos-kernel/queue.o
 xStreamBufferBytesAvailable                       ./freertos/freertos-kernel/stream_buffer.o
 xStreamBufferGenericCreate                        ./freertos/freertos-kernel/stream_buffer.o
@@ -7420,9 +7420,9 @@ xTaskCheckForTimeOut                              ./freertos/freertos-kernel/tas
                                                   ./freertos/freertos-kernel/queue.o
 xTaskCreate                                       ./freertos/freertos-kernel/tasks.o
                                                   ./freertos/freertos-kernel/timers.o
-                                                  ./source/headers/main.o
+                                                  ./source/main logic/main.o
 xTaskDelayUntil                                   ./freertos/freertos-kernel/tasks.o
-                                                  ./source/headers/tasks.o
+                                                  ./source/main logic/tasks.o
 xTaskGenericNotify                                ./freertos/freertos-kernel/tasks.o
                                                   ./freertos/freertos-kernel/stream_buffer.o
 xTaskGenericNotifyFromISR                         ./freertos/freertos-kernel/tasks.o
@@ -7441,9 +7441,9 @@ xTaskGetSchedulerState                            ./freertos/freertos-kernel/tas
                                                   ./freertos/freertos-kernel/event_groups.o
 xTaskGetTickCount                                 ./freertos/freertos-kernel/tasks.o
                                                   ./freertos/freertos-kernel/timers.o
-                                                  ./source/headers/tasks.o
+                                                  ./source/main logic/tasks.o
 xTaskGetTickCountFromISR                          ./freertos/freertos-kernel/tasks.o
-                                                  ./source/headers/buttons.o
+                                                  ./source/main logic/buttons.o
 xTaskIncrementTick                                ./freertos/freertos-kernel/tasks.o
                                                   ./freertos/freertos-kernel/portable/GCC/ARM_CM0/port.o
 xTaskPriorityDisinherit                           ./freertos/freertos-kernel/tasks.o

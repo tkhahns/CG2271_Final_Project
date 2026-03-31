@@ -5,7 +5,7 @@
 #include <stdbool.h>
 
 /*
- * MAX7219 driver — 4 chained 8-digit modules
+ * MAX7219 driver — 4 chained 8-digit modules (32 digits total)
  *
  * Wiring (SPI0 on MCXC444):
  *   PTD0  GPIO output  → CS  (LOAD)
@@ -27,8 +27,8 @@
  * Label digits use raw segment data; value digits use Code-B decode.
  */
 
-#define MAX7219_NUM_MODULES    4
-#define MAX7219_DIGITS_PER_MOD 8
+#define MAX7219_NUM_MODULES    4U
+#define MAX7219_DIGITS_PER_MOD 8U
 
 /* ------------------------------------------------------------------ */
 /* Public API                                                           */
