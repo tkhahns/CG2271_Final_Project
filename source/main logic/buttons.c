@@ -6,7 +6,7 @@
 #define SW3_ACK_PIN     4    /* PTA4 */
 #define DEBOUNCE_MS     200
 
-SemaphoreHandle_t  g_buttonSema       = NULL;
+extern SemaphoreHandle_t  g_buttonSema;
 volatile bool      g_sw2StartPending  = false;
 volatile bool      g_sw3AckPending    = false;
 

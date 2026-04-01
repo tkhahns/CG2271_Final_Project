@@ -1,9 +1,9 @@
-#include <main logic/adc.h>
-#include <main logic/app_types.h>
-#include <main logic/buttons.h>
-#include <main logic/led.h>
-#include <main logic/max7219.h>
-#include <main logic/tasks.h>
+#include "tasks.h"
+#include "app_types.h"
+#include "adc.h"
+#include "led.h"
+#include "buttons.h"
+#include "slcd.h"
 #include "fsl_debug_console.h"
 
 #include "FreeRTOS.h"
@@ -35,7 +35,6 @@ void sensorTask(void *p) {
             pkt.lightRaw = ADC_ReadChannel(PHOTO_ADC_CH);
             ADC_ReadMicWindow(&pkt.micRaw, &pkt.micMin, &pkt.micMax, &pkt.micP2P);
             pkt.p2pFlag  = (pkt.micP2P > MIC_P2P_THRESHOLD) ? 1U : 0U;
-
             xQueueOverwrite(g_sensorQueue, &pkt);
         }
 
@@ -48,8 +47,6 @@ void sensorTask(void *p) {
 /* ================================================================== */
 void buttonTask(void *p) {
     (void)p;
-
-    /* Init hardware inside task so it runs after scheduler starts */
     Buttons_Init(g_buttonSema);
 
     while (1) {
@@ -86,11 +83,19 @@ void buttonTask(void *p) {
 }
 
 /* ================================================================== */
-/* alertTask — consumes queue, drives RGB LED + MAX7219 display        */
+/* alertTask — drives RGB LED and SLCD based on system state           */
+/*                                                                      */
+/* SLCD display layout (4 digits):                                      */
+/*   System OFF  : "    " (blank)                                       */
+/*   Running, OK : light ADC value  e.g. "2048"                        */
+/*   Alert       : mic P2P value    e.g. "  42" (leading zeros hidden) */
+/*                 alternating every 1 second with "AL  "              */
 /* ================================================================== */
 void alertTask(void *p) {
     (void)p;
     SensorPacket pkt;
+    bool showingAlert = false;       /* used to alternate SLCD content on alert */
+    TickType_t lastAlternate = 0;
 
     while (1) {
         bool gotPacket = (xQueueReceive(g_sensorQueue, &pkt, pdMS_TO_TICKS(200)) == pdTRUE);
@@ -102,26 +107,38 @@ void alertTask(void *p) {
             }
 
             if (!g_systemStarted) {
-                /* System off: blank everything */
+                /* System off: everything blank */
                 g_alertLatched = false;
                 LED_OffAll();
-                MAX7219_Clear();
+                SLCD_Clear();
             } else {
                 if (gotPacket && pkt.p2pFlag) {
                     g_alertLatched = true;
                 }
 
-                /* Update RGB LED */
                 if (g_alertLatched) {
-                    LED_SetRGB(true, false, false);   /* RED   */
-                } else {
-                    LED_SetRGB(false, true, false);   /* GREEN */
-                }
+                    /* Red LED */
+                    LED_SetRGB(true, false, false);
 
-                /* Update all 4 MAX7219 modules */
-                MAX7219_ShowAll(g_systemStarted, g_alertLatched,
-                                g_latestPacket.lightRaw,
-                                g_latestPacket.micP2P);
+                    /* Alternate SLCD between "AL  " and mic P2P value every 1 s */
+                    TickType_t now = xTaskGetTickCount();
+                    if ((now - lastAlternate) >= pdMS_TO_TICKS(1000)) {
+                        lastAlternate  = now;
+                        showingAlert   = !showingAlert;
+                    }
+
+                    if (showingAlert) {
+                        SLCD_ShowString("AL  ");
+                    } else {
+                        SLCD_ShowNumber(g_latestPacket.micP2P);
+                    }
+                } else {
+                    /* Green LED, show light ADC value */
+                    LED_SetRGB(false, true, false);
+                    showingAlert  = false;
+                    lastAlternate = xTaskGetTickCount();
+                    SLCD_ShowNumber(g_latestPacket.lightRaw);
+                }
             }
 
             xSemaphoreGive(g_statusMutex);
@@ -144,7 +161,7 @@ void printTask(void *p) {
     PRINTF("SW3 (PTA4) : Acknowledge alert\r\n");
     PRINTF("Light      : PTB0 (ADC0_SE8)\r\n");
     PRINTF("Mic        : PTB1 (ADC0_SE9)\r\n");
-    PRINTF("MAX7219    : SPI0  PTD0=CS  PTD1=SCK  PTD2=MOSI\r\n");
+    PRINTF("SLCD       : on-board DS1 (4-digit 7-seg)\r\n");
     PRINTF("P2P thresh : >%u\r\n\r\n", MIC_P2P_THRESHOLD);
 
     while (1) {
