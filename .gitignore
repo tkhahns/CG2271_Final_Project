@@ -1,1 +1,7 @@
-/Debug/
+B01_08_Interim_Report.md
+
+# macOS
+.DS_Store
+
+# ESP32 secrets — never commit real keys
+esp32/config.h
