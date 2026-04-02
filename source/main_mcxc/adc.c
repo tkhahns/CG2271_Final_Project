@@ -1,4 +1,4 @@
-#include <main logic/adc.h>
+#include "adc.h"
 #include "MCXC444.h"
 #include <stdbool.h>
 
