@@ -4,8 +4,13 @@
 
 static volatile uint16_t s_adcValue = 0;
 static volatile bool     s_adcDone  = false;
+static volatile bool     s_adcInitialized = false;
 
 void ADC_Init(void) {
+    if (s_adcInitialized) {
+        return;
+    }
+
     NVIC_DisableIRQ(ADC0_IRQn);
 
     SIM->SCGC6 |= SIM_SCGC6_ADC0_MASK;
@@ -28,6 +33,7 @@ void ADC_Init(void) {
     NVIC_SetPriority(ADC0_IRQn, 2);
     NVIC_ClearPendingIRQ(ADC0_IRQn);
     NVIC_EnableIRQ(ADC0_IRQn);
+    s_adcInitialized = true;
 }
 
 void ADC0_IRQHandler(void) {

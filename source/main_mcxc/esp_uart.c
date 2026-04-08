@@ -1,14 +1,25 @@
 #include "esp_uart.h"
 
 #include <stdio.h>
+#include <string.h>
 
 #include "MCXC444.h"
 #include "fsl_clock.h"
+#include "fsl_debug_console.h"
 
-#define ESP_UART_BAUD_RATE 115200
-#define ESP_UART_TX_PIN    22  /* PTE22 -> UART2_TX */
-#define ESP_UART_RX_PIN    23  /* PTE23 -> UART2_RX */
-#define ESP_UART_PIN_MUX   4   /* ALT4 routes PTE22/PTE23 to UART2 */
+#define ESP_UART_BAUD_RATE 9600
+#define ESP_UART_TX_PIN    22
+#define ESP_UART_RX_PIN    23
+#define ESP_UART_PIN_MUX   4
+#define UART2_INT_PRIO     128
+
+static char s_rxBuffer[48];
+static volatile char s_isrBuffer[48];
+static volatile uint8_t s_isrIndex = 0U;
+static volatile bool s_frameReady = false;
+static bool s_remoteValid = false;
+static uint8_t s_lastRemoteActiveCount = 0U;
+static bool s_uartInitialized = false;
 
 static void ESP_UART_WriteByte(uint8_t byte)
 {
@@ -28,36 +39,140 @@ static void ESP_UART_WriteString(const char *str)
     }
 }
 
-void ESP_UART_Init(void)
+static void ESP_UART_HandleFrame(const char *frame)
 {
-    uint32_t uartClockHz = CLOCK_GetFreq(UART2_CLK_SRC);
-    uint32_t divisorTimes32 = (uint32_t)((((uint64_t)uartClockHz * 2ULL) + (ESP_UART_BAUD_RATE / 2U)) / ESP_UART_BAUD_RATE);
-    uint16_t sbr = (uint16_t)(divisorTimes32 / 32U);
-    uint8_t brfa = (uint8_t)(divisorTimes32 % 32U);
+    unsigned int remoteActiveCount = 0U;
 
-    SIM->SCGC5 |= SIM_SCGC5_PORTE_MASK;
-    SIM->SCGC4 |= SIM_SCGC4_UART2_MASK;
-
-    PORTE->PCR[ESP_UART_TX_PIN] = PORT_PCR_MUX(ESP_UART_PIN_MUX);
-    PORTE->PCR[ESP_UART_RX_PIN] = PORT_PCR_MUX(ESP_UART_PIN_MUX);
-
-    UART2->C2 = 0U;
-    UART2->BDH = (uint8_t)((UART2->BDH & ~UART_BDH_SBR_MASK) | UART_BDH_SBR((sbr >> 8U) & UART_BDH_SBR_MASK));
-    UART2->BDL = UART_BDL_SBR(sbr & 0xFFU);
-    UART2->C1 = 0U;
-    UART2->C3 = 0U;
-    UART2->C4 = (uint8_t)((UART2->C4 & ~UART_C4_BRFA_MASK) | UART_C4_BRFA(brfa));
-    UART2->C2 = UART_C2_TE_MASK | UART_C2_RE_MASK;
+    if (sscanf(frame, "$ESP,%u", &remoteActiveCount) == 1)
+    {
+        s_lastRemoteActiveCount = (uint8_t)remoteActiveCount;
+        s_remoteValid = true;
+    }
 }
 
-void ESP_UART_SendTelemetry(uint16_t lightRaw, uint16_t micP2P, bool systemStarted, bool alertLatched)
+void UART2_FLEXIO_IRQHandler(void)
 {
-    char frame[48];
+    const uint8_t s1 = UART2->S1;
+
+    if ((s1 & UART_S1_RDRF_MASK) != 0U)
+    {
+        const char rx = (char)UART2->D;
+
+        if (rx == '\r')
+        {
+            return;
+        }
+
+        if (rx == '\n')
+        {
+            if ((s_isrIndex > 0U) && !s_frameReady)
+            {
+                s_isrBuffer[s_isrIndex] = '\0';
+                memcpy(s_rxBuffer, (const void *)s_isrBuffer, (size_t)s_isrIndex + 1U);
+                s_frameReady = true;
+            }
+            s_isrIndex = 0U;
+            return;
+        }
+
+        if (s_isrIndex < (sizeof(s_isrBuffer) - 1U))
+        {
+            s_isrBuffer[s_isrIndex++] = rx;
+        }
+        else
+        {
+            s_isrIndex = 0U;
+        }
+    }
+    else if ((s1 & (UART_S1_OR_MASK | UART_S1_NF_MASK | UART_S1_FE_MASK | UART_S1_PF_MASK)) != 0U)
+    {
+        (void)UART2->D;
+        s_isrIndex = 0U;
+    }
+}
+
+void ESP_UART_Init(void)
+{
+    uint32_t busClkHz;
+    uint32_t sbr;
+
+    if (s_uartInitialized)
+    {
+        return;
+    }
+
+    NVIC_DisableIRQ(UART2_FLEXIO_IRQn);
+
+    SIM->SCGC4 |= SIM_SCGC4_UART2_MASK;
+    SIM->SCGC5 |= SIM_SCGC5_PORTE_MASK;
+
+    UART2->C2 &= ~(UART_C2_TE_MASK | UART_C2_RE_MASK);
+
+    PORTE->PCR[ESP_UART_TX_PIN] &= ~PORT_PCR_MUX_MASK;
+    PORTE->PCR[ESP_UART_TX_PIN] |= PORT_PCR_MUX(ESP_UART_PIN_MUX);
+    PORTE->PCR[ESP_UART_RX_PIN] &= ~PORT_PCR_MUX_MASK;
+    PORTE->PCR[ESP_UART_RX_PIN] |= PORT_PCR_MUX(ESP_UART_PIN_MUX);
+
+    busClkHz = CLOCK_GetBusClkFreq();
+    sbr = (busClkHz + (ESP_UART_BAUD_RATE * 8U)) / (ESP_UART_BAUD_RATE * 16U);
+
+    UART2->BDH &= (uint8_t)~UART_BDH_SBR_MASK;
+    UART2->BDH |= (uint8_t)((sbr >> 8U) & UART_BDH_SBR_MASK);
+    UART2->BDL = (uint8_t)(sbr & 0xFFU);
+    UART2->C1 = 0U;
+    UART2->C3 = 0U;
+    UART2->C4 &= (uint8_t)~UART_C4_BRFA_MASK;
+    UART2->S2 = 0U;
+    UART2->C2 = UART_C2_RIE_MASK | UART_C2_RE_MASK | UART_C2_TE_MASK;
+
+    NVIC_SetPriority(UART2_FLEXIO_IRQn, UART2_INT_PRIO);
+    NVIC_ClearPendingIRQ(UART2_FLEXIO_IRQn);
+    NVIC_EnableIRQ(UART2_FLEXIO_IRQn);
+
+    s_isrIndex = 0U;
+    s_frameReady = false;
+    s_remoteValid = false;
+    s_lastRemoteActiveCount = 0U;
+    s_uartInitialized = true;
+}
+
+void ESP_UART_ServiceRx(void)
+{
+    if (!s_uartInitialized)
+    {
+        return;
+    }
+
+    if (s_frameReady)
+    {
+        s_frameReady = false;
+        ESP_UART_HandleFrame(s_rxBuffer);
+    }
+}
+
+void ESP_UART_GetRemoteCount(bool *remoteValid,
+                             uint8_t *remoteActiveCount)
+{
+    *remoteValid = s_remoteValid;
+    *remoteActiveCount = s_lastRemoteActiveCount;
+}
+
+void ESP_UART_SendTelemetry(const SensorPacket *packet,
+                            bool systemStarted,
+                            bool alertSuppressed)
+{
+    char frame[64];
+
+    if (!s_uartInitialized)
+    {
+        return;
+    }
+
     (void)snprintf(frame, sizeof(frame), "$MCXC,%u,%u,%u,%u\r\n",
-                   (unsigned int)lightRaw,
-                   (unsigned int)micP2P,
+                   (unsigned int)packet->lightRaw,
+                   (unsigned int)packet->micP2P,
                    systemStarted ? 1U : 0U,
-                   alertLatched ? 1U : 0U);
+                   alertSuppressed ? 1U : 0U);
 
     ESP_UART_WriteString(frame);
 }

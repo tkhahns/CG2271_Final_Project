@@ -1,49 +1,77 @@
 #include <Arduino.h>
 #include <stdio.h>
+#include <math.h>
 
 #include "uart_receive.h"
+#include "sensors.h"
 
 namespace {
 
-constexpr size_t kFrameBufferSize = 64;
+constexpr size_t kFrameBufferSize = 80;
 char g_frameBuffer[kFrameBufferSize];
 size_t g_frameIndex = 0;
+bool g_haveMcxcFrame = false;
 
-void printParsedFrame(unsigned int light, unsigned int micP2P, unsigned int started, unsigned int alert) {
-  Serial.print("MCXC LIGHT=");
-  Serial.print(light);
-  Serial.print(" | MCXC MIC_P2P=");
-  Serial.print(micP2P);
-  Serial.print(" | STARTED=");
-  Serial.print(started);
-  Serial.print(" | ALERT=");
-  Serial.println(alert);
+static uint8_t warningStateFromCount(uint8_t activeCount) {
+  if (activeCount == 0U) {
+    return WARNING_STATE_IDLE;
+  }
+  if (activeCount == 1U) {
+    return WARNING_STATE_YELLOW;
+  }
+  if (activeCount == 2U) {
+    return WARNING_STATE_RED;
+  }
+  return WARNING_STATE_RED_BUZZER;
 }
 
-void handleFrame(const char *frame) {
-  unsigned int light = 0;
-  unsigned int micP2P = 0;
-  unsigned int started = 0;
-  unsigned int alert = 0;
+static uint8_t breachedCountFromAllSensors(const DeskState &state) {
+  uint8_t count = 0U;
 
-  const int parsed = sscanf(frame, "$MCXC,%u,%u,%u,%u", &light, &micP2P, &started, &alert);
-  if (parsed == 4) {
-    printParsedFrame(light, micP2P, started, alert);
-    return;
+  if (!isnan(state.temp) && state.temp >= TEMP_HIGH_THRESHOLD_C) {
+    count++;
+  }
+  if (state.distance >= 0.0f && state.distance <= DIST_CLOSE_THRESHOLD_CM) {
+    count++;
+  }
+  if (state.light <= LIGHT_DARK_THRESHOLD) {
+    count++;
+  }
+  if (state.soundP2P >= SOUND_THRESHOLD) {
+    count++;
   }
 
-  Serial.print("INVALID FRAME: ");
-  Serial.println(frame);
+  return count;
+}
+
+static void handleFrame(const char *frame, DeskState &state) {
+  unsigned int light = 0;
+  unsigned int sound = 0;
+  unsigned int started = 0;
+  unsigned int suppressed = 0;
+
+  const int parsed = sscanf(frame, "$MCXC,%u,%u,%u,%u",
+                            &light,
+                            &sound,
+                            &started,
+                            &suppressed);
+  if (parsed == 4) {
+    state.light = static_cast<uint16_t>(light);
+    state.soundP2P = static_cast<uint16_t>(sound);
+    state.systemActive = (started != 0U);
+    state.warningSuppressed = (suppressed != 0U);
+    g_haveMcxcFrame = true;
+  }
 }
 
 }  // namespace
 
 void uartReceiveInit() {
-  Serial1.begin(115200, SERIAL_8N1, RX1_PIN, TX1_PIN);
-  Serial.println("UART receive monitor ready");
+  Serial1.begin(UART_LINK_BAUD_RATE, SERIAL_8N1, RX1_PIN, TX1_PIN);
+  Serial.println("UART link to MCXC ready");
 }
 
-void uartReceiveLoop() {
+void uartReceiveLoop(DeskState &state) {
   while (Serial1.available() > 0) {
     const char incoming = static_cast<char>(Serial1.read());
 
@@ -52,10 +80,10 @@ void uartReceiveLoop() {
     }
 
     if (incoming == '\n') {
-      if (g_frameIndex > 0) {
+      if (g_frameIndex > 0U) {
         g_frameBuffer[g_frameIndex] = '\0';
-        handleFrame(g_frameBuffer);
-        g_frameIndex = 0;
+        handleFrame(g_frameBuffer, state);
+        g_frameIndex = 0U;
       }
       continue;
     }
@@ -63,10 +91,23 @@ void uartReceiveLoop() {
     if (g_frameIndex < (kFrameBufferSize - 1U)) {
       g_frameBuffer[g_frameIndex++] = incoming;
     } else {
-      g_frameBuffer[g_frameIndex] = '\0';
-      Serial.print("FRAME TOO LONG: ");
-      Serial.println(g_frameBuffer);
-      g_frameIndex = 0;
+      g_frameIndex = 0U;
     }
   }
+}
+
+void uartSendEspSensors(const DeskState &state) {
+  DeskState &mutableState = const_cast<DeskState &>(state);
+  uint8_t activeCount = 0U;
+
+  if (g_haveMcxcFrame && state.systemActive) {
+    activeCount = breachedCountFromAllSensors(state);
+  }
+
+  mutableState.activeCount = activeCount;
+  mutableState.warningState = warningStateFromCount(activeCount);
+
+  char frame[24];
+  snprintf(frame, sizeof(frame), "$ESP,%u\r\n", static_cast<unsigned int>(activeCount));
+  Serial1.print(frame);
 }
