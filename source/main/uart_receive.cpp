@@ -64,6 +64,13 @@ static void handleFrame(const char *frame, DeskState &state) {
   }
 }
 
+static int encodeDeciOrInvalid(float value, bool isValid) {
+  if (!isValid) {
+    return -1;
+  }
+  return static_cast<int>(lroundf(value * 10.0f));
+}
+
 }  // namespace
 
 void uartReceiveInit() {
@@ -107,7 +114,15 @@ void uartSendEspSensors(const DeskState &state) {
   mutableState.activeCount = activeCount;
   mutableState.warningState = warningStateFromCount(activeCount);
 
-  char frame[24];
-  snprintf(frame, sizeof(frame), "$ESP,%u\r\n", static_cast<unsigned int>(activeCount));
+  const int tempDeci = encodeDeciOrInvalid(state.temp, !isnan(state.temp));
+  const int distDeci = encodeDeciOrInvalid(state.distance, state.distance >= 0.0f);
+
+  char frame[48];
+  snprintf(frame,
+           sizeof(frame),
+           "$ESP,%u,%d,%d\r\n",
+           static_cast<unsigned int>(activeCount),
+           tempDeci,
+           distDeci);
   Serial1.print(frame);
 }

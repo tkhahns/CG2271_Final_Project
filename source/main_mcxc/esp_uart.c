@@ -13,12 +13,14 @@
 #define ESP_UART_PIN_MUX   4
 #define UART2_INT_PRIO     128
 
-static char s_rxBuffer[48];
-static volatile char s_isrBuffer[48];
+static char s_rxBuffer[64];
+static volatile char s_isrBuffer[64];
 static volatile uint8_t s_isrIndex = 0U;
 static volatile bool s_frameReady = false;
 static bool s_remoteValid = false;
 static uint8_t s_lastRemoteActiveCount = 0U;
+static int16_t s_lastRemoteTempDeci = -1;
+static int16_t s_lastRemoteDistDeci = -1;
 static bool s_uartInitialized = false;
 
 static void ESP_UART_WriteByte(uint8_t byte)
@@ -42,10 +44,23 @@ static void ESP_UART_WriteString(const char *str)
 static void ESP_UART_HandleFrame(const char *frame)
 {
     unsigned int remoteActiveCount = 0U;
+    int remoteTempDeci = -1;
+    int remoteDistDeci = -1;
+
+    if (sscanf(frame, "$ESP,%u,%d,%d", &remoteActiveCount, &remoteTempDeci, &remoteDistDeci) == 3)
+    {
+        s_lastRemoteActiveCount = (uint8_t)remoteActiveCount;
+        s_lastRemoteTempDeci = (int16_t)remoteTempDeci;
+        s_lastRemoteDistDeci = (int16_t)remoteDistDeci;
+        s_remoteValid = true;
+        return;
+    }
 
     if (sscanf(frame, "$ESP,%u", &remoteActiveCount) == 1)
     {
         s_lastRemoteActiveCount = (uint8_t)remoteActiveCount;
+        s_lastRemoteTempDeci = -1;
+        s_lastRemoteDistDeci = -1;
         s_remoteValid = true;
     }
 }
@@ -133,6 +148,8 @@ void ESP_UART_Init(void)
     s_frameReady = false;
     s_remoteValid = false;
     s_lastRemoteActiveCount = 0U;
+    s_lastRemoteTempDeci = -1;
+    s_lastRemoteDistDeci = -1;
     s_uartInitialized = true;
 }
 
@@ -155,6 +172,28 @@ void ESP_UART_GetRemoteCount(bool *remoteValid,
 {
     *remoteValid = s_remoteValid;
     *remoteActiveCount = s_lastRemoteActiveCount;
+}
+
+void ESP_UART_GetRemoteData(bool *remoteValid,
+                            uint8_t *remoteActiveCount,
+                            float *remoteTemperatureC,
+                            bool *remoteTemperatureValid,
+                            float *remoteDistanceCm,
+                            bool *remoteDistanceValid)
+{
+    *remoteValid = s_remoteValid;
+    *remoteActiveCount = s_lastRemoteActiveCount;
+
+    *remoteTemperatureValid = (s_lastRemoteTempDeci >= 0);
+    *remoteDistanceValid = (s_lastRemoteDistDeci >= 0);
+
+    *remoteTemperatureC = (*remoteTemperatureValid)
+        ? ((float)s_lastRemoteTempDeci / 10.0f)
+        : 0.0f;
+
+    *remoteDistanceCm = (*remoteDistanceValid)
+        ? ((float)s_lastRemoteDistDeci / 10.0f)
+        : 0.0f;
 }
 
 void ESP_UART_SendTelemetry(const SensorPacket *packet,

@@ -21,6 +21,11 @@ typedef enum {
     WARNING_STATE_RED_BUZZER = 4
 } WarningState;
 
+typedef enum {
+    OLED_SCREEN_SENSORS = 0,
+    OLED_SCREEN_SUGGESTION = 1
+} OledScreenMode;
+
 typedef struct {
     uint16_t lightRaw;
     uint16_t micRaw;
@@ -42,9 +47,10 @@ extern QueueHandle_t     g_sensorQueue;
 extern SemaphoreHandle_t g_buttonSema;
 extern SemaphoreHandle_t g_statusMutex;
 
-extern bool         g_systemStarted;
-extern bool         g_alertSuppressed;
-extern WarningState g_warningState;
-extern SensorPacket g_latestPacket;
+extern bool           g_systemStarted;
+extern bool           g_alertSuppressed;
+extern WarningState   g_warningState;
+extern OledScreenMode g_oledScreenMode;
+extern SensorPacket   g_latestPacket;
 
 #endif

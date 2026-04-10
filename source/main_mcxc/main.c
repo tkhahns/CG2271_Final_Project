@@ -22,16 +22,18 @@
 #include "led.h"
 #include "adc.h"
 #include "slcd.h"
+#include "ssd1306.h"
 #include "app_tasks.h"
 
 QueueHandle_t     g_sensorQueue  = NULL;
 SemaphoreHandle_t g_buttonSema   = NULL;
 SemaphoreHandle_t g_statusMutex  = NULL;
 
-bool         g_systemStarted = false;
-bool         g_alertSuppressed = false;
-WarningState g_warningState = WARNING_STATE_IDLE;
-SensorPacket g_latestPacket  = { 0 };
+bool           g_systemStarted = false;
+bool           g_alertSuppressed = false;
+WarningState   g_warningState = WARNING_STATE_IDLE;
+OledScreenMode g_oledScreenMode = OLED_SCREEN_SENSORS;
+SensorPacket   g_latestPacket  = { 0 };
 
 int main(void) {
     BOARD_InitBootPins();
@@ -45,6 +47,8 @@ int main(void) {
     LED_Init();
     LED_OffAll();
     SLCD_Init();
+    SSD1306_Init();
+    SSD1306_ShowAll(false, false, 0U, 0U, 0U, false, 0.0f, false, 0.0f, false);
 
     g_sensorQueue = xQueueCreate(1, sizeof(SensorPacket));
     g_buttonSema  = xSemaphoreCreateBinary();
