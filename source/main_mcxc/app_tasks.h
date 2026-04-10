@@ -1,10 +1,10 @@
-#ifndef TASKS_H
-#define TASKS_H
+#ifndef APP_TASKS_H
+#define APP_TASKS_H
 
-// FreeRTOS task entry points — pass to xTaskCreate
 void sensorTask(void *p);
 void buttonTask(void *p);
 void alertTask(void *p);
 void printTask(void *p);
+void remoteTask(void *p);
 
 #endif

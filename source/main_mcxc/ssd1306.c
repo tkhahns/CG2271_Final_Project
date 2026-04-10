@@ -20,6 +20,8 @@
 #include "ssd1306.h"
 #include "MCXC444.h"
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <stddef.h>
 
 /* ================================================================== */
@@ -409,51 +411,82 @@ void SSD1306_Clear(void) {
 /*   Page 6: "MIC P2P"                   (small font label)            */
 /*   Page 7: value e.g. "  42"            (small font, fits one page)  */
 /* ================================================================== */
-void SSD1306_ShowAll(bool started, bool alert,
-                     uint16_t lightAdc, uint16_t micP2P) {
-    char numBuf[8];
+void SSD1306_ShowAll(bool started,
+                     bool alert,
+                     uint16_t lightAdc,
+                     uint16_t micP2P,
+                     uint8_t activeCount,
+                     bool showSuggestionScreen,
+                     float temperatureC,
+                     bool temperatureValid,
+                     float distanceCm,
+                     bool distanceValid) {
+    char numBuf[16];
 
-    /* Clear the buffer first */
     memset(s_frameBuf, 0, sizeof(s_frameBuf));
 
     if (!started) {
-        /* System off — show centred message */
         fb_drawString(16U, 3U, "System stopped");
         fb_drawString(28U, 4U, "Press SW2");
         SSD1306_Flush();
         return;
     }
 
-    /* ---- Page 0: System status ---- */
-    fb_drawString(0U, 0U, "SYS:");
-    fb_drawString(30U, 0U, "ON ");
-
-    /* ---- Page 1: Alert status ---- */
-    fb_drawString(0U, 1U, "ALT:");
+    fb_drawString(0U, 0U, "SYS: ON");
+    fb_drawString(56U, 0U, "ALT:");
     if (alert) {
-        /* Invert the alert value text to make it stand out */
-        fb_drawString(30U, 1U, "*** ALERT ***");
+        fb_drawString(86U, 0U, "YES");
     } else {
-        fb_drawString(30U, 1U, "OK ");
+        fb_drawString(86U, 0U, "NO ");
     }
 
-    /* ---- Page 2: Divider ---- */
-    fb_hLine(19U);   /* pixel row 19 = middle of page 2 */
+    if (showSuggestionScreen) {
+        fb_drawString(0U, 1U, "VIEW: SUGGESTION");
+        fb_hLine(19U);
+        fb_drawString(0U, 3U, "CHATGPT SUGGEST:");
+        fb_drawString(0U, 4U, "TO BE IMPLEMENTED");
+        fb_drawString(0U, 6U, "Press SW3 to toggle");
+    } else {
+        fb_drawString(0U, 1U, "VIEW: SENSORS");
+        fb_hLine(19U);
 
-    /* ---- Pages 3-5: Light ADC ---- */
-    fb_drawString(0U, 3U, "LIGHT ADC:");
-    u16ToString(lightAdc, numBuf, sizeof(numBuf));
-    fb_drawStringBig(0U, 4U, numBuf, 2U);   /* 2x scale = 14px tall, 2 pages */
+        fb_drawString(0U, 3U, "LIGHT:");
+        u16ToString(lightAdc, numBuf, sizeof(numBuf));
+        fb_drawString(42U, 3U, numBuf);
 
-    /* ---- Pages 6-7: Mic P2P ---- */
-    fb_drawString(0U, 6U, "MIC P2P:");
-    u16ToString(micP2P, numBuf, sizeof(numBuf));
-    fb_drawString(52U, 6U, numBuf);          /* fits in one page at normal size */
+        fb_drawString(0U, 4U, "SOUND:");
+        u16ToString(micP2P, numBuf, sizeof(numBuf));
+        fb_drawString(42U, 4U, numBuf);
 
-    /* ---- Alert indicator bar at bottom when alert is latched ---- */
-    if (alert) {
-        fb_hLine(62U);
-        fb_hLine(63U);
+        fb_drawString(0U, 5U, "CNT:");
+        u16ToString(activeCount, numBuf, sizeof(numBuf));
+        fb_drawString(30U, 5U, numBuf);
+
+        fb_drawString(0U, 6U, "TEMP:");
+        if (temperatureValid) {
+            const int tempDeci = (int)(temperatureC * 10.0f);
+            (void)snprintf(numBuf,
+                           sizeof(numBuf),
+                           "%d.%dC",
+                           tempDeci / 10,
+                           abs(tempDeci % 10));
+            fb_drawString(36U, 6U, numBuf);
+        } else {
+            fb_drawString(36U, 6U, "N/A");
+        }
+
+        fb_drawString(0U, 7U, "DIST:");
+        if (distanceValid) {
+            const int distDeci = (int)(distanceCm * 10.0f);
+            (void)snprintf(numBuf,
+                           sizeof(numBuf),
+                           "%d.%dcm",
+                           distDeci / 10,
+                           abs(distDeci % 10));
+            fb_drawString(36U, 7U, numBuf);
+        } else {
+            fb_drawString(36U, 7U, "N/A");
+        }
     }
 
     SSD1306_Flush();

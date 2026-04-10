@@ -2,13 +2,15 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
+<<<<<<< HEAD
 #define I2C_SDA_PIN 10          
 #define I2C_SCL_PIN 11          
 
 // 0x27 is the most common I2C address; try 0x3F if the display is blank.
+=======
+>>>>>>> testing
 static LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-// ── Init ──────────────────────────────────────────────────────────
 void displayInit() {
   Wire.begin(I2C_SDA_PIN, I2C_SCL_PIN);
   lcd.init();
@@ -19,9 +21,7 @@ void displayInit() {
   lcd.print("Initialized...");
 }
 
-// ── Public: Normal operating screen ───────────────────────────────
 void displayUpdate(const DeskState &state, uint8_t finalState) {
-  // Line 0: Temperature + State label
   lcd.setCursor(0, 0);
   lcd.print("T:");
   if (isnan(state.temp)) {
@@ -33,13 +33,14 @@ void displayUpdate(const DeskState &state, uint8_t finalState) {
 
   lcd.setCursor(8, 0);
   switch (finalState) {
-    case NORMAL:   lcd.print(" S:NORM "); break;
-    case WARNING:  lcd.print(" S:WARN "); break;
-    case CRITICAL: lcd.print(" S:CRIT "); break;
-    default:       lcd.print("        "); break;
+    case WARNING_STATE_IDLE:         lcd.print(" S:IDLE "); break;
+    case WARNING_STATE_ACKNOWLEDGED: lcd.print(" S:ACK  "); break;
+    case WARNING_STATE_YELLOW:       lcd.print(" S:YEL  "); break;
+    case WARNING_STATE_RED:          lcd.print(" S:RED  "); break;
+    case WARNING_STATE_RED_BUZZER:   lcd.print(" S:BUZZ "); break;
+    default:                         lcd.print("        "); break;
   }
 
-  // Line 1: Distance + Light
   lcd.setCursor(0, 1);
   lcd.print("D:");
   if (state.distance < 0) {
@@ -52,7 +53,7 @@ void displayUpdate(const DeskState &state, uint8_t finalState) {
   lcd.setCursor(8, 1);
   lcd.print("L:");
   lcd.print(state.light);
-  lcd.print("   ");  // Overwrite any leftover digits
+  lcd.print("   ");
 }
 
 void displayInactive() {
