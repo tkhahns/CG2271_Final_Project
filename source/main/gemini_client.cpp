@@ -14,8 +14,8 @@ static uint32_t lastCallMs = 0;
 static const char *warningDesc(uint8_t s) {
   switch (s) {
     case WARNING_STATE_IDLE:         return "normal";
-    case WARNING_STATE_ACKNOWLEDGED: return "acknowledged";
-    case WARNING_STATE_YELLOW:       return "warning";
+    case WARNING_STATE_GREEN:        return "green";
+    case WARNING_STATE_YELLOW:       return "yellow";
     case WARNING_STATE_RED:          return "critical";
     case WARNING_STATE_RED_BUZZER:   return "critical with buzzer";
     default:                         return "unknown";

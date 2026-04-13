@@ -5,6 +5,7 @@
 static DHT dht(DHTPIN, DHTTYPE);
 static float cachedTemp = NAN;
 static float cachedHumidity = NAN;
+static float cachedDistance = -1.0f;
 static uint32_t lastDhtReadMs = 0;
 static bool lightIsDark = false;
 
@@ -13,6 +14,7 @@ void sensorsInit() {
   pinMode(TRIG_PIN, OUTPUT);
   pinMode(ECHO_PIN, INPUT);
   pinMode(BUZZER_PIN, OUTPUT);
+  digitalWrite(TRIG_PIN, LOW);
 }
 
 static float readUltrasonic() {
@@ -22,11 +24,14 @@ static float readUltrasonic() {
   delayMicroseconds(10);
   digitalWrite(TRIG_PIN, LOW);
 
-  const float duration = pulseIn(ECHO_PIN, HIGH, 30000);
-  if (duration == 0) {
-    return -1.0f;
+  const float duration = pulseIn(ECHO_PIN, HIGH, 30000UL);
+  if (duration <= 0.0f) {
+    return cachedDistance;
   }
-  return duration * 0.0343f / 2.0f;
+
+  const float distance = duration * 0.0343f / 2.0f;
+  cachedDistance = distance;
+  return distance;
 }
 
 void sensorsRead(DeskState &state) {
@@ -51,7 +56,7 @@ void sensorsRead(DeskState &state) {
 }
 
 uint8_t breachedCount(const DeskState &state) {
-  uint8_t count = 0;
+  uint8_t count = 0U;
 
   if (!isnan(state.temp) && state.temp >= TEMP_HIGH_THRESHOLD_C) {
     count++;
@@ -61,11 +66,8 @@ uint8_t breachedCount(const DeskState &state) {
   }
 
   if (state.light <= LIGHT_DARK_THRESHOLD) {
-    lightIsDark = true;
+    count++;
   } else if (state.light >= LIGHT_BRIGHT_THRESHOLD) {
-    lightIsDark = false;
-  }
-  if (lightIsDark) {
     count++;
   }
 
@@ -83,9 +85,12 @@ uint8_t evaluateState(const DeskState &state) {
     return WARNING_STATE_IDLE;
   }
   if (activeCount == 1U) {
-    return WARNING_STATE_YELLOW;
+    return WARNING_STATE_GREEN;
   }
   if (activeCount == 2U) {
+    return WARNING_STATE_YELLOW;
+  }
+  if (activeCount == 3U) {
     return WARNING_STATE_RED;
   }
   return WARNING_STATE_RED_BUZZER;

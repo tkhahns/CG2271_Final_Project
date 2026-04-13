@@ -13,8 +13,8 @@ static WiFiClientSecure firebaseClient;
 static const char *warningLabel(uint8_t state) {
   switch (state) {
     case WARNING_STATE_IDLE:         return "Normal";
-    case WARNING_STATE_ACKNOWLEDGED: return "Acknowledged";
-    case WARNING_STATE_YELLOW:       return "Warning";
+    case WARNING_STATE_GREEN:        return "Green";
+    case WARNING_STATE_YELLOW:       return "Yellow";
     case WARNING_STATE_RED:          return "Critical";
     case WARNING_STATE_RED_BUZZER:   return "Critical+Buzzer";
     default:                         return "Unknown";

@@ -17,31 +17,15 @@ static uint8_t warningStateFromCount(uint8_t activeCount) {
     return WARNING_STATE_IDLE;
   }
   if (activeCount == 1U) {
-    return WARNING_STATE_YELLOW;
+    return WARNING_STATE_GREEN;
   }
   if (activeCount == 2U) {
+    return WARNING_STATE_YELLOW;
+  }
+  if (activeCount == 3U) {
     return WARNING_STATE_RED;
   }
   return WARNING_STATE_RED_BUZZER;
-}
-
-static uint8_t breachedCountFromAllSensors(const DeskState &state) {
-  uint8_t count = 0U;
-
-  if (!isnan(state.temp) && state.temp >= TEMP_HIGH_THRESHOLD_C) {
-    count++;
-  }
-  if (state.distance >= 0.0f && state.distance <= DIST_CLOSE_THRESHOLD_CM) {
-    count++;
-  }
-  if (state.light <= LIGHT_DARK_THRESHOLD) {
-    count++;
-  }
-  if (state.soundP2P >= SOUND_THRESHOLD) {
-    count++;
-  }
-
-  return count;
 }
 
 static void handleFrame(const char *frame, DeskState &state) {
@@ -108,7 +92,7 @@ void uartSendEspSensors(const DeskState &state) {
   uint8_t activeCount = 0U;
 
   if (g_haveMcxcFrame && state.systemActive) {
-    activeCount = breachedCountFromAllSensors(state);
+    activeCount = breachedCount(state);
   }
 
   mutableState.activeCount = activeCount;

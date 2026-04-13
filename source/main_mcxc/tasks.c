@@ -17,8 +17,9 @@
 
 static WarningState warningStateFromCount(uint8_t activeCount) {
     if (activeCount == 0U) { return WARNING_STATE_IDLE; }
-    if (activeCount == 1U) { return WARNING_STATE_YELLOW; }
-    if (activeCount == 2U) { return WARNING_STATE_RED; }
+    if (activeCount == 1U) { return WARNING_STATE_GREEN; }
+    if (activeCount == 2U) { return WARNING_STATE_YELLOW; }
+    if (activeCount == 3U) { return WARNING_STATE_RED; }
     return WARNING_STATE_RED_BUZZER;
 }
 
@@ -199,34 +200,42 @@ void alertTask(void *p) {
                 memset(&g_latestPacket, 0, sizeof(g_latestPacket));
                 memset(&pkt, 0, sizeof(pkt));
                 LED_OffAll();
-            } else if (pkt.activeCount == 0U) {
-                g_alertSuppressed = false;
-                g_warningState    = WARNING_STATE_IDLE;
-                LED_OffAll();
             } else {
                 g_warningState = warningStateFromCount(pkt.activeCount);
-                if (g_warningState == WARNING_STATE_YELLOW) {
-                    LED_SetRGB(true, true, false);
-                } else {
-                    LED_SetRGB(true, false, false);
+                switch (g_warningState) {
+                    case WARNING_STATE_GREEN:
+                        LED_SetRGB(false, true, false);
+                        break;
+                    case WARNING_STATE_YELLOW:
+                        LED_SetRGB(true, true, false);
+                        break;
+                    case WARNING_STATE_RED:
+                        LED_SetRGB(true, false, false);
+                        break;
+                    case WARNING_STATE_RED_BUZZER:
+                        LED_SetRGB(true, false, false);
+                        break;
+                    default:
+                        LED_OffAll();
+                        break;
                 }
             }
 
-            systemStarted    = g_systemStarted;
-            g_alertSuppressed = false;
-            alertSuppressed  = false;
+            systemStarted        = g_systemStarted;
+            g_alertSuppressed    = false;
+            alertSuppressed      = false;
 
-            oledStarted           = systemStarted;
-            oledAlert             = (g_warningState >= WARNING_STATE_YELLOW);
-            oledLight             = pkt.lightRaw;
-            oledMic               = pkt.micP2P;
-            oledCount             = pkt.activeCount;
-            oledSuggestionScreen  = (g_oledScreenMode == OLED_SCREEN_SUGGESTION);
-            oledTemperatureC      = pkt.temperatureC;
-            oledTemperatureValid  = (pkt.tempFlag != 0U);
-            oledDistanceCm        = pkt.distanceCm;
-            oledDistanceValid     = (pkt.distanceFlag != 0U);
-            oledSugReady          = g_suggestionReady;
+            oledStarted          = systemStarted;
+            oledAlert            = (g_warningState >= WARNING_STATE_YELLOW);
+            oledLight            = pkt.lightRaw;
+            oledMic              = pkt.micP2P;
+            oledCount            = pkt.activeCount;
+            oledSuggestionScreen = (g_oledScreenMode == OLED_SCREEN_SUGGESTION);
+            oledTemperatureC     = pkt.temperatureC;
+            oledTemperatureValid = (pkt.tempFlag != 0U);
+            oledDistanceCm       = pkt.distanceCm;
+            oledDistanceValid    = (pkt.distanceFlag != 0U);
+            oledSugReady         = g_suggestionReady;
             strncpy(oledSugBuf, g_suggestionBuf, SUGGESTION_MAX_LEN - 1U);
             oledSugBuf[SUGGESTION_MAX_LEN - 1U] = '\0';
             oledRefresh = true;
@@ -252,6 +261,8 @@ void alertTask(void *p) {
         if (gotPacket || !systemStarted) {
             ESP_UART_SendTelemetry(&pkt, systemStarted, alertSuppressed);
         }
+
+        vTaskDelay(pdMS_TO_TICKS(200));
     }
 }
 
