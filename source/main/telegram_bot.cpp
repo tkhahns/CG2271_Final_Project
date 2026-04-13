@@ -161,14 +161,17 @@ TgResult pollTelegram() {
     const long uid = update["update_id"].as<long>();
     if (uid > lastUpdateId) lastUpdateId = uid;
 
-    const char *chat = update["message"]["chat"]["id"] | "";
-    const char *text = update["message"]["text"]        | "";
+    // chat.id is a JSON number, not a string — read as int64 and stringify.
+    const int64_t chatId = update["message"]["chat"]["id"].as<int64_t>();
+    const String  chatStr = String((long long)chatId);
+    const char   *text    = update["message"]["text"] | "";
 
     Serial.printf("[Telegram] update_id=%ld chat=%s text=\"%s\"\n",
-                  uid, chat, text);
+                  uid, chatStr.c_str(), text);
 
-    if (String(chat) != String(TELEGRAM_CHAT_ID)) {
-      Serial.printf("[Telegram] Ignored — not from authorized chat\n");
+    if (chatStr != String(TELEGRAM_CHAT_ID)) {
+      Serial.printf("[Telegram] Ignored — chat %s != expected %s\n",
+                    chatStr.c_str(), TELEGRAM_CHAT_ID);
       continue;
     }
 
