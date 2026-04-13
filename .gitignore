@@ -5,3 +5,4 @@ B01_08_Interim_Report.md
 
 # ESP32 secrets — never commit real keys
 esp32/config.h
+source/main/secrets.h
