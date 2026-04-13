@@ -1,6 +1,7 @@
 #include "telegram_bot.h"
 #include "secrets.h"
 #include "wifi_manager.h"
+#include "time_util.h"
 
 #include <WiFi.h>
 #include <WiFiClientSecure.h>
@@ -30,6 +31,7 @@ void initTelegram() {
 
 String formatStatus(const DeskState &s) {
   String msg = "📊 Desk Status\n";
+  msg += "🕒 " + currentIsoString() + "\n";
 
   msg += "🌡 Temp: ";
   msg += isnan(s.temp) ? String("ERR") : String(s.temp, 1) + " °C";
@@ -73,6 +75,7 @@ bool sendTelegramMessage(const String &text) {
 bool sendTelegramAlert(const DeskState &state) {
   String msg = "🚨 ALERT — ";
   msg += warningText(state.warningState);
+  msg += "\n🕒 " + currentIsoString();
   msg += "\n\n";
   msg += formatStatus(state);
   return sendTelegramMessage(msg);

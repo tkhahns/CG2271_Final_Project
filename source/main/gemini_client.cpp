@@ -1,6 +1,7 @@
 #include "gemini_client.h"
 #include "secrets.h"
 #include "wifi_manager.h"
+#include "time_util.h"
 
 #include <WiFi.h>
 #include <WiFiClientSecure.h>
@@ -9,7 +10,8 @@
 #include <math.h>
 
 static WiFiClientSecure aiClient;
-static uint32_t lastCallMs = 0;
+static uint32_t lastCallMs    = 0;
+static uint32_t backoffUntilMs = 0;  // set after a 429 response
 
 static const char *warningDesc(uint8_t s) {
   switch (s) {
@@ -29,7 +31,9 @@ void initGemini() {
 }
 
 static String buildContext(const DeskState &s) {
-  String ctx = "Current desk sensor readings: ";
+  String ctx = "Time: ";
+  ctx += currentIsoString();
+  ctx += ". Current desk sensor readings: ";
   ctx += "temp=";
   ctx += isnan(s.temp) ? String("N/A") : String(s.temp, 1) + "C";
   ctx += ", humidity=";
@@ -46,6 +50,11 @@ String askGemini(const DeskState &state, const String &question) {
   if (!wifiIsConnected()) return "";
 
   const uint32_t now = millis();
+  if (backoffUntilMs != 0 && now < backoffUntilMs) {
+    Serial.printf("[Gemini] In 429 backoff for %lu more ms — skipping.\n",
+                  (unsigned long)(backoffUntilMs - now));
+    return "";
+  }
   if (lastCallMs != 0 && (now - lastCallMs) < GEMINI_MIN_INTERVAL_MS) {
     Serial.println("[Gemini] Rate-limited — skipping.");
     return "";
@@ -93,6 +102,11 @@ String askGemini(const DeskState &state, const String &question) {
   const int code = http.POST(body);
   if (code != 200) {
     Serial.printf("[Gemini] HTTP error: %d\n", code);
+    if (code == 429) {
+      backoffUntilMs = millis() + GEMINI_BACKOFF_ON_429_MS;
+      Serial.printf("[Gemini] Backing off for %u ms due to 429.\n",
+                    GEMINI_BACKOFF_ON_429_MS);
+    }
     http.end();
     return "";
   }

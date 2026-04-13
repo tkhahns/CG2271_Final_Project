@@ -1,6 +1,7 @@
 #include "firebase_client.h"
 #include "secrets.h"
 #include "wifi_manager.h"
+#include "time_util.h"
 
 #include <WiFi.h>
 #include <WiFiClientSecure.h>
@@ -47,9 +48,13 @@ static String buildSensorJson(const DeskState &state) {
   doc["warningLabel"]      = warningLabel(state.warningState);
   doc["warningSuppressed"] = state.warningSuppressed;
 
-  // Firebase server-side timestamp
+  // Firebase server-side timestamp (ms since epoch, set by Firebase)
   JsonObject ts = doc["timestamp"].to<JsonObject>();
   ts[".sv"] = "timestamp";
+
+  // Human-readable ESP32-local time (from NTP, falls back to uptime)
+  doc["isoTime"]     = currentIsoString();
+  doc["uptime_s"]    = uptimeSeconds();
 
   String out;
   serializeJson(doc, out);
