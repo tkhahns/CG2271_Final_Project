@@ -82,6 +82,7 @@ static void handleTelegramCommand(const TgResult &r, const DeskState &snapshot) 
       String answer = askGemini(snapshot, r.text);
       if (answer.length() == 0) answer = "(AI unavailable or rate-limited — try again shortly)";
       sendTelegramMessage("🤖 " + answer);
+      uartSendSuggestion(answer);
       break;
     }
 
@@ -126,7 +127,10 @@ static void cloudTask(void *param) {
         if (escalated && !snapshot.warningSuppressed) {
           sendTelegramAlert(snapshot);
           String tip = askGeminiForAdvice(snapshot);
-          if (tip.length() > 0) sendTelegramMessage("🤖 " + tip);
+          if (tip.length() > 0) {
+            sendTelegramMessage("🤖 " + tip);
+            uartSendSuggestion(tip);
+          }
         }
         lastWarningState = snapshot.warningState;
       }

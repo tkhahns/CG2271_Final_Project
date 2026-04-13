@@ -8,6 +8,7 @@
 namespace {
 
 constexpr size_t kFrameBufferSize = 80;
+constexpr size_t kSuggestionPayloadMax = 72;
 char g_frameBuffer[kFrameBufferSize];
 size_t g_frameIndex = 0;
 bool g_haveMcxcFrame = false;
@@ -109,4 +110,26 @@ void uartSendEspSensors(const DeskState &state) {
            tempDeci,
            distDeci);
   Serial1.print(frame);
+}
+
+void uartSendSuggestion(const String &suggestion) {
+  if (suggestion.length() == 0) {
+    return;
+  }
+
+  char payload[kSuggestionPayloadMax + 1U];
+  size_t out = 0U;
+  for (size_t i = 0; i < static_cast<size_t>(suggestion.length()) && out < kSuggestionPayloadMax; ++i) {
+    const char c = suggestion[i];
+    if (c == '\r' || c == '\n') {
+      payload[out++] = ' ';
+    } else {
+      payload[out++] = c;
+    }
+  }
+  payload[out] = '\0';
+
+  Serial1.print("$SUG,");
+  Serial1.print(payload);
+  Serial1.print("\r\n");
 }

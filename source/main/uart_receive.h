@@ -15,3 +15,4 @@
 void uartReceiveInit();
 void uartReceiveLoop(DeskState &state);
 void uartSendEspSensors(const DeskState &state);
+void uartSendSuggestion(const String &suggestion);
