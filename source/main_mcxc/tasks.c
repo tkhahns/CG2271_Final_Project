@@ -14,7 +14,7 @@
 
 #include <string.h>
 #include <stdbool.h>
-
+#include <stdio.h>
 static WarningState warningStateFromCount(uint8_t activeCount) {
     if (activeCount == 0U) { return WARNING_STATE_IDLE; }
     if (activeCount == 1U) { return WARNING_STATE_GREEN; }
@@ -22,6 +22,20 @@ static WarningState warningStateFromCount(uint8_t activeCount) {
     if (activeCount == 3U) { return WARNING_STATE_RED; }
     return WARNING_STATE_RED_BUZZER;
 }
+
+static void formatFixed1(char *buf, size_t bufLen, float value, bool valid) {
+    if (!valid) {
+        (void)snprintf(buf, bufLen, "N/A");
+        return;
+    }
+
+    int deci = (int)(value * 10.0f + ((value >= 0.0f) ? 0.5f : -0.5f));
+    int whole = deci / 10;
+    int frac = deci % 10;
+    if (frac < 0) { frac = -frac; }
+    (void)snprintf(buf, bufLen, "%d.%d", whole, frac);
+}
+
 
 /* ------------------------------------------------------------------ */
 void sensorTask(void *p) {
@@ -106,6 +120,7 @@ void remoteTask(void *p) {
                     strncpy(g_suggestionBuf, localSug, SUGGESTION_MAX_LEN - 1U);
                     g_suggestionBuf[SUGGESTION_MAX_LEN - 1U] = '\0';
                     g_suggestionReady = true;
+                    g_oledScreenMode = OLED_SCREEN_SUGGESTION;
                     xSemaphoreGive(g_statusMutex);
                 }
             }
@@ -304,18 +319,24 @@ void printTask(void *p) {
         if (!started) {
             PRINTF("STARTED=0 | SYSTEM IDLE\r\n");
         } else {
+            char tempBuf[16];
+            char distBuf[16];
+            formatFixed1(tempBuf, sizeof(tempBuf), pkt.temperatureC, pkt.tempFlag != 0U);
+            formatFixed1(distBuf, sizeof(distBuf), pkt.distanceCm, pkt.distanceFlag != 0U);
+
             PRINTF("STARTED=%u | SUPP=%u | CNT=%u | LIGHT=%u | "
-                   "SOUND=%u | TEMP=%.1f | DIST=%.1f | VIEW=%s\r\n",
+                   "SOUND=%u | TEMP=%s | DIST=%s | VIEW=%s\r\n",
                    started    ? 1U : 0U,
                    suppressed ? 1U : 0U,
                    pkt.activeCount,
                    pkt.lightRaw,
                    pkt.micP2P,
-                   pkt.temperatureC,
-                   pkt.distanceCm,
+                   tempBuf,
+                   distBuf,
                    (oledMode == OLED_SCREEN_SUGGESTION) ? "AI" : "SNS");
         }
 
         vTaskDelayUntil(&lastWake, pdMS_TO_TICKS(1000));
     }
 }
+
