@@ -28,8 +28,8 @@ bool           g_alertSuppressed  = false;
 WarningState   g_warningState     = WARNING_STATE_IDLE;
 OledScreenMode g_oledScreenMode   = OLED_SCREEN_SENSORS;
 SensorPacket   g_latestPacket     = { 0 };
-char           g_suggestionBuf[SUGGESTION_MAX_LEN] = { 0 };
-bool           g_suggestionReady  = false;
+//char           g_suggestionBuf[SUGGESTION_MAX_LEN] = { 0 };
+//bool           g_suggestionReady  = false;
 
 int main(void) {
     BOARD_InitBootPins();
