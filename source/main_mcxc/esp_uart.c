@@ -203,6 +203,7 @@ void ESP_UART_GetSuggestion(bool *ready, char *buf, uint8_t bufLen)
     {
         strncpy(buf, s_suggestionBuf, bufLen - 1U);
         buf[bufLen - 1U] = '\0';
+        s_suggestionReady = false;
     }
 }
 
