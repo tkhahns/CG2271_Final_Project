@@ -99,6 +99,7 @@ static TgCmd parseCommand(const String &text, float &value, String &asked) {
   if (head == "/start")           return CMD_START;
   if (head == "/status")          return CMD_STATUS;
   if (head == "/help")            return CMD_HELP;
+  if (head == "/clear")           return CMD_CLEAR;
 
   if (head == "/settemp" && tail.length() > 0) {
     value = tail.toFloat();

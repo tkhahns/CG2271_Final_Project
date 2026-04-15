@@ -438,7 +438,13 @@ void SSD1306_ShowAll(bool started,
         fb_drawString(0U, 1U, "VIEW: SUGGESTION");
         fb_hLine(19U);
 
-        if (suggestionReady &&
+        if (activeCount >= 3U)
+        {
+            fb_drawString(0U, 3U, "Go check your");
+            fb_drawString(0U, 4U, "phone for");
+            fb_drawString(0U, 5U, "Telegram message");
+        }
+        else if (suggestionReady &&
             suggestionBuf != NULL &&
             suggestionBuf[0] != '\0')
         {
@@ -447,7 +453,7 @@ void SSD1306_ShowAll(bool started,
         }
         else
         {
-            fb_drawString(0U, 3U, "Waiting for AI...");
+            fb_drawString(0U, 3U, "You are good now");
             fb_drawString(0U, 5U, "Press SW3 to toggle");
         }
     }
@@ -491,3 +497,4 @@ void SSD1306_ShowAll(bool started,
 
     SSD1306_Flush();
 }
+

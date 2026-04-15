@@ -8,7 +8,8 @@ enum TgCmd : uint8_t {
   CMD_SETTEMP,
   CMD_SETDIST,
   CMD_HELP,
-  CMD_ASK
+  CMD_ASK,
+  CMD_CLEAR
 };
 
 struct TgResult {

@@ -119,8 +119,13 @@ void remoteTask(void *p) {
                 if (xSemaphoreTake(g_statusMutex, pdMS_TO_TICKS(10)) == pdTRUE) {
                     strncpy(g_suggestionBuf, localSug, SUGGESTION_MAX_LEN - 1U);
                     g_suggestionBuf[SUGGESTION_MAX_LEN - 1U] = '\0';
-                    g_suggestionReady = true;
-                    g_oledScreenMode = OLED_SCREEN_SUGGESTION;
+                    if (localSug[0] != '\0') {
+                        g_suggestionReady = true;
+                        g_oledScreenMode = OLED_SCREEN_SUGGESTION;
+                    } else {
+                        g_suggestionReady = false;
+                        g_oledScreenMode = OLED_SCREEN_SENSORS;
+                    }
                     xSemaphoreGive(g_statusMutex);
                 }
             }

@@ -58,7 +58,7 @@ static void handleTelegramCommand(const TgResult &r, const DeskState &snapshot) 
         "👋 Smart Study Monitor online.\n"
         "Commands:\n/status — current readings\n"
         "/settemp <C> — temp threshold\n/setdist <cm> — distance threshold\n"
-        "/ask <question> — ask AI about your desk\n/help");
+        "/ask <question> — ask AI about your desk\n/clear — clear AI text on MCXC\n/help");
       break;
 
     case CMD_STATUS:
@@ -75,7 +75,7 @@ static void handleTelegramCommand(const TgResult &r, const DeskState &snapshot) 
 
     case CMD_HELP:
       sendTelegramMessage(
-        "Commands:\n/status\n/settemp <C>\n/setdist <cm>\n/ask <question>");
+        "Commands:\n/status\n/settemp <C>\n/setdist <cm>\n/ask <question>\n/clear");
       break;
 
     case CMD_ASK: {
@@ -85,6 +85,11 @@ static void handleTelegramCommand(const TgResult &r, const DeskState &snapshot) 
       sendTelegramMessage("🤖 " + answer);
       break;
     }
+
+    case CMD_CLEAR:
+      uartSendSuggestion("");
+      sendTelegramMessage("MCXC AI message cleared.");
+      break;
 
     default:
       sendTelegramMessage("Unknown command. Send /help for options.");
@@ -123,7 +128,6 @@ static void cloudTask(void *param) {
         lastTelegramMs = now;
         TgResult r = pollTelegram();
         if (r.received) {
-          uartSendSuggestion("Message received on Telegram");
           handleTelegramCommand(r, snapshot);
         }
       }

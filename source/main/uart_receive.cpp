@@ -113,9 +113,6 @@ void uartSendEspSensors(const DeskState &state) {
 }
 
 void uartSendSuggestion(const String &suggestion) {
-  if (suggestion.length() == 0) {
-    return;
-  }
 
   char payload[kSuggestionPayloadMax + 1U];
   size_t out = 0U;
