@@ -14,12 +14,41 @@ static uint32_t lastCallMs    = 0;
 static uint32_t backoffUntilMs = 0;  // set after a 429 response
 static String lastGeminiError;
 
+static const uint16_t GEMINI_HTTP_TIMEOUT_MS = 8000;
+static const uint8_t  GEMINI_MAX_RETRIES     = 1;
+static const uint16_t GEMINI_RETRY_DELAY_MS  = 300;
+
 static void setGeminiError(const String &message) {
   lastGeminiError = message;
 }
 
 String getLastGeminiError() {
   return lastGeminiError;
+}
+
+static const char *httpErrorName(int code) {
+  switch (code) {
+    case HTTPC_ERROR_CONNECTION_REFUSED: return "connection refused";
+    case HTTPC_ERROR_SEND_HEADER_FAILED: return "send header failed";
+    case HTTPC_ERROR_SEND_PAYLOAD_FAILED:return "send payload failed";
+    case HTTPC_ERROR_NOT_CONNECTED:      return "not connected";
+    case HTTPC_ERROR_CONNECTION_LOST:    return "connection lost";
+    case HTTPC_ERROR_NO_STREAM:          return "no response stream";
+    case HTTPC_ERROR_NO_HTTP_SERVER:     return "no HTTP server";
+    case HTTPC_ERROR_TOO_LESS_RAM:       return "not enough RAM";
+    case HTTPC_ERROR_ENCODING:           return "transfer encoding error";
+    case HTTPC_ERROR_STREAM_WRITE:       return "stream write error";
+    case HTTPC_ERROR_READ_TIMEOUT:       return "read timeout";
+    default:                            return "";
+  }
+}
+
+static bool isTransientHttpError(int code) {
+  return (code == HTTPC_ERROR_CONNECTION_REFUSED) ||
+         (code == HTTPC_ERROR_CONNECTION_LOST) ||
+         (code == HTTPC_ERROR_NOT_CONNECTED) ||
+         (code == HTTPC_ERROR_READ_TIMEOUT) ||
+         (code >= 500 && code < 600);
 }
 
 static const char *warningDesc(uint8_t s) {
@@ -111,20 +140,36 @@ String askGemini(const DeskState &state, const String &question) {
   serializeJson(payload, body);
 
   // ---- Send ----
-  HTTPClient http;
   String url = "https://generativelanguage.googleapis.com/v1beta/models/";
   url += GEMINI_MODEL;
   url += ":generateContent?key=";
   url += GEMINI_API_KEY;
 
-  if (!http.begin(aiClient, url)) {
-    setGeminiError("Could not start HTTPS request to Gemini.");
-    return "";
-  }
-  http.addHeader("Content-Type", "application/json");
+  int code = 0;
+  String resp = "";
+  for (uint8_t attempt = 0; attempt <= GEMINI_MAX_RETRIES; ++attempt) {
+    HTTPClient http;
+    http.setTimeout(GEMINI_HTTP_TIMEOUT_MS);
+    http.setConnectTimeout(GEMINI_HTTP_TIMEOUT_MS);
 
-  const int code = http.POST(body);
-  String resp = http.getString();
+    if (!http.begin(aiClient, url)) {
+      setGeminiError("Could not start HTTPS request to Gemini.");
+      return "";
+    }
+    http.addHeader("Content-Type", "application/json");
+
+    code = http.POST(body);
+    resp = http.getString();
+    http.end();
+
+    if (!isTransientHttpError(code) || attempt == GEMINI_MAX_RETRIES) {
+      break;
+    }
+
+    Serial.printf("[Gemini] Transient HTTP error %d (%s), retrying.\n",
+                  code, httpErrorName(code));
+    delay(GEMINI_RETRY_DELAY_MS);
+  }
 
   if (code != 200) {
     Serial.printf("[Gemini] HTTP error: %d\n", code);
@@ -143,7 +188,12 @@ String askGemini(const DeskState &state, const String &question) {
       }
     }
     if (reason.length() == 0) {
-      reason = "HTTP " + String(code);
+      const char *errorName = httpErrorName(code);
+      if (strlen(errorName) > 0) {
+        reason = errorName;
+      } else {
+        reason = "HTTP " + String(code);
+      }
     }
     String failure = "Gemini returned ";
     failure += String(code);
@@ -161,11 +211,8 @@ String askGemini(const DeskState &state, const String &question) {
       Serial.printf("[Gemini] Backing off for %u ms due to 429.\n",
                     GEMINI_BACKOFF_ON_429_MS);
     }
-    http.end();
     return "";
   }
-
-  http.end();
 
   // ---- Parse response ----
   JsonDocument doc;
