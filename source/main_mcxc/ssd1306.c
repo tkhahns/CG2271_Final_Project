@@ -23,11 +23,11 @@
 
 static uint8_t s_frameBuf[SSD1306_HEIGHT / 8U][SSD1306_WIDTH];
 
-/* ================================================================== */
-/* 5×7 font (ASCII 0x20..0x7E)                                         */
-/* Each character = 5 columns of 8 bits, MSB = bottom pixel.           */
-/* Source: classic public-domain 5x7 bitmap font.                      */
-/* ================================================================== */
+
+//  5×7 font (ASCII 0x20..0x7E)                                         
+//  Each character = 5 columns of 8 bits, MSB = bottom pixel.           
+//  Source: classic public-domain 5x7 bitmap font.                      
+
 static const uint8_t k_font5x7[][5] = {
     { 0x00, 0x00, 0x00, 0x00, 0x00 }, /*   space */
     { 0x00, 0x00, 0x5F, 0x00, 0x00 }, /* ! */
@@ -189,9 +189,9 @@ static void fb_setPixel(uint8_t x, uint8_t y, bool on) {
     }
 }
 
-/* Draw a single 5x7 character at pixel position (x, page).
- * page = 0..7, each page = 8 pixels tall.
- * Returns the x coordinate of the next character. */
+//  Draw a single 5x7 character at pixel position (x, page).
+//   page = 0..7, each page = 8 pixels tall.
+//   Returns the x coordinate of the next character. 
 static uint8_t fb_drawChar(uint8_t x, uint8_t page, char c) {
     if (c < (char)FONT_FIRST_CHAR ||
         c > (char)(FONT_FIRST_CHAR + (sizeof(k_font5x7) / sizeof(k_font5x7[0])) - 1U)) {
@@ -333,7 +333,7 @@ void SSD1306_Init(void) {
     I2C1->C2 = 0x00U;
     I2C1->S  = I2C_S_IICIF_MASK;    /* clear any stale interrupt flag */
 
-    // ---- SSD1306 initialisation sequence (128x64) ----
+    // SSD1306 initialisation sequence (128x64)
     ssd1306_cmd(0xAEU);             // display off
     ssd1306_cmd2(0xD5U, 0x80U);     // set display clock divide
     ssd1306_cmd2(0xA8U, 0x3FU);     // set multiplex ratio = 63 (64 rows)
@@ -392,19 +392,18 @@ static void fb_drawWrapped(uint8_t startPage, uint8_t maxPages,
     }
 }
 
-/* ================================================================== */
-/* Public                                                     */
-/*                                                                      */
-/* Screen layout (each row = 1 page = 8px tall):                       */
-/*                                                                      */
-/*   Page 0: "SYS:  ON " or "SYS: OFF"   (small font)                 */
-/*   Page 1: "ALT:  OK " or "ALT: ***"   (small font, inverted if AL) */
-/*   Page 2: horizontal divider line                                   */
-/*   Page 3: "LIGHT"                      (small font label)           */
-/*   Page 4-5: value e.g. "2048"          (2x scaled font)             */
-/*   Page 6: "MIC P2P"                   (small font label)            */
-/*   Page 7: value e.g. "  42"            (small font, fits one page)  */
-/* ================================================================== */
+
+                                                                   
+//  Screen layout (each row = 1 page = 8px tall):                       
+                                                                      
+//    Page 0: "SYS:  ON " or "SYS: OFF"   (small font)                 
+//    Page 1: "ALT:  OK " or "ALT: ***"   (small font, inverted if AL) 
+//    Page 2: horizontal divider line                                   
+//   Page 3: "LIGHT"                      (small font label)           
+//   Page 4-5: value e.g. "2048"          (2x scaled font)             
+//   Page 6: "MIC P2P"                   (small font label)            
+// Page 7: value e.g. "  42"            (small font, fits one page)  
+
 void SSD1306_ShowAll(bool started,
                      bool alert,
                      uint16_t lightAdc,

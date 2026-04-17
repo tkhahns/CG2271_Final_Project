@@ -156,7 +156,7 @@ void buttonTask(void *p) {
     }
 }
 
-/* ------------------------------------------------------------------ */
+
 void alertTask(void *p) {
     (void)p;
     SensorPacket pkt;
