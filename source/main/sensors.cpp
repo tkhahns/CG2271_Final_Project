@@ -65,9 +65,9 @@ uint8_t breachedCount(const DeskState &state) {
     count++;
   }
 
-  if (state.light <= LIGHT_DARK_THRESHOLD) {
+  if (state.light <= LIGHT_BRIGHT_THRESHOLD) {
     count++;
-  } else if (state.light >= LIGHT_BRIGHT_THRESHOLD) {
+  } else if (state.light >= LIGHT_DARK_THRESHOLD) {
     count++;
   }
 

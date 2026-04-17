@@ -15,8 +15,8 @@ enum TgCmd : uint8_t {
 struct TgResult {
   bool   received;
   TgCmd  command;
-  float  value;       // for SETTEMP / SETDIST
-  String text;        // for ASK (free-form question)
+  float  value;       
+  String text;        
 };
 
 void initTelegram();

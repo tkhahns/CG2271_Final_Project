@@ -113,13 +113,13 @@ static void cloudTask(void *param) {
         (snapshot.warningState >= WARNING_STATE_RED) &&
         !snapshot.warningSuppressed;
 
-      // ---- 1. Periodic Firebase stream ----
+      //  Periodic Firebase stream 
       if (now - lastFirebaseMs >= FIREBASE_LOG_INTERVAL_MS) {
         lastFirebaseMs = now;
         logToFirebase(snapshot);
       }
 
-      // ---- 2. Telegram command poll ----
+      // Telegram command poll
       if (now - lastTelegramMs >= TELEGRAM_POLL_INTERVAL_MS) {
         lastTelegramMs = now;
         TgResult r = pollTelegram();
@@ -127,7 +127,7 @@ static void cloudTask(void *param) {
           handleTelegramCommand(r, snapshot);
         }
       }
-[4/15/2026 5:13 PM] Ethan Lam: // ---- 3. RED edge detection (transition into RED) ----
+     // RED edge detection (transition into RED)
       if (snapshot.warningState != lastWarningState) {
         const bool escalated =
           (snapshot.warningState >= WARNING_STATE_RED) &&
@@ -153,7 +153,7 @@ static void cloudTask(void *param) {
         lastWarningState = snapshot.warningState;
       }
 
-      // ---- 4. While stuck in RED — periodic re-alert + re-advice ----
+      // While stuck in RED — periodic re-alert + re-advice
       if (inRed) {
         if (now - lastRedAlertMs >= RED_PERSIST_ALERT_INTERVAL_MS) {
           lastRedAlertMs = now;

@@ -1,17 +1,71 @@
 #include <Arduino.h>
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 
 #include "uart_receive.h"
 #include "sensors.h"
 
 namespace {
 
-constexpr size_t kFrameBufferSize = 80;
+constexpr size_t kFrameBufferSize = 96;
 constexpr size_t kSuggestionPayloadMax = 72;
 char g_frameBuffer[kFrameBufferSize];
 size_t g_frameIndex = 0;
 bool g_haveMcxcFrame = false;
+
+static uint8_t frameChecksum(const char *frameBody) {
+  uint8_t checksum = 0U;
+  const char *cursor = (frameBody[0] == '$') ? (frameBody + 1) : frameBody;
+  while (*cursor != '\0') {
+    checksum ^= static_cast<uint8_t>(*cursor);
+    ++cursor;
+  }
+  return checksum;
+}
+
+static int hexNibble(char c) {
+  if (c >= '0' && c <= '9') {
+    return c - '0';
+  }
+  if (c >= 'A' && c <= 'F') {
+    return 10 + (c - 'A');
+  }
+  if (c >= 'a' && c <= 'f') {
+    return 10 + (c - 'a');
+  }
+  return -1;
+}
+
+static bool stripAndValidateChecksum(const char *frame,
+                                     char *payload,
+                                     size_t payloadSize,
+                                     bool *hadChecksum) {
+  strncpy(payload, frame, payloadSize - 1U);
+  payload[payloadSize - 1U] = '\0';
+
+  char *separator = strrchr(payload, '*');
+  if (separator == nullptr) {
+    *hadChecksum = false;
+    return true;
+  }
+
+  if ((separator[1] == '\0') || (separator[2] == '\0') || (separator[3] != '\0')) {
+    *hadChecksum = true;
+    return false;
+  }
+
+  const int high = hexNibble(separator[1]);
+  const int low = hexNibble(separator[2]);
+  *hadChecksum = true;
+  if (high < 0 || low < 0) {
+    return false;
+  }
+
+  *separator = '\0';
+  const uint8_t expected = static_cast<uint8_t>((high << 4) | low);
+  return frameChecksum(payload) == expected;
+}
 
 static uint8_t warningStateFromCount(uint8_t activeCount) {
   if (activeCount == 0U) {
@@ -30,12 +84,21 @@ static uint8_t warningStateFromCount(uint8_t activeCount) {
 }
 
 static void handleFrame(const char *frame, DeskState &state) {
+  char payload[kFrameBufferSize];
+  bool hadChecksum = false;
+  if (!stripAndValidateChecksum(frame, payload, sizeof(payload), &hadChecksum)) {
+    if (hadChecksum) {
+      Serial.println("CHECKSUM ERROR");
+    }
+    return;
+  }
+
   unsigned int light = 0;
   unsigned int sound = 0;
   unsigned int started = 0;
   unsigned int suppressed = 0;
 
-  const int parsed = sscanf(frame, "$MCXC,%u,%u,%u,%u",
+  const int parsed = sscanf(payload, "$MCXC,%u,%u,%u,%u",
                             &light,
                             &sound,
                             &started,
@@ -102,13 +165,20 @@ void uartSendEspSensors(const DeskState &state) {
   const int tempDeci = encodeDeciOrInvalid(state.temp, !isnan(state.temp));
   const int distDeci = encodeDeciOrInvalid(state.distance, state.distance >= 0.0f);
 
-  char frame[48];
-  snprintf(frame,
-           sizeof(frame),
-           "$ESP,%u,%d,%d\r\n",
+  char body[48];
+  snprintf(body,
+           sizeof(body),
+           "$ESP,%u,%d,%d",
            static_cast<unsigned int>(activeCount),
            tempDeci,
            distDeci);
+
+  char frame[56];
+  snprintf(frame,
+           sizeof(frame),
+           "%s*%02X\r\n",
+           body,
+           static_cast<unsigned int>(frameChecksum(body)));
   Serial1.print(frame);
 }
 
@@ -118,7 +188,7 @@ void uartSendSuggestion(const String &suggestion) {
   size_t out = 0U;
   for (size_t i = 0; i < static_cast<size_t>(suggestion.length()) && out < kSuggestionPayloadMax; ++i) {
     const char c = suggestion[i];
-    if (c == '\r' || c == '\n') {
+    if (c == '\r' || c == '\n' || c == '*') {
       payload[out++] = ' ';
     } else {
       payload[out++] = c;
@@ -126,7 +196,14 @@ void uartSendSuggestion(const String &suggestion) {
   }
   payload[out] = '\0';
 
-  Serial1.print("$SUG,");
-  Serial1.print(payload);
-  Serial1.print("\r\n");
+  char body[kSuggestionPayloadMax + 8U];
+  snprintf(body, sizeof(body), "$SUG,%s", payload);
+
+  char frame[kSuggestionPayloadMax + 16U];
+  snprintf(frame,
+           sizeof(frame),
+           "%s*%02X\r\n",
+           body,
+           static_cast<unsigned int>(frameChecksum(body)));
+  Serial1.print(frame);
 }
