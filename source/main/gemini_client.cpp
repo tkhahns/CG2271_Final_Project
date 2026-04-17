@@ -12,6 +12,15 @@
 static WiFiClientSecure aiClient;
 static uint32_t lastCallMs    = 0;
 static uint32_t backoffUntilMs = 0;  // set after a 429 response
+static String lastGeminiError;
+
+static void setGeminiError(const String &message) {
+  lastGeminiError = message;
+}
+
+String getLastGeminiError() {
+  return lastGeminiError;
+}
 
 static const char *warningDesc(uint8_t s) {
   switch (s) {
@@ -27,6 +36,7 @@ static const char *warningDesc(uint8_t s) {
 void initGemini() {
   aiClient.setInsecure();
   lastCallMs = 0;
+  lastGeminiError = "";
   Serial.println("[Gemini] Client ready.");
 }
 
@@ -47,19 +57,30 @@ static String buildContext(const DeskState &s) {
 }
 
 String askGemini(const DeskState &state, const String &question) {
-  if (!wifiIsConnected()) return "";
+  if (!wifiIsConnected()) {
+    setGeminiError("Wi-Fi is disconnected.");
+    return "";
+  }
 
   const uint32_t now = millis();
   if (backoffUntilMs != 0 && now < backoffUntilMs) {
+    const unsigned long remainingMs = (unsigned long)(backoffUntilMs - now);
     Serial.printf("[Gemini] In 429 backoff for %lu more ms — skipping.\n",
-                  (unsigned long)(backoffUntilMs - now));
+                  remainingMs);
+    setGeminiError(String("Gemini is cooling down after a 429 response. Try again in ") +
+                   String((remainingMs + 999UL) / 1000UL) + " s.");
     return "";
   }
   if (lastCallMs != 0 && (now - lastCallMs) < GEMINI_MIN_INTERVAL_MS) {
     Serial.println("[Gemini] Rate-limited — skipping.");
+    const unsigned long remainingMs =
+      (unsigned long)(GEMINI_MIN_INTERVAL_MS - (now - lastCallMs));
+    setGeminiError(String("Local cooldown active. Try again in ") +
+                   String((remainingMs + 999UL) / 1000UL) + " s.");
     return "";
   }
   lastCallMs = now;
+  setGeminiError("");
 
   // ---- Build Gemini request body ----
   JsonDocument payload;
@@ -96,12 +117,45 @@ String askGemini(const DeskState &state, const String &question) {
   url += ":generateContent?key=";
   url += GEMINI_API_KEY;
 
-  http.begin(aiClient, url);
+  if (!http.begin(aiClient, url)) {
+    setGeminiError("Could not start HTTPS request to Gemini.");
+    return "";
+  }
   http.addHeader("Content-Type", "application/json");
 
   const int code = http.POST(body);
+  String resp = http.getString();
+
   if (code != 200) {
     Serial.printf("[Gemini] HTTP error: %d\n", code);
+    String reason = "";
+    JsonDocument errDoc;
+    const DeserializationError errParse = deserializeJson(errDoc, resp);
+    if (!errParse) {
+      String status = errDoc["error"]["status"] | "";
+      String message = errDoc["error"]["message"] | "";
+      if (status.length() > 0) {
+        reason += status;
+      }
+      if (message.length() > 0) {
+        if (reason.length() > 0) reason += ": ";
+        reason += message;
+      }
+    }
+    if (reason.length() == 0) {
+      reason = "HTTP " + String(code);
+    }
+    String failure = "Gemini returned ";
+    failure += String(code);
+    failure += ". ";
+    failure += reason;
+    setGeminiError(failure);
+    if (resp.length() > 0) {
+      if (resp.length() > 500) {
+        resp = resp.substring(0, 500);
+      }
+      Serial.printf("[Gemini] Error body: %s\n", resp.c_str());
+    }
     if (code == 429) {
       backoffUntilMs = millis() + GEMINI_BACKOFF_ON_429_MS;
       Serial.printf("[Gemini] Backing off for %u ms due to 429.\n",
@@ -111,7 +165,6 @@ String askGemini(const DeskState &state, const String &question) {
     return "";
   }
 
-  String resp = http.getString();
   http.end();
 
   // ---- Parse response ----
@@ -119,6 +172,7 @@ String askGemini(const DeskState &state, const String &question) {
   DeserializationError err = deserializeJson(doc, resp);
   if (err) {
     Serial.printf("[Gemini] JSON parse error: %s\n", err.c_str());
+    setGeminiError("Gemini replied, but the response JSON could not be parsed.");
     return "";
   }
 
@@ -126,6 +180,9 @@ String askGemini(const DeskState &state, const String &question) {
     doc["candidates"][0]["content"]["parts"][0]["text"] | "";
   String out = String(reply);
   out.trim();
+  if (out.length() == 0) {
+    setGeminiError("Gemini returned an empty answer.");
+  }
   return out;
 }
 

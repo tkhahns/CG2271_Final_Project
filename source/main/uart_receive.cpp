@@ -119,7 +119,7 @@ static int encodeDeciOrInvalid(float value, bool isValid) {
   return static_cast<int>(lroundf(value * 10.0f));
 }
 
-}  // namespace
+}  
 
 void uartReceiveInit() {
   Serial1.begin(UART_LINK_BAUD_RATE, SERIAL_8N1, RX1_PIN, TX1_PIN);

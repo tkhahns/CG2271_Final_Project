@@ -23,7 +23,6 @@ static WarningState warningStateFromCount(uint8_t activeCount) {
     return WARNING_STATE_RED_BUZZER;
 }
 
-/* ------------------------------------------------------------------ */
 void sensorTask(void *p) {
     (void)p;
     SensorPacket pkt;
@@ -82,7 +81,6 @@ void sensorTask(void *p) {
     }
 }
 
-/* ------------------------------------------------------------------ */
 void remoteTask(void *p) {
     (void)p;
     char localSug[SUGGESTION_BUF_LEN];
@@ -114,7 +112,6 @@ void remoteTask(void *p) {
     }
 }
 
-/* ------------------------------------------------------------------ */
 void buttonTask(void *p) {
     (void)p;
     Buttons_Init(g_buttonSema);
@@ -265,7 +262,7 @@ void alertTask(void *p) {
     }
 }
 
-/* ------------------------------------------------------------------ */
+
 void printTask(void *p) {
     (void)p;
     TickType_t lastWake = xTaskGetTickCount();

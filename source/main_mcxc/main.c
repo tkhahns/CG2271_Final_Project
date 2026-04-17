@@ -83,7 +83,6 @@ static void handleTelegramCommand(const TgResult &r, const DeskState &snapshot) 
       if (answer.length() == 0) answer = "(AI unavailable or rate-limited — try again shortly)";
       sendTelegramMessage("🤖 " + answer);
       
-      // ✅ AI text routed to display
       uartSendSuggestion(answer); 
       break;
     }
@@ -125,7 +124,6 @@ static void cloudTask(void *param) {
         lastTelegramMs = now;
         TgResult r = pollTelegram();
         if (r.received) {
-          // ✅ Test string removed
           handleTelegramCommand(r, snapshot);
         }
       }
@@ -147,7 +145,6 @@ static void cloudTask(void *param) {
             String tip = askGeminiForAdvice(snapshot);
             if (tip.length() > 0) {
               sendTelegramMessage("🤖 " + tip);
-              // ✅ Alert tip routed to display
               uartSendSuggestion(tip); 
             }
             lastRedGeminiMs = now;
@@ -167,7 +164,7 @@ static void cloudTask(void *param) {
           String tip = askGeminiForAdvice(snapshot);
           if (tip.length() > 0) {
             sendTelegramMessage("🤖 " + tip);
-            // ✅ Repeated alert tip routed to display
+            // Repeated alert tip routed to display
             uartSendSuggestion(tip);
           }
         }

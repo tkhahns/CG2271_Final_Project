@@ -81,8 +81,15 @@ static void handleTelegramCommand(const TgResult &r, const DeskState &snapshot) 
     case CMD_ASK: {
       sendTelegramMessage("🤔 Thinking...");
       String answer = askGemini(snapshot, r.text);
-      if (answer.length() == 0) answer = "(AI unavailable or rate-limited — try again shortly)";
-      sendTelegramMessage("🤖 " + answer);
+      if (answer.length() == 0) {
+        String reason = getLastGeminiError();
+        if (reason.length() == 0) {
+          reason = "No error details were available.";
+        }
+        sendTelegramMessage("Gemini request failed.\n" + reason);
+      } else {
+        sendTelegramMessage("🤖 " + answer);
+      }
       break;
     }
 

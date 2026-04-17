@@ -21,7 +21,7 @@ void Buttons_Init(SemaphoreHandle_t sema) {
 
     SIM->SCGC5 |= SIM_SCGC5_PORTC_MASK | SIM_SCGC5_PORTA_MASK;
 
-    /* SW2 = PTC3: GPIO input, pull-up, falling-edge IRQ */
+    // SW2 = PTC3: GPIO input, pull-up, falling-edge IRQ 
     PORTC->PCR[SW2_START_PIN] = PORT_PCR_MUX(1)
                                | PORT_PCR_PE_MASK
                                | PORT_PCR_PS_MASK
