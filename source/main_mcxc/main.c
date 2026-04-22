@@ -1,230 +1,84 @@
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "freertos/semphr.h"
-#include "config.h"
-#include "uart_receive.h"
-#include "sensors.h"
-#include "wifi_manager.h"
-#include "firebase_client.h"
-#include "telegram_bot.h"
-#include "gemini_client.h"
-#include "time_util.h"
-#include "secrets.h"
+/*
+ * main.c -- MCXC444 sensor monitor with SSD1306 OLED display
+ */
 
-DeskState espDesk = {NAN, NAN, -1.0f, 0, 0, false, 0, WARNING_STATE_IDLE, false};
+#include "board.h"
+#include "peripherals.h"
+#include "pin_mux.h"
+#include "clock_config.h"
+#include "fsl_debug_console.h"
 
-static SemaphoreHandle_t g_espDeskMutex = nullptr;
-static uint32_t lastEspPrintMs = 0;
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include "semphr.h"
 
-static void applyBuzzer(bool enabled) {
-  digitalWrite(BUZZER_PIN, enabled ? HIGH : LOW);
-}
+#include "app_types.h"
+#include "led.h"
+#include "adc.h"
+#include "ssd1306.h"
+#include "app_tasks.h"
 
-static DeskState readDeskStateSnapshot() {
-  DeskState snapshot;
+QueueHandle_t g_sensorQueue = NULL;
+SemaphoreHandle_t g_buttonSema = NULL;
+SemaphoreHandle_t g_statusMutex = NULL;
 
-  if ((g_espDeskMutex != nullptr) &&
-      (xSemaphoreTake(g_espDeskMutex, pdMS_TO_TICKS(20)) == pdTRUE)) {
-    snapshot = espDesk;
-    xSemaphoreGive(g_espDeskMutex);
-  } else {
-    snapshot = espDesk;
-  }
+bool g_systemStarted = false;
+bool g_alertSuppressed = false;
+WarningState g_warningState = WARNING_STATE_IDLE;
+OledScreenMode g_oledScreenMode = OLED_SCREEN_SENSORS;
+SensorPacket g_latestPacket = {0};
+char g_suggestionBuf[SUGGESTION_MAX_LEN] = {0};
+bool g_suggestionReady = false;
 
-  return snapshot;
-}
+int main(void) {
+    BOARD_InitBootPins();
+    BOARD_InitBootClocks();
+    BOARD_InitBootPeripherals();
 
-static void printEspSensors(const DeskState &state) {
-  Serial.print("TEMP=");
-  if (isnan(state.temp)) Serial.print("ERR");
-  else                   Serial.print(state.temp, 1);
+#ifndef BOARD_INIT_DEBUG_CONSOLE_PERIPHERAL
+    BOARD_InitDebugConsole();
+#endif
 
-  Serial.print(" | DIST=");
-  if (state.distance < 0) Serial.print("ERR");
-  else                    Serial.print(state.distance, 2);
+    LED_Init();
+    LED_OffAll();
+    SSD1306_Init();
+    SSD1306_ShowAll(false, false, 0U, 0U, 0U, false,
+                    0.0f, false, 0.0f, false,
+                    false, NULL);
 
-  Serial.print(" | LIGHT=");    Serial.print(state.light);
-  Serial.print(" | SOUND=");    Serial.print(state.soundP2P);
-  Serial.print(" | STARTED=");  Serial.print(state.systemActive ? 1 : 0);
-  Serial.print(" | CNT=");      Serial.print(state.activeCount);
-  Serial.print(" | SUPP=");     Serial.println(state.warningSuppressed ? 1 : 0);
-}
+    g_sensorQueue = xQueueCreate(1, sizeof(SensorPacket));
+    g_buttonSema = xSemaphoreCreateBinary();
+    g_statusMutex = xSemaphoreCreateMutex();
 
-static void handleTelegramCommand(const TgResult &r, const DeskState &snapshot) {
-  switch (r.command) {
-    case CMD_START:
-      sendTelegramMessage(
-        "👋 Smart Study Monitor online.\n"
-        "Commands:\n/status — current readings\n"
-        "/settemp <C> — temp threshold\n/setdist <cm> — distance threshold\n"
-        "/ask <question> — ask AI about your desk\n/help");
-      break;
-
-    case CMD_STATUS:
-      sendTelegramMessage(formatStatus(snapshot));
-      break;
-
-    case CMD_SETTEMP:
-      sendTelegramMessage("✅ Temp threshold received: " + String(r.value, 1) + " °C");
-      break;
-
-    case CMD_SETDIST:
-      sendTelegramMessage("✅ Distance threshold received: " + String(r.value, 1) + " cm");
-      break;
-
-    case CMD_HELP:
-      sendTelegramMessage(
-        "Commands:\n/status\n/settemp <C>\n/setdist <cm>\n/ask <question>");
-      break;
-
-    case CMD_ASK: {
-      sendTelegramMessage("🤔 Thinking...");
-      String answer = askGemini(snapshot, r.text);
-      if (answer.length() == 0) answer = "(AI unavailable or rate-limited — try again shortly)";
-      sendTelegramMessage("🤖 " + answer);
-      
-      uartSendSuggestion(answer); 
-      break;
+    if ((g_sensorQueue == NULL) || (g_buttonSema == NULL) ||
+        (g_statusMutex == NULL)) {
+        PRINTF("ERROR: RTOS object creation failed\r\n");
+        while (1) { __asm volatile ("nop"); }
     }
 
-    default:
-      sendTelegramMessage("Unknown command. Send /help for options.");
-      break;
-  }
+    xTaskCreate(sensorTask, "sensor", configMINIMAL_STACK_SIZE + 250, NULL, 2, NULL);
+    xTaskCreate(remoteTask, "remote", configMINIMAL_STACK_SIZE + 180, NULL, 3, NULL);
+    xTaskCreate(buttonTask, "button", configMINIMAL_STACK_SIZE + 200, NULL, 3, NULL);
+    xTaskCreate(alertTask, "alert", configMINIMAL_STACK_SIZE + 400, NULL, 2, NULL);
+    xTaskCreate(printTask, "print", configMINIMAL_STACK_SIZE + 350, NULL, 1, NULL);
+
+    vTaskStartScheduler();
+
+    while (1) { __asm volatile ("nop"); }
+    return 0;
 }
 
-static void cloudTask(void *param) {
-  (void)param;
-
-  uint32_t lastFirebaseMs   = 0;
-  uint32_t lastTelegramMs   = 0;
-  uint32_t lastRedAlertMs   = 0;   // for periodic re-alerts while RED
-  uint32_t lastRedGeminiMs  = 0;   // for periodic re-advice while RED
-  uint8_t  lastWarningState = WARNING_STATE_IDLE;
-
-  for (;;) {
-    wifiEnsureUp();
-    timeMaintain();
-
-    if (wifiIsConnected()) {
-      const uint32_t now = millis();
-      const DeskState snapshot = readDeskStateSnapshot();
-      const bool inRed =
-        (snapshot.warningState >= WARNING_STATE_RED) &&
-        !snapshot.warningSuppressed;
-
-      //  Periodic Firebase stream 
-      if (now - lastFirebaseMs >= FIREBASE_LOG_INTERVAL_MS) {
-        lastFirebaseMs = now;
-        logToFirebase(snapshot);
-      }
-
-      // Telegram command poll
-      if (now - lastTelegramMs >= TELEGRAM_POLL_INTERVAL_MS) {
-        lastTelegramMs = now;
-        TgResult r = pollTelegram();
-        if (r.received) {
-          handleTelegramCommand(r, snapshot);
-        }
-      }
-     // RED edge detection (transition into RED)
-      if (snapshot.warningState != lastWarningState) {
-        const bool escalated =
-          (snapshot.warningState >= WARNING_STATE_RED) &&
-          (lastWarningState < WARNING_STATE_RED);
-
-
-        if (escalated) {
-          // Force-write the moment of escalation, never wait for the cadence.
-          if (logToFirebase(snapshot)) lastFirebaseMs = now;
-
-          if (!snapshot.warningSuppressed) {
-            sendTelegramAlert(snapshot);
-            lastRedAlertMs = now;
-
-            String tip = askGeminiForAdvice(snapshot);
-            if (tip.length() > 0) {
-              sendTelegramMessage("🤖 " + tip);
-              uartSendSuggestion(tip); 
-            }
-            lastRedGeminiMs = now;
-          }
-        }
-        lastWarningState = snapshot.warningState;
-      }
-
-      // While stuck in RED — periodic re-alert + re-advice
-      if (inRed) {
-        if (now - lastRedAlertMs >= RED_PERSIST_ALERT_INTERVAL_MS) {
-          lastRedAlertMs = now;
-          sendTelegramAlert(snapshot);
-        }
-        if (now - lastRedGeminiMs >= RED_PERSIST_GEMINI_INTERVAL_MS) {
-          lastRedGeminiMs = now;
-          String tip = askGeminiForAdvice(snapshot);
-          if (tip.length() > 0) {
-            sendTelegramMessage("🤖 " + tip);
-            // Repeated alert tip routed to display
-            uartSendSuggestion(tip);
-          }
-        }
-      }
-    }
-
-    vTaskDelay(pdMS_TO_TICKS(CLOUD_TASK_TICK_MS));
-  }
+void vApplicationMallocFailedHook(void) {
+    taskDISABLE_INTERRUPTS();
+    LED_SetRGB(true, false, false);
+    while (1) { __asm volatile ("nop"); }
 }
 
-void setup() {
-  Serial.begin(9600);
-  delay(300);
-
-  g_espDeskMutex = xSemaphoreCreateMutex();
-
-  uartReceiveInit();
-  sensorsInit();
-  applyBuzzer(false);
-
-  wifiInit();
-  timeInit();
-  initFirebase();
-  initTelegram();
-  initGemini();
-
-  xTaskCreatePinnedToCore(cloudTask,
-                          "cloud",
-                          8192,
-                          nullptr,
-                          1,
-                          nullptr,
-                          0);
-
-  Serial.println("ESP32 warning bridge + cloud ready");
-}
-
-void loop() {
-  if ((g_espDeskMutex != nullptr) &&
-      (xSemaphoreTake(g_espDeskMutex, pdMS_TO_TICKS(20)) == pdTRUE)) {
-    uartReceiveLoop(espDesk);
-    sensorsRead(espDesk);
-    uartSendEspSensors(espDesk);
-    xSemaphoreGive(g_espDeskMutex);
-  } else {
-    uartReceiveLoop(espDesk);
-    sensorsRead(espDesk);
-    uartSendEspSensors(espDesk);
-  }
-
-  const DeskState snapshot = readDeskStateSnapshot();
-  const bool buzzerOn = snapshot.systemActive &&
-                        !snapshot.warningSuppressed &&
-                        (snapshot.warningState >= WARNING_STATE_RED_BUZZER);
-  applyBuzzer(buzzerOn);
-
-  if ((millis() - lastEspPrintMs >= 1000UL) && snapshot.systemActive) {
-    lastEspPrintMs = millis();
-    printEspSensors(snapshot);
-  }
-
-  delay(50);
+void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName) {
+    (void)pxTask;
+    (void)pcTaskName;
+    taskDISABLE_INTERRUPTS();
+    LED_SetRGB(true, false, false);
+    while (1) { __asm volatile ("nop"); }
 }
